@@ -1,0 +1,27 @@
+{
+  "name": "gateway-control-room",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local control room for the Gateway launchpad: simulates token treasuries, holder governance, the agent site API, VPS-local services and the agent loop; talks to vast.ai for real.",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test:profile": "node --test test/project-profile.test.mjs",
+    "test:dex": "node --test test/dex-payments.test.mjs test/dex-durability-security.test.mjs test/padre-pipeline.test.mjs test/dex-ui.test.mjs test/token-adversarial-ui.test.mjs && PYTHONDONTWRITEBYTECODE=1 python3 test/dex-agent.test.py && PYTHONDONTWRITEBYTECODE=1 python3 test/security-dex-relay.test.py",
+    "test:conversation-security": "node --test test/conversation-policy.test.mjs test/authority-races.test.mjs test/governance-finality.test.mjs test/security-authorization.test.mjs test/x402.test.mjs test/token-adversarial-ui.test.mjs && PYTHONDONTWRITEBYTECODE=1 python3 test/security-controller.test.py && PYTHONDONTWRITEBYTECODE=1 python3 test/security-dex-relay.test.py",
+    "test:node-all": "node --test test/*.test.mjs",
+    "test:usage": "node --test test/usage-budget.test.mjs test/usage-ui.test.mjs test/x402.test.mjs",
+    "test:desktop": "PYTHONDONTWRITEBYTECODE=1 python3 test/native-desktop.test.py && PYTHONDONTWRITEBYTECODE=1 python3 test/desktop-kurt.test.py && node --test test/bootstrap.test.mjs test/desktop.test.mjs test/companion.test.mjs test/companion-http.test.mjs test/vps-flow.test.mjs",
+    "test": "node --test test/simulation.test.mjs test/vps-flow.test.mjs test/x402.test.mjs test/bridge.test.mjs test/plan.test.mjs test/launch.test.mjs test/pons.test.mjs test/bootstrap.test.mjs test/vps-publication.test.mjs test/security-authorization.test.mjs test/security-ui.test.mjs test/security-launch.test.mjs test/realtime.test.mjs test/realtime-ui.test.mjs test/chat-session.test.mjs test/chat-session-ui.test.mjs test/community.test.mjs test/governance-rpc.test.mjs",
+    "test:workbench": "PYTHONDONTWRITEBYTECODE=1 python3 test/workbench.test.py && PYTHONDONTWRITEBYTECODE=1 python3 test/security-workbench.test.py && PYTHONDONTWRITEBYTECODE=1 python3 test/security-publisher.test.py && PYTHONDONTWRITEBYTECODE=1 python3 test/security-controller.test.py && PYTHONDONTWRITEBYTECODE=1 python3 test/realtime-agent.test.py && PYTHONDONTWRITEBYTECODE=1 python3 test/community-agent.test.py"
+  },
+  "engines": { "node": ">=20.18.0" },
+  "dependencies": {
+    "@solana/addresses": "6.5.0",
+    "@solana/instructions": "6.5.0",
+    "@solana/transaction-messages": "6.5.0",
+    "@solana/transactions": "6.5.0",
+    "ethers": "6.13.4",
+    "sharp": "0.35.4"
+  }
+}

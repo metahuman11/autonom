@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+*.env
+control-room/data/
+**/secrets/
+**/*.pem
+**/*.key
+.DS_Store
+._*

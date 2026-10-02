@@ -1,0 +1,51 @@
+# MediaMTX for Gateway: RTMP in from agent VPSes, HLS out to the website.
+# Publishing needs the token's stream key (checked by the gateway); playback is open.
+logLevel: info
+logDestinations: [stdout]
+
+# Loopback API: the gateway reads viewer counts from it.
+api: yes
+apiAddress: 127.0.0.1:9997
+metrics: no
+pprof: no
+playback: no
+
+authMethod: http
+authHTTPAddress: http://127.0.0.1:__PORT__/api/mediamtx/auth
+# Playback is public; only publishing is checked with the gateway.
+authHTTPExclude:
+  - action: read
+  - action: playback
+  - action: api
+
+rtsp: no
+rtmp: yes
+rtmpAddress: :1935
+hls: yes
+hlsAddress: 127.0.0.1:8888
+hlsAllowOrigin: '*'
+hlsVariant: lowLatency
+hlsSegmentCount: 7
+hlsSegmentDuration: 1s
+hlsPartDuration: 200ms
+# WebRTC (WHEP) playback: sub-second latency. Signalling is proxied by nginx at
+# /whep/, media goes straight to the server's public IP on UDP/TCP 8189.
+webrtc: yes
+webrtcAddress: 127.0.0.1:8889
+webrtcAllowOrigin: '*'
+webrtcLocalUDPAddress: :8189
+webrtcLocalTCPAddress: :8189
+webrtcIPsFromInterfaces: no
+webrtcAdditionalHosts: [__PUBLIC_IP__]
+webrtcICEServers2: []
+srt: no
+moq: no
+
+pathDefaults:
+  runOnReady: >-
+    curl -s -X POST http://127.0.0.1:__PORT__/api/mediamtx/event -H "Content-Type: application/json" -d "{\"path\":\"$MTX_PATH\",\"event\":\"ready\"}"
+  runOnNotReady: >-
+    curl -s -X POST http://127.0.0.1:__PORT__/api/mediamtx/event -H "Content-Type: application/json" -d "{\"path\":\"$MTX_PATH\",\"event\":\"notready\"}"
+
+paths:
+  all_others:

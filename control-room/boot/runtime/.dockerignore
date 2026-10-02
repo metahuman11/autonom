@@ -1,0 +1,4 @@
+# Allowlist: app data, .env, credentials and even sibling files cannot enter a build.
+**
+!Dockerfile
+!runtime-setup.sh

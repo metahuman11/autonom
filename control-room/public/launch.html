@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonom · Create a project</title>
+<meta name="description" content="Launch your token community on Autonom. Choose an AI model and a machine, review the costs and confirm with your own wallet.">
+<meta name="theme-color" content="#101013">
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png?v=space-logo-v2">
+<link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png?v=space-logo-v2">
+<meta property="og:site_name" content="Autonom">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Autonom · Create a project">
+<meta property="og:description" content="Give your community an AI companion and a place to build together.">
+<meta property="og:image" content="https://autonom.fun/brand/autonom-social.jpg?v=20260917">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Autonom mark: an A carrying a lime node">
+<meta name="twitter:card" content="summary_large_image">
+<script id="launch-purchase-controls">
+// Native currency amounts remain separate when the selected venue changes.
+(() => {
+  function parseSol(value) {
+    const raw = String(value ?? '').trim() || '0';
+    if (raw.length > 32 || !/^\d+(?:\.\d{1,9})?$/.test(raw)) throw new Error('Enter a SOL amount with at most 9 decimal places.');
+    const [whole, fraction = ''] = raw.split('.');
+    const lamports = BigInt(whole) * 1_000_000_000n + BigInt(fraction.padEnd(9, '0'));
+    if (lamports > 100_000_000_000n) throw new Error('The first buy can be at most 100 SOL.');
+    const remainder = (lamports % 1_000_000_000n).toString().padStart(9, '0').replace(/0+$/, '');
+    return {sol:(lamports / 1_000_000_000n).toString() + (remainder ? '.' + remainder : ''),lamports:lamports.toString()};
+  }
+  const previous = new Map();
+  window.GatewayLaunchPurchase = Object.freeze({parseSol,sol:()=>parseSol(document.getElementById('firstBuySol')?.value),
+    setBusy(busy) {
+      window.GatewayLaunchBusy = Boolean(busy);
+      for (const element of document.querySelectorAll('#venuePump,#venuePons,#firstBuy,#firstBuySol,#connect')) {
+        if (busy) {if (!previous.has(element)) previous.set(element,element.disabled);element.disabled=true;}
+        else if (previous.has(element)) {element.disabled=previous.get(element);previous.delete(element);}
+      }
+    }
+  });
+})();
+</script>
+<script defer src="/launch-layout.js?v=site-consistency-20260930"></script>
+<script src="/wallet-mobile.js?v=unified-20260930"></script><link rel="stylesheet" href="/product.css?v=unified-20260930"><link rel="stylesheet" href="/product-launch.css?v=unified-20260930"><script defer src="/autonom-shell.js?v=unified-20260930"></script><style id="nofee-upcoming-networks">
+body.reference-launch.mh-site.create-token-page .token-details .venue-switch{margin-bottom:12px}
+body.create-token-page .upcoming-networks{margin:0 0 28px;padding:0}
+body.create-token-page .upcoming-networks-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+body.create-token-page .upcoming-network:disabled{display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;align-items:center;min-width:0;margin:0;padding:12px;border:1px solid #343338;border-radius:12px;background:#19191d;color:#e4dfe0;font-family:var(--product-font);text-align:left;opacity:1;cursor:not-allowed;box-shadow:none;transform:none}
+body.create-token-page .upcoming-network svg{display:block;width:24px;height:24px;flex:none}
+body.create-token-page .upcoming-network b{min-width:0;font-size:12px;font-weight:500;line-height:1.4;white-space:nowrap}
+body.create-token-page .upcoming-network-meta{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:6px}
+body.create-token-page .upcoming-network-provider{color:#aaa4ae;font-size:10px;line-height:1.4}
+body.create-token-page .upcoming-network-soon{padding:2px 6px;border:1px solid #51413d;border-radius:5px;background:#302420;color:#e8b09b;font-size:9px;line-height:1.3;font-weight:500}
+@media(max-width:600px){body.create-token-page .upcoming-networks-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body.create-token-page .upcoming-network:disabled{padding:10px;gap:7px}body.create-token-page .upcoming-networks{margin-bottom:24px}}
+</style></head>
+<body class="mh-site mh-launch-page reference-launch autonom-app create-token-page product-app app-ready" data-autonom-static="1">
+<header class="app-topnav"><a class="app-skip" data-product-copy="skip" href="#appMain">Skip to content</a><a class="app-brand" href="/" aria-label="Autonom home" data-product-label="brandHome"><img src="/brand/autonom-mark.png" width="32" height="32" alt=""><span>Autonom</span></a><nav class="app-links" id="appNavigation" aria-label="Main navigation" data-product-label="mainNav"><a class="app-mobile-link" href="/launch" data-i18n="create">Launch a project</a><a href="/#communities" data-i18n="explore">Explore</a><a href="/#how-it-works" data-i18n="navHow">How it works</a><a href="/agent-playbook.html" data-i18n="navDocs">Docs</a></nav><div class="app-actions"><span id="me" class="mono muted" style="font-size:12px"></span><button id="connect" class="btn lime">Connect wallet</button></div><button class="app-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="appNavigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14M5 16h14"/></svg></button></header>
+<div class="app-content">
+
+
+<div class="wrap" id="appMain" tabindex="-1" data-launch-static="1">
+  
+  <div class="cols"><div class="create-heading"><div class="mh-launch-intro"><div>
+  
+  <h1>Create a project<span class="create-title-dot">.</span></h1>
+  
+  
+  </div></div><nav class="create-nav" aria-label="Create a project steps"><button aria-controls="create-step-0" aria-current="step" type="button" data-step="0"><span class="create-step-number">1</span><b>Project</b></button><button aria-controls="create-step-1" type="button" data-step="1"><span class="create-step-number">2</span><b>AI setup</b></button></nav></div>
+    <div id="left">
+      
+      
+      
+      
+      
+    <section class="create-panel token-workbench" id="create-step-0" aria-label="Project" tabindex="-1"><aside class="token-preview project-identity-band project-identity-pass" aria-labelledby="tokenPreviewHeading"><h2 id="tokenPreviewHeading" hidden="">Project preview</h2><div class="token-preview-image"><img id="tokenLogoPreview" alt="Project logo" width="512" height="512" decoding="async" referrerpolicy="no-referrer" hidden=""><div id="tokenPreviewPlaceholder"><svg class="token-image-art" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle class="token-image-plus" cx="32" cy="32" r="31"></circle><path d="M32 18v28M18 32h28" class="token-image-plus-stroke" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path></svg><button type="button" class="btn" id="tokenLogoAdd">Add a logo</button><strong id="tokenImagePrompt" hidden="">Add a logo</strong><small id="tokenImageInstruction" hidden="">Choose a file or drop it here</small><small id="tokenImageLimits" hidden="">PNG, JPG, GIF, WebP · up to 10 MB · auto-optimized</small></div><label class="full mh-solana-only token-logo token-logo-editor" hidden="">Logo <input id="logoFile" type="file" accept="image/png,image/jpeg,image/gif,image/webp" aria-label="Choose project logo"><small>PNG, JPG, GIF or WebP · max 10 MB. Optimized automatically; animated images use the first frame.</small></label></div><div class="token-preview-copy"><div class="token-avatar" hidden=""><img id="tokenAvatarImage" alt="" width="72" height="72" referrerpolicy="no-referrer" hidden=""><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M11 30V12l9-5 9 5v18l-9 5-9-5Z" stroke="currentColor" stroke-width="1.5"></path><path d="m11 12 9 5 9-5m-9 5v18" stroke="currentColor" stroke-width="1.5"></path></svg></div><div class="token-preview-text"><h3 id="tokenPreviewName">Your project</h3><p id="tokenPreviewSymbol">$SYMBOL</p><span id="tokenPreviewNetwork"></span></div></div><div class="token-preview-tools"><small id="tokenLogoFormats">PNG, JPG, GIF, WebP · up to 10 MB · auto-optimized</small></div><div class="token-image-actions" hidden=""><button type="button" class="btn" id="tokenImageChange">Change</button><button type="button" class="btn" id="tokenImageRemove">Remove</button></div><div class="token-preview-editors"><label class="full mh-evm-only token-logo-url-editor">Logo URL <input id="logo" placeholder="https://… or ipfs://…"></label></div><p id="tokenLogoStatus" role="status" aria-live="polite" hidden=""></p><p id="tokenPreviewDescription" hidden=""></p><div class="token-readiness" hidden=""><span id="tokenReadyDetails" data-ready="false">Project details</span><span id="tokenReadyImage" data-ready="false">Project image</span></div></aside><div class="card mh-form-card token-details"><h2 hidden="">Network</h2>
+<section class="upcoming-networks" aria-label="Upcoming networks via NoFee.tax"><div class="upcoming-networks-grid">
+<button class="upcoming-network" type="button" disabled aria-label="Base · NoFee.tax · Coming soon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#315CF5"/><path d="M6 16h20" stroke="white" stroke-width="3"/></svg><b>Base</b><span class="upcoming-network-meta"><span class="upcoming-network-provider">NoFee.tax</span><span class="upcoming-network-soon">Soon</span></span></button>
+<button class="upcoming-network" type="button" disabled aria-label="Ethereum · NoFee.tax · Coming soon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 1 9 15-9 5-9-5Z" fill="#A8B9EF"/><path d="M16 1v20l9-5Z" fill="#7286BF"/><path d="m7 18 9 13 9-13-9 5Z" fill="#A8B9EF"/><path d="M16 23v8l9-13Z" fill="#7286BF"/></svg><b>Ethereum</b><span class="upcoming-network-meta"><span class="upcoming-network-provider">NoFee.tax</span><span class="upcoming-network-soon">Soon</span></span></button>
+<button class="upcoming-network" type="button" disabled aria-label="Arbitrum · NoFee.tax · Coming soon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 1 13 7.5v15L16 31 3 23.5v-15Z" fill="#213147" stroke="#8EB9DE" stroke-width="1.5"/><path d="m10 24 7-16h4l-7 16Z" fill="white"/><path d="m5 24 7-16h4L9 24Z" fill="white"/><path d="m19 16 5 10 3-2-6-12Z" fill="#28A0F0"/></svg><b>Arbitrum</b><span class="upcoming-network-meta"><span class="upcoming-network-provider">NoFee.tax</span><span class="upcoming-network-soon">Soon</span></span></button>
+<button class="upcoming-network" type="button" disabled aria-label="BNB Chain · NoFee.tax · Coming soon"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="#F3BA2F"><path d="m16 2 5 5-5 5-5-5ZM7 11l5 5-5 5-5-5Zm18 0 5 5-5 5-5-5ZM16 20l5 5-5 5-5-5Z"/><path d="m16 12 4 4-4 4-4-4Z"/></g></svg><b>BNB Chain</b><span class="upcoming-network-meta"><span class="upcoming-network-provider">NoFee.tax</span><span class="upcoming-network-soon">Soon</span></span></button>
+<button class="upcoming-network" type="button" disabled aria-label="Polygon · NoFee.tax · Coming soon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m11 9-7 4v8l7 4 7-4v-5l7-4 7 4v8l-7 4-7-4M4 13l7 4 7-4m0 3V8l-7-4-7 4v5m14 3 7 4 7-4" transform="translate(0 -1) scale(.94)" fill="none" stroke="#AE87FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Polygon</b><span class="upcoming-network-meta"><span class="upcoming-network-provider">NoFee.tax</span><span class="upcoming-network-soon">Soon</span></span></button>
+</div></section>
+
+        <div class="form">
+          <label class="token-field"><span class="field-heading"><span>Name</span><small class="field-count" id="nameCount" hidden=""></small></span><input id="name" maxlength="40" placeholder="Project name" required=""></label>
+          <label class="token-field"><span class="field-heading"><span>Symbol</span><small class="field-count" id="symbolCount" hidden=""></small></span><span class="symbol-field"><span aria-hidden="true">$</span><input id="symbol" maxlength="10" placeholder="SYMBOL" style="text-transform:uppercase" required=""></span></label>
+          <label class="full token-field"><span class="field-heading"><span>Description <small>(optional)</small></span><small class="field-count" id="descriptionCount" hidden=""></small></span><textarea id="description" rows="2" maxlength="400" placeholder="What are you building?"></textarea></label>
+          
+          
+          <details class="mh-optional full"><summary id="logoLinksSummary">Add links <span id="logoLinksHint">(optional)</span></summary><div class="form">
+          <label>Website <input id="website" placeholder="https://…"></label>
+          <label>X / Twitter <input id="twitter" placeholder="https://x.com/…"></label>
+          <label class="full mh-solana-only" hidden="">Telegram <input id="telegram" placeholder="https://t.me/…"></label>
+          </div></details>
+          
+          <label class="mh-evm-only">Community trading fee <select id="tax"><option value="100">1%</option><option value="200" selected="">2%</option><option value="300">3%</option><option value="400">4%</option><option value="500">5%</option></select><small>Paid to the AI treasury</small></label>
+        </div>
+        <div class="create-actions"><button type="button" class="btn" id="createBack" hidden="">Back</button><button type="button" class="btn lime" id="createNext">Choose AI</button><small id="createNextHint">Next: AI setup</small></div></div></section><section class="create-panel" id="create-step-1" aria-label="AI setup" hidden="" tabindex="-1"><div class="ai-token-summary"><div class="ai-token-avatar"><img id="aiTokenLogo" alt="" width="44" height="44" referrerpolicy="no-referrer" hidden=""><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M11 30V12l9-5 9 5v18l-9 5-9-5Z" stroke="currentColor" stroke-width="1.5"></path><path d="m11 12 9 5 9-5m-9 5v18" stroke="currentColor" stroke-width="1.5"></path></svg></div><div class="ai-token-copy"><strong id="aiTokenName">Your project</strong><span id="aiTokenSymbol">$SYMBOL</span><small id="aiTokenNetwork"></small></div><button type="button" class="btn" id="aiTokenEdit">Edit project</button></div><div class="card mh-form-card"><h2><span class="mh-step">2</span> Choose an AI</h2>
+        <label class="mh-select-label" for="model">AI model</label><select id="model"></select>
+        <details class="mh-optional"><summary>AI pricing</summary><div class="hint" id="modelInfo"></div></details></div><div class="card mh-form-card"><h2><span class="mh-step">3</span> Choose a computer</h2>
+        <details class="mh-optional"><summary>Filters</summary><div class="form" style="margin-bottom:10px"><label>Graphics card <select id="gpuClass"></select></label><label>Maximum price ($ / hour, up to $1) <input id="maxDph" type="number" step="0.01" min="0.01" max="1" value="1"></label></div></details>
+        <div class="stock"><table id="stock"><tr><th></th><th>GPU</th><th>RAM</th><th>$/h</th><th>Where</th><th>↑ Mbps</th></tr></table></div>
+        <div class="hint" id="stockInfo">Available computers. Prices and availability refresh every minute.</div></div><div class="card quote" data-quote-state="empty" tabindex="-1"><h2>Costs &amp; funding</h2><p class="launch-funding-intro">Creator fees and deposits fund each stage after launch. AI and computer usage continues throughout.</p>
+        <div class="kpi big"><span>Initial AI budget</span><b id="qUnlock">—</b></div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      <section id="launchCostDetails" class="launch-cost-details" aria-label="Project funding breakdown"><div class="launch-cost-content"><div class="kpi"><span>1. AI &amp; computer</span><b id="qOperating">—</b><small>Initial funding · usage billed as it runs</small></div><div class="kpi" id="qSocialRow"><span>2. X account</span><b id="qSocial">—</b><small>Account setup budget</small></div><div class="kpi"><span>3. DEX Screener</span><b id="qDex">—</b><small>Required last · maximum setup budget</small></div></div><div class="launch-cost-columns"><section class="launch-usage-details" aria-labelledby="launchUsageTitle"><h3 id="launchUsageTitle">AI &amp; computer usage</h3><p>Computer time is capped at $1/hour. AI is billed by tokens used; the estimate below assumes 10k input + 1k output tokens. These ongoing costs are separate from X and DEX setup.</p><div class="kpi"><span>Model</span><b id="qModel">—</b></div><div class="kpi"><span>Estimated AI step</span><b id="qStep">—</b></div><div class="kpi"><span>Computer</span><b id="qMachine">—</b></div><div class="kpi"><span>Computer / hour</span><b id="qDph">—</b></div></section><section class="launch-upfront-details" aria-labelledby="launchUpfrontTitle"><h3 id="launchUpfrontTitle">Paid at creation</h3><p>Your initial buy plus launch and network costs, paid separately by your connected wallet.</p><div class="steps mh-evm-only" id="ponsLaunchSteps" style="margin-top:14px"><div><b>Cost now:</b> Pons launch fee <span id="qFee">…</span> + your first buy, paid by your wallet on Robinhood Chain. No additional launch-package charge is added to this transaction.</div><div id="packageAfterLaunch">After launch, creator tax and deposits fund the reviewed launch package.</div><div>DEX Screener setup is the final required stage, after the AI and X account.</div><div>Buying tokens makes you a holder. Holding requirements apply to community chat and voting.</div></div><div class="steps mh-solana-only" id="pumpLaunchSteps" style="margin-top:14px" hidden=""></div></section></div><div class="launch-funding-notes"><div class="card" id="requiredLaunchPackage"><h2 id="packageHeading">Funding details</h2>
+        <p id="packageBreakdown">Select a computer to see the funding target.</p>
+        <div class="hint" id="packageSourceHint">This allocation comes from collected creator tax and deposits. It does not add an upfront charge to your Pons launch transaction or change the bonding curve&#39;s economics.</div>
+        <div class="hint">Start with the initial AI budget. Computer time and AI tokens are charged as used. X setup follows; DEX Screener is last, then holder work opens.</div></div><div class="hint" id="launchWhereHint">Launched <b>on Pons</b> (Robinhood Chain) from your own wallet in one transaction: token + bonding curve + your first buy. Creator tax from buys and sells, plus direct deposits, funds the project&#39;s launch package.</div><div class="hint" id="qHint">Funded by creator fees and deposits; not charged at creation.</div></div></section></div></section></div>
+    
+  </div><div class="create-status"><div class="hint" id="status" role="status"></div></div>
+</div>
+
+
+
+<dialog id="launchFirstBuy" class="launch-buy-dialog" aria-labelledby="buyTitle" aria-describedby="firstBuyHelp">
+        <div class="buy-dialog-content">
+          <button id="buyClose" type="button" aria-label="Close purchase window"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
+          <h2 id="buyTitle">Buy your first tokens? <span>(optional)</span></h2>
+          <p id="buyContext"></p>
+          <label class="purchase-field mh-solana-only" hidden="" for="firstBuySol"><span class="purchase-label">Amount in SOL</span><span class="purchase-input"><input id="firstBuySol" type="number" inputmode="decimal" step="0.000000001" min="0" max="100" value="0" aria-describedby="firstBuyHelp buyCosts"><b aria-hidden="true">SOL</b></span></label>
+          <label class="purchase-field mh-evm-only" for="firstBuy"><span class="purchase-label">Amount in ETH</span><span class="purchase-input"><input id="firstBuy" type="number" inputmode="decimal" step="0.001" min="0" max="10" value="0" aria-describedby="firstBuyHelp buyCosts"><b aria-hidden="true">ETH</b></span></label>
+          <p id="firstBuyHelp">Enter 0 to skip the initial buy.</p>
+          <p id="buyCosts">Creation and network fees are extra.</p>
+          <div id="buyActions"><button id="buyConnect" class="btn lime" hidden="" type="button">Connect wallet</button><button id="launch" class="btn lime" style="width:100%;margin-top:14px" disabled="">Connect wallet to launch</button></div>
+          <p id="buyStatus" role="status" aria-live="polite" hidden=""></p>
+        </div>
+      </dialog>
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const money = (n) => "$" + Number(n || 0).toFixed(2);
+const short = (a) => a ? a.slice(0, 6) + "…" + a.slice(-4) : "";
+let me = null, models = [], inv = { offers: [], gpus: [] }, offerId = null, quoteTimer = null, launching = false, reviewedQuote = null, quoteRequest = 0;
+let pickedOffer = null;   // the machine the launcher chose, kept even when the stock slice moves
+function packageTerms(value) {
+  if (!value || ![1, 2, 3, 4, 5].includes(value.version) || value.required !== true) return null;
+  const social = value.version >= 2 ? value.socialAccountBudgetMicros : 0;
+  const amounts = [value.activationMicros, value.dexBudgetMicros, value.operatingMicros, social];
+  if (!amounts.every(n => Number.isSafeInteger(n) && n >= 0) || !value.activationMicros || (value.version < 4 && !value.dexBudgetMicros) || !value.operatingMicros ||
+      value.version >= 2 && value.version < 4 && !social || (value.version===5 ? value.staged!==true || value.activationMicros!==value.operatingMicros || value.totalOnboardingMicros!==value.operatingMicros+social+value.dexBudgetMicros || value.maxVpsHourlyMicros!==1_000_000 || !social || !value.dexBudgetMicros : value.activationMicros !== value.dexBudgetMicros + value.operatingMicros + social)) return null;
+  return { version: value.version, required: true, activationMicros: value.activationMicros, dexBudgetMicros: value.dexBudgetMicros,
+    operatingMicros: value.operatingMicros, socialAccountBudgetMicros: social, ...(value.version===5 ? {staged:true,totalOnboardingMicros:value.totalOnboardingMicros,maxVpsHourlyMicros:value.maxVpsHourlyMicros} : {}) };
+}
+function packageBreakdown(p) {
+  if(p.version===5) return `First ${money(p.operatingMicros/1e6)} for AI and computer time → then ${money(p.socialAccountBudgetMicros/1e6)} for X setup → finally up to ${money(p.dexBudgetMicros/1e6)} for required DEX Screener setup. Holder work opens after setup. Running costs continue throughout; these amounts are not a lifetime service price.`;
+  const parts = [`${money(p.operatingMicros / 1e6)} for AI and computer time`];
+  if (p.socialAccountBudgetMicros) parts.push(`${money(p.socialAccountBudgetMicros / 1e6)} reserved for an X account`);
+  if (p.dexBudgetMicros) parts.push(`${money(p.dexBudgetMicros / 1e6)} for DEX Screener`);
+  return `${money(p.activationMicros / 1e6)} startup target: ${parts.join(' · ')}.${p.dexBudgetMicros === 0 ? ' DEX Screener is optional.' : ''}`;
+}
+function packageProgress(p) {
+  if(p?.version===5) return 'Setup runs in order. Each stage needs available funds and verified completion of the previous stage. AI is metered by tokens; the computer is billed by time, up to $1/hour.';
+  const dex = p?.dexBudgetMicros === 0 ? 'DEX Screener is optional.' : p?.paid === true
+    ? 'DEX Screener payment confirmed; ' + (p.publication === 'published' ? 'profile published.' : 'publication pending.')
+    : 'The existing DEX Screener payment has not been confirmed.';
+  const social = p?.socialAccountBudgetMicros > 0 ? ` X account setup ${p.socialAccount?.acquired === true ? 'confirmed' : 'pending'}.` : '';
+  return dex + social;
+}
+function reviewedSelection() { return reviewedQuote && reviewedQuote.model === $('#model').value && reviewedQuote.offerId === offerId && Date.now() - reviewedQuote.at < 60_000; }
+function canonicalize(v) { if (v === null) return "null"; if (typeof v !== "object") return JSON.stringify(v); if (Array.isArray(v)) return "[" + v.map(canonicalize).join(",") + "]"; return "{" + Object.keys(v).filter((k) => v[k] !== undefined).sort().map((k) => JSON.stringify(k) + ":" + canonicalize(v[k])).join(",") + "}"; }
+const hexNonce = () => "0x" + [...crypto.getRandomValues(new Uint8Array(16))].map((b) => b.toString(16).padStart(2, "0")).join("");
+const toHex = (str) => "0x" + [...new TextEncoder().encode(str)].map((b) => b.toString(16).padStart(2, "0")).join("");
+const status = (m, cls = "") => { $("#status").textContent = m; $("#status").className = "hint " + cls; };
+async function connect() {
+  if (!window.ethereum) { window.GatewayWalletMobile?.offer({ chain: "evm", anchor: ($("#launchFirstBuy")?.open ? $("#buyConnect") : $("#connect")) }); status("No wallet found — open this page inside MetaMask (button under Connect), or install the extension.", "bad"); return; }
+  const [a] = await window.ethereum.request({ method: "eth_requestAccounts" });
+  me = a.toLowerCase(); $("#me").textContent = short(me); $("#connect").textContent = "Connected"; $("#connect").classList.remove("lime"); armButton();
+}
+$("#connect").onclick = () => connect().catch((e) => status(e.message, "bad"));
+function armButton() { const ok = me && offerId != null && $("#model")?.value && reviewedQuote; $("#launch").disabled = !ok || launching; $("#launch").textContent = !me ? "Connect wallet to launch" : offerId == null ? "Pick a machine" : !reviewedQuote ? "Review funding target" : launching ? "Creating…" : "Create coin"; }
+
+async function loadModels() {
+  const { models: list, default: def } = await (await fetch("/api/site/models")).json();
+  models = list;
+  const perM = (n) => "$" + Number(n).toFixed(n < 1 ? 2 : n % 1 ? 1 : 0);
+  const label = (m) => m.name;
+  const groups = [["⭐ Recommended", models.filter((m) => m.featured)]];
+  for (const m of models.filter((m) => !m.featured)) { let g = groups.find((x) => x[0] === m.vendorName); if (!g) groups.push((g = [m.vendorName, []])); g[1].push(m); }
+  $("#model").innerHTML = groups.filter((g) => g[1].length).map(([n, l]) => `<optgroup label="${esc(n)}">${l.map((m) => `<option value="${esc(m.id)}">${esc(label(m))}</option>`).join("")}</optgroup>`).join("");
+  $("#model").value = def; $("#model").onchange = () => { modelInfo(); quote(); };
+  modelInfo();
+}
+function modelInfo() { const m = models.find((x) => x.id === $("#model").value); if (!m) return; const step = (10_000 * m.promptUsd + 1_000 * m.completionUsd) / 1e6; $("#modelInfo").textContent = `About $${step.toFixed(4)} per AI step (10k input + 1k output tokens), paid from the treasury.`; }
+async function loadStock() {
+  inv = await (await fetch("/api/site/inventory")).json();
+  const keep = $("#gpuClass").value;
+  $("#gpuClass").innerHTML = `<option value="">All (${inv.count})</option>` + inv.gpus.map((g) => `<option value="${esc(g.gpu)}">${esc(g.gpu)} — ${g.count} in stock, from $${g.minDph}/h</option>`).join("");
+  $("#gpuClass").value = keep; renderStock();
+}
+function renderStock() {
+  const cls = $("#gpuClass").value, max = Math.min(1, Number($("#maxDph").value) || 1);
+  const list = inv.offers.filter((o) => (!cls || o.gpu === cls) && o.dph <= max && o.upMbps >= 50).slice(0, 80);
+  // The stock list is a moving top slice of a market that changes every minute. A picked machine that
+  // is no longer in the slice stays pinned at the top (owner 2026-09-27: the page kept saying "pick
+  // another"); the quote and the launch itself verify the machine, and if it is really gone the
+  // server's answer says so and the launcher picks again.
+  if (offerId != null && !list.some((o) => o.id === offerId) && pickedOffer && pickedOffer.id === offerId && pickedOffer.dph <= 1) list.unshift({ ...pickedOffer, pinned: true });
+  $("#stock").innerHTML = `<tr><th>Choose</th><th>Computer</th><th>Memory</th><th>Per hour</th><th>Location</th><th>Upload Mbps</th></tr>` + (list.map((o) => `<tr class="pick ${o.id === offerId ? "on" : ""}" data-id="${o.id}"><td><button type="button" class="mh-pick" aria-label="Select ${esc(o.gpu)} in ${esc(o.geo)}" aria-pressed="${o.id === offerId}">${o.id === offerId ? "✓" : "+"}</button></td><td>${esc(o.gpu)}</td><td>${o.ramGb} GB</td><td>$${Number(o.dph).toFixed(4)}</td><td>${esc(o.geo)}</td><td>${o.upMbps}</td></tr>`).join("") || `<tr><td colspan="6" class="muted">No computers match these filters. Try a different price or graphics card.</td></tr>`);
+  $("#stockInfo").textContent = `${list.length} shown · ${inv.count} in inventory · updated every minute`;
+}
+$("#stock").onclick = (e) => { const tr = e.target.closest("tr.pick"); if (!tr) return; offerId = Number(tr.dataset.id); pickedOffer = inv.offers.find((o) => o.id === offerId) || pickedOffer; renderStock(); quote(); armButton(); };
+$("#gpuClass").onchange = renderStock; $("#maxDph").oninput = renderStock;
+let lastQuoteError = '';
+function clearQuoteDisplay(state) {
+  const panel = document.querySelector('.quote');
+  panel.dataset.quoteState = state;
+  panel.setAttribute('aria-busy', String(state === 'loading'));
+  for (const id of ['qUnlock', 'qDex', 'qSocial', 'qOperating', 'qModel', 'qMachine', 'qDph', 'qStep']) $('#' + id).textContent = '—';
+}
+async function quote() {
+  reviewedQuote = null; const request = ++quoteRequest; armButton();
+  clearQuoteDisplay(offerId == null ? 'empty' : 'loading');
+  if (offerId == null) return;
+  $('#packageHeading').textContent = 'Checking current costs…';
+  $('#packageBreakdown').textContent = 'Confirming the selected computer and funding terms.';
+  $('#packageAfterLaunch').textContent = 'After launch, creator fees and deposits fund each setup stage.';
+  $('#qHint').textContent = 'Waiting for a current quote.';
+  const selection = { model: $('#model').value, offerId };
+  try {
+  const r = await fetch("/api/site/launch/quote", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(selection) });
+  const q = await r.json();
+  if (request !== quoteRequest || selection.model !== $('#model').value || selection.offerId !== offerId) return;
+  const terms = packageTerms(q.launchPackage);
+  if (!r.ok || !terms || q.activationUsd !== terms.activationMicros / 1e6) throw new Error(q.error || 'Launch package terms are unavailable. Select your plan again to retry.');
+  $("#qUnlock").textContent = money(q.activationUsd); $("#qModel").textContent = q.modelName; $("#qMachine").textContent = q.machine; $("#qDph").textContent = `$${q.dph}/h`; $("#qStep").textContent = `$${q.stepUsd}`;
+  $("#qDex").textContent = terms.dexBudgetMicros ? money(terms.dexBudgetMicros / 1e6) : "Optional";
+  $("#qOperating").textContent = money(q.launchPackage?.operatingMicros / 1e6);
+  $('#qSocialRow').hidden = !terms.socialAccountBudgetMicros; $('#qSocial').textContent = terms.socialAccountBudgetMicros ? money(terms.socialAccountBudgetMicros / 1e6) : '—';
+  $('#packageHeading').textContent = `Initial AI budget: ${money(q.activationUsd)}`;
+  $('#packageBreakdown').textContent = packageBreakdown(terms);
+  $('#packageAfterLaunch').textContent = `After launch: creator tax and deposits fill the project treasury. ${packageBreakdown(terms)}`;
+  $("#qHint").textContent = `Creator tax and deposits fund this package; it is not an extra launch transaction fee. ${packageProgress(q.launchPackage)}${terms.socialAccountBudgetMicros ? ' The X setup amount is a budget cap; the provider price is checked before payment.' : ''}`;
+  reviewedQuote = { ...selection, terms, at: Date.now() };
+  document.querySelector('.quote').dataset.quoteState = 'ready';
+  document.querySelector('.quote').setAttribute('aria-busy', 'false');
+  if (lastQuoteError && $('#status').textContent === lastQuoteError) status('');
+  lastQuoteError = ''; armButton();
+  } catch (error) {
+    if (request !== quoteRequest) return;
+    clearQuoteDisplay('error');
+    $('#packageHeading').textContent = 'Launch package terms unavailable'; $('#packageBreakdown').textContent = 'Select your plan again to review current terms.';
+    $('#packageAfterLaunch').textContent = 'After launch, creator tax and deposits fund the reviewed launch package.';
+    $('#qHint').textContent = 'A current funding quote is required before launching.'; lastQuoteError = error.message; status(lastQuoteError, 'bad'); armButton();
+  }
+}
+let launchInfo = null;
+fetch("/api/site/launch/info").then((r) => r.json()).then((i) => { launchInfo = i; $("#qFee").textContent = `${i.launchFeeEth} ETH`; if (i.paused && i.pump) { $("#launch").hidden = true; $("#launch").disabled = true; }
+  else if (i.paused) { status(i.pausedReason || "Token launches are paused for now.", "bad"); document.querySelectorAll(".mh-form-card").forEach((el) => { el.hidden = true; }); $("#launch").disabled = true; $("#launch").textContent = "Launches paused — moving to Solana"; } else if (!i.enabled) status("Pons launches are disabled right now.", "bad"); }).catch(() => {});
+async function ensureChain() {
+  const want = "0x1237";   // Robinhood Chain 4663
+  const cur = await window.ethereum.request({ method: "eth_chainId" });
+  if (cur === want) return;
+  try { await window.ethereum.request({ method: "wallet_switchEthereumChain", params: [{ chainId: want }] }); }
+  catch (e) {
+    if (e.code !== 4902) throw e;
+    await window.ethereum.request({ method: "wallet_addEthereumChain", params: [{ chainId: want, chainName: "Robinhood Chain", nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 }, rpcUrls: ["https://rpc.mainnet.chain.robinhood.com"], blockExplorerUrls: ["https://robin.etherscan.io"] }] });
+  }
+}
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+$("#launch").onclick = async () => {
+  if (launching || window.GatewayLaunchBusy || window.GatewayLaunchVenue?.get?.() === "pump") return;
+  if (!$("#firstBuy").reportValidity()) return;
+  const name = $("#name").value.trim(), symbol = $("#symbol").value.trim().toUpperCase(), description = $("#description").value.trim();
+  if (name.length < 2 || symbol.length < 2) { status("Name and symbol are required.", "bad"); return; }
+  if (!reviewedSelection()) { await quote(); status('Funding details updated. Review them, then click Create coin again.', 'bad'); return; }
+  const reviewed = reviewedQuote;
+  launching = true; window.GatewayLaunchPurchase.setBusy(true); armButton();
+  try {
+    status("Preparing the launch…");
+    const body = { creator: me, name, symbol, description, website: $("#website").value.trim(), twitter: $("#twitter").value.trim(), logo: $("#logo").value.trim(), model: reviewed.model, offerId: reviewed.offerId, creatorTaxBps: Number($("#tax").value), firstBuyEth: Number($("#firstBuy").value) || 0, launchPackageVersion: reviewed.terms.version };
+    const pr = await fetch("/api/site/launch/prepare", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const prep = await pr.json();
+    if (!pr.ok) throw new Error(prep.error || `HTTP ${pr.status}`);
+    if (canonicalize(packageTerms(prep.launchPackage)) !== canonicalize(reviewed.terms)) {
+      await quote(); throw new Error('Launch package terms changed. Review the refreshed funding target before launching.');
+    }
+    status(`Switching your wallet to Robinhood Chain… (total ${prep.totalEth} ETH: ${prep.launchFeeEth} launch fee + first buy)`);
+    await ensureChain();
+    status("Confirm the launch transaction in your wallet…");
+    const txHash = await window.ethereum.request({ method: "eth_sendTransaction", params: [{ from: me, to: prep.tx.to, data: prep.tx.data, value: "0x" + BigInt(prep.tx.value).toString(16) }] });
+    status(`Sent ${txHash.slice(0, 12)}… — waiting for Robinhood Chain to mine it`);
+    let done = null;
+    for (let i = 0; i < 90 && !done; i++) {
+      await sleep(2000);
+      const cr = await fetch("/api/site/launch/confirm", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: prep.id, txHash }) });
+      const c = await cr.json();
+      if (!cr.ok) throw new Error(c.error || `HTTP ${cr.status}`);
+      if (c.status === "failed") throw new Error("the launch transaction reverted");
+      if (c.status === "done") done = c.channel;
+    }
+    if (!done) throw new Error("still not mined after 3 minutes — open the channel list later, the launch will be picked up");
+    const confirmedTerms = packageTerms(done.launchPackage);
+    $("#left").innerHTML = `<div class="card done"><div style="font-size:40px">🚀</div><h2 style="color:var(--lime)">$${esc(done.symbol)} launched on Pons</h2><p class="muted">Token <span class="mono">${esc(done.address)}</span><br>Every trade's ${(done.onchain.creatorTaxBps / 100).toFixed(0)}% creator tax flows to the treasury below. ${confirmedTerms ? esc(packageBreakdown(confirmedTerms)) : 'Launch package details are unavailable; check the project page.'} You can also deposit ETH on Robinhood.</p><p class="muted">${esc(packageProgress(done.launchPackage))} Funding and server availability determine startup, and a live stream is confirmed separately.</p><div class="addr mono">${esc(done.treasury.wallet)}</div><a class="btn lime" href="/t/${done.address}">Open the channel →</a> <a class="btn" href="${esc(done.onchain.explorer)}" target="_blank">Explorer ↗</a></div>`;
+    status("Launched on Pons.", "ok");
+  } catch (e) { status("Refused: " + (e.shortMessage || e.message), "bad"); }
+  launching = false; window.GatewayLaunchPurchase.setBusy(false); armButton();
+};
+loadModels().catch((e) => status("Could not load models: " + e.message, "bad"));
+loadStock().catch((e) => status("Could not load stock: " + e.message, "bad"));
+setInterval(() => loadStock().catch(() => {}), 60_000);
+</script>
+<script id="mh-pump-launch">
+// pump.fun launches on Solana. Activates only when the API says so; the Pons script above is untouched.
+(async () => {
+  const $ = (s) => document.querySelector(s);
+  const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const B58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+  const toBase58 = (bytes) => { let n = 0n; for (const b of bytes) n = (n << 8n) | BigInt(b); let out = ""; while (n > 0n) { out = B58[Number(n % 58n)] + out; n /= 58n; } let z = 0; while (z < bytes.length && bytes[z] === 0) z++; return "1".repeat(z) + out; };
+  const short = (a) => (a ? a.slice(0, 4) + "…" + a.slice(-4) : "");
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  let info;
+  try { info = await (await fetch("/api/site/launch/pump/info")).json(); } catch { return; }
+  if (!info?.enabled) return;
+  // Both venues live on this page (owner 2026-09-26, like usepaid.app): the Pons page is captured as it
+  // is, the pump.fun overlay is applied, and a switch shows one side at a time. Pons keeps its own
+  // script, handlers and texts untouched.
+  const ponsPage = { connect: $("#connect")?.onclick || null, where: $("#launchWhereHint")?.innerHTML, source: $("#packageSourceHint")?.textContent,
+    logoSummary: $("#logoLinksSummary")?.firstChild?.textContent, logoHint: $("#logoLinksHint")?.textContent };
+  document.body.classList.add("mh-solana");
+  document.querySelectorAll(".mh-solana-only").forEach((el) => { el.hidden = false; });
+  const logoSummary = $("#logoLinksSummary");
+  if (logoSummary?.firstChild) logoSummary.firstChild.textContent = "Social links ";
+  const logoHint = $("#logoLinksHint"); if (logoHint) logoHint.textContent = "Optional";
+
+  const status = (m, cls = "") => { const el = $("#pumpStatus") || $("#status"); el.textContent = m; el.className = "hint " + cls; };
+
+  // Wallet Standard discovery, no library: wallets announce themselves to the app.
+  const registry = [];
+  const api = Object.freeze({ register: (...ws) => { for (const w of ws) if (w && !registry.includes(w)) registry.push(w); return () => {}; } });
+  window.addEventListener("wallet-standard:register-wallet", (ev) => { try { ev.detail(api); } catch {} });
+  window.dispatchEvent(new CustomEvent("wallet-standard:app-ready", { detail: api }));
+  const solanaWallets = () => registry.filter((w) => w.features?.["standard:connect"] && w.features?.["solana:signAndSendTransaction"] && (w.chains || []).includes("solana:mainnet"));
+  let wallet = null, account = null;
+  async function connect() {
+    const list = solanaWallets();
+    const w = list.find((x) => /phantom/i.test(x.name)) || list[0];
+    if (!w) { window.GatewayWalletMobile?.offer({ chain: "solana", anchor: ($("#launchFirstBuy")?.open ? $("#buyConnect") : $("#connect")) }); throw new Error("No Solana wallet found — open this page inside Phantom or Solflare (buttons under Connect), or install the extension and reload."); }
+    const { accounts } = await w.features["standard:connect"].connect();
+    const a = accounts.find((x) => (x.chains || []).includes("solana:mainnet"));
+    if (!a?.address) throw new Error("The wallet did not provide a Solana mainnet account.");
+    wallet = w; account = a;
+    $("#me").textContent = short(a.address); $("#connect").textContent = "Connected · " + w.name; $("#connect").classList.remove("lime");
+    arm();
+  }
+  $("#connect").onclick = () => connect().catch((e) => status(e.message, "bad"));
+  // A phone without an injected wallet sees the "open in your wallet app" buttons right away.
+  if (window.GatewayWalletMobile?.isMobile() && !solanaWallets().length) setTimeout(() => { if (!solanaWallets().length) window.GatewayWalletMobile.offer({ chain: "solana", anchor: ($("#launchFirstBuy")?.open ? $("#buyConnect") : $("#connect")) }); }, 800);
+
+  // The Pons button is hidden by the Pons script; this one is ours.
+  const pons = $("#launch");
+  const button = document.createElement("button"); button.id = "pumpLaunch"; button.type = "button"; button.className = "btn lime"; button.style.cssText = "width:100%;margin-top:14px"; button.disabled = true; button.textContent = "Connect wallet to launch";
+  const note = document.createElement("div"); note.id = "pumpStatus"; note.className = "hint";
+  pons.after(button, note);
+  // The form's own explanations describe the Pons path; on Solana they describe pump.fun (owner 2026-09-25).
+  const where = $("#launchWhereHint"); if (where) where.innerHTML = `Launched <b>on pump.fun</b> (Solana) from your own wallet in one transaction: the coin, its bonding curve and your first buy. The coin's creator on chain is the project's AI treasury, so pump.fun's creator fee on every buy and sell, plus direct deposits, funds the project's launch package.`;
+  const source = $("#packageSourceHint"); if (source) source.textContent = "This allocation comes from collected creator fees and deposits. It does not add an upfront charge to your pump.fun launch transaction or change the bonding curve.";
+  const steps = $("#pumpLaunchSteps");
+  if (steps) steps.innerHTML = `<div><b>Network:</b> pump.fun · Solana mainnet.</div><div><b>Initial buy:</b> up to <span id="pumpFirstBuyAmount">0</span> SOL from your connected wallet. Tokens go to that wallet.</div><div><b>Additional costs:</b> network rent starts around ${esc(info.rentEstimateSol)} SOL, plus transaction fees and any account rent for the buy. The prepared total is shown before wallet confirmation.</div><div><b>Creator fees:</b> the project's AI treasury receives the coin's creator fees. Your initial buy is not a direct treasury deposit.</div>`;
+  const selectedOffer = () => Number(document.querySelector("#stock tr.pick.on")?.dataset.id) || null;
+  const ready = () => Boolean(account && selectedOffer() && $("#model")?.value && $("#name").value.trim().length >= 2 && $("#symbol").value.trim().length >= 2 && $("#firstBuySol")?.checkValidity() && $("#logoFile")?.files?.[0]);
+  let launching = false;
+  function arm() { button.disabled = launching || !ready(); button.textContent = !account ? "Connect wallet to launch" : !selectedOffer() ? "Pick a machine" : !$("#logoFile")?.files?.[0] ? "Add a logo image" : launching ? "Creating…" : "Create coin"; }
+  for (const id of ["#name", "#symbol", "#logoFile", "#model", "#firstBuySol"]) $(id)?.addEventListener("input", arm);
+  $("#stock")?.addEventListener("click", () => setTimeout(arm, 0));
+  document.addEventListener("change", arm);
+  // Both load orders use the explicit venue, not a captured default network label.
+  const labelPreview = (v) => {
+    const net = document.querySelector(".create-preview-network b"), hint = document.querySelector(".create-preview-hint");
+    if (net) net.textContent = v === "pump" ? "Solana · pump.fun" : "Robinhood Chain · Pons";
+    if (hint) hint.textContent = v === "pump" ? "Confirm on Solana with your own wallet. Creator fees fund the project's AI treasury." : "Confirm on Robinhood Chain with your own wallet. Creator tax funds the project's AI treasury.";
+  };
+  // ── Where to launch: pump.fun (Solana) or Pons (Robinhood Chain) ──
+  const pumpPage = { where: where?.innerHTML, source: source?.textContent, logoSummary: logoSummary?.firstChild?.textContent, logoHint: logoHint?.textContent };
+  let venue = "pump";
+  function applyVenue(v) {
+    if (launching || window.GatewayLaunchBusy) return;
+    venue = v === "pons" ? "pons" : "pump"; const solana = venue === "pump", page = solana ? pumpPage : ponsPage;
+    if (solana) document.body.classList.add("mh-solana"); else document.body.classList.remove?.("mh-solana");
+    document.querySelectorAll(".mh-solana-only").forEach((el) => { el.hidden = !solana; });
+    document.body.dataset.launchVenue = venue;
+    $("#name")?.setAttribute("maxlength", solana ? "32" : "40");
+    if ($("#ponsLaunchSteps")) $("#ponsLaunchSteps").hidden = solana;
+    if (pons) pons.hidden = solana; button.hidden = !solana; note.hidden = !solana;
+    if (where && page.where != null) where.innerHTML = page.where; if (source && page.source != null) source.textContent = page.source;
+    if (logoSummary?.firstChild && page.logoSummary != null) logoSummary.firstChild.textContent = page.logoSummary; if (logoHint && page.logoHint != null) logoHint.textContent = page.logoHint;
+    const c = $("#connect"); if (c) { c.onclick = solana ? () => connect().catch((e) => status(e.message, "bad")) : ponsPage.connect; c.textContent = "Connect wallet"; c.classList?.add?.("lime"); }
+    const m = $("#me"); if (m) m.textContent = solana && account ? short(account.address) : "";
+    if (solana && account) { c.textContent = "Connected · " + wallet.name; c.classList?.remove?.("lime"); }
+    for (const [id, on] of [["#venuePump", solana], ["#venuePons", !solana]]) { const b = document.querySelector(id); b?.setAttribute?.("aria-pressed", String(on)); }
+    labelPreview(venue); document.dispatchEvent(new CustomEvent("autonom:launch-venue", {detail:{venue}})); arm();
+  }
+  window.GatewayLaunchVenue = Object.freeze({ set: applyVenue, get: () => venue });
+  const sw = document.createElement("div"); sw.className = "venue-switch"; sw.setAttribute?.("role", "group"); sw.setAttribute?.("aria-label", "Where to launch");
+  sw.innerHTML = '<span class="venue-label">Launch on</span><button type="button" id="venuePump" aria-pressed="true"><i class="venue-dot"></i>pump.fun · Solana</button><button type="button" id="venuePons" aria-pressed="false"><i class="venue-dot"></i>Pons · Robinhood Chain</button>';
+  sw.addEventListener?.("click", (e) => { const b = e.target?.closest?.("button"); if (b?.id === "venuePons") applyVenue("pons"); else if (b?.id === "venuePump") applyVenue("pump"); });
+  const firstCard = $("#left")?.querySelector?.(".card"); if (firstCard?.before) firstCard.before(sw); else $("#left")?.prepend?.(sw);
+  applyVenue("pump");   // the explicit initial state: Pons button hidden, pump.fun texts, Solana wallet handler
+
+  // The in-flight launch survives a reload: {id, signature} is kept until the server answers done/failed.
+  const STORE = "mh-pump-launch";
+  const remember = (v) => { try { v ? sessionStorage.setItem(STORE, JSON.stringify(v)) : sessionStorage.removeItem(STORE); } catch {} };
+  const remembered = () => { try { return JSON.parse(sessionStorage.getItem(STORE) || "null"); } catch { return null; } };
+  const signatureText = (sig) => (typeof sig === "string" ? sig : toBase58(sig instanceof Uint8Array ? sig : Uint8Array.from(sig)));
+  const showDone = (done) => { $("#left").innerHTML = `<div class="card done"><div style="font-size:40px">🚀</div><h2 style="color:var(--lime)">$${esc(done.symbol)} is live on pump.fun</h2><p class="muted">Mint <span class="mono">${esc(done.address)}</span><br>Its creator on chain is the project's AI treasury, so pump.fun's creator fee funds this token's AI and server from the first trade.</p><div class="addr mono">${esc(done.treasury?.wallet || "")}</div><a class="btn lime" href="/t/${esc(done.address)}">Open the channel →</a> <a class="btn" href="https://pump.fun/coin/${esc(done.address)}" target="_blank" rel="noopener">pump.fun ↗</a> <a class="btn" href="https://solscan.io/token/${esc(done.address)}" target="_blank" rel="noopener">Solscan ↗</a></div>`; status("Launched on pump.fun.", "ok"); };
+  // Polls confirm until the server says done or failed. Network trouble and 5xx are transient:
+  // the transaction is already on its way, so we keep asking (with backoff) instead of giving up.
+  async function awaitConfirm(id, signature) {
+    remember({ id, signature });
+    let transient = 0;
+    for (let i = 0; i < 150; i++) {
+      await sleep(Math.min(2000 + transient * 1000, 8000));
+      let cr, c;
+      try { cr = await fetch("/api/site/launch/pump/confirm", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, signature }) }); c = await cr.json(); }
+      catch { transient++; status(`Waiting for the network… (${signature.slice(0, 12)}…)`); continue; }
+      if (cr.status >= 500) { transient++; status(`Server busy, still checking your launch… (${signature.slice(0, 12)}…)`); continue; }
+      if (!cr.ok) { remember(null); throw new Error(c.error || `HTTP ${cr.status}`); }
+      transient = 0;
+      if (c.status === "failed") { remember(null); throw new Error(c.retry ? "the launch transaction failed on chain — nothing was created; you can try again" : "the launch failed on chain — nothing was created"); }
+      if (c.status === "done") { remember(null); return c.channel; }
+    }
+    throw new Error("still not confirmed — keep this page open or come back later; the server keeps checking the launch on its own");
+  }
+  const resume = remembered();
+  if (resume?.id && resume?.signature) { status(`Resuming your launch ${resume.signature.slice(0, 12)}…`); awaitConfirm(resume.id, resume.signature).then(showDone).catch((e) => status("Launch check: " + (e.message || e), "bad")); }
+
+  const readLogo = (file) => new Promise((resolve, reject) => { if (!file) return reject(new Error("Choose a logo image.")); if (file.size > 500 * 1024) return reject(new Error(`The logo is ${Math.round(file.size / 1024)} KB; the limit is 500 KB.`)); const r = new FileReader(); r.onload = () => resolve(String(r.result)); r.onerror = () => reject(new Error("Could not read the logo file.")); r.readAsDataURL(file); });
+  button.onclick = async () => {
+    if (launching || window.GatewayLaunchBusy || venue !== "pump" || !ready()) return;
+    launching = true; window.GatewayLaunchPurchase.setBusy(true); arm();
+    try {
+      const name = $("#name").value.trim(), symbol = $("#symbol").value.trim().toUpperCase(), description = $("#description").value.trim();
+      const requestedBuy = window.GatewayLaunchPurchase.sol();
+      const launchAccount = account, launchWallet = wallet;
+      const logo = await readLogo($("#logoFile").files[0]);
+      status("Preparing your Autonom address, metadata and transaction…");
+      const body = { creator: launchAccount.address, firstBuySol: requestedBuy.sol, name, symbol, description, website: $("#website").value.trim(), twitter: $("#twitter").value.trim(), telegram: $("#telegram")?.value.trim() || "", logo, model: $("#model").value, offerId: selectedOffer(), launchPackageVersion: info.launchPackage?.version };
+      const pr = await fetch("/api/site/launch/pump/prepare", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+      const prep = await pr.json();
+      if (!pr.ok) throw new Error(prep.error || `HTTP ${pr.status}`);
+      if (String(prep.costs?.firstBuyLamports) !== requestedBuy.lamports) throw new Error('The prepared first-buy amount changed. Review the amount and prepare again.');
+      status(`Buy up to ${requestedBuy.sol} SOL. Estimated total up to ${Number(prep.costs.totalEstimateSol).toFixed(6)} SOL including network costs. Confirm in your wallet.`);
+      if (prep.resume && prep.signature) { status("This launch was already sent; checking it…"); showDone(await awaitConfirm(prep.id, prep.signature)); return; }
+      const bytes = Uint8Array.from(atob(prep.transaction), (c) => c.charCodeAt(0));
+      const [out] = await launchWallet.features["solana:signAndSendTransaction"].signAndSendTransaction({ transaction: bytes, account: launchAccount, chain: "solana:mainnet", options: { preflightCommitment: "confirmed" } });
+      const signature = signatureText(out.signature);
+      status(`Sent ${signature.slice(0, 12)}… — waiting for Solana to confirm it`);
+      showDone(await awaitConfirm(prep.id, signature));
+    } catch (e) { status("Refused: " + (e.message || e), "bad"); }
+    finally { launching = false; window.GatewayLaunchPurchase.setBusy(false); arm(); }
+  };
+})();
+</script>
+<footer class="app-footer"><a class="app-footer-brand" href="/">Autonom</a><nav aria-label="Information" data-product-label="infoNav"><a href="/#communities" data-i18n="explore">Explore</a><a href="/#how-it-works" data-i18n="navHow">How it works</a><a href="/agent-playbook.html" data-i18n="navDocs">Docs</a><a href="/terms" data-product-copy="terms">Terms &amp; fees</a><a href="/privacy#privacy" data-product-copy="privacy">Privacy</a></nav><small>© 2026 Autonom</small></footer></div>
+</body>
+</html>

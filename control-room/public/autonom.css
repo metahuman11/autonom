@@ -1,0 +1,182 @@
+/* Autonom app shell (owner 2026-09-26, reference: usepaid.app/launch): dark, monochrome, a left
+   sidebar, a top bar, rounded surfaces, white primary actions. Presentation only — every id, handler
+   and value of the pages underneath is untouched. Loaded last, so it wins over the light skins. */
+:root{--ap-bg:#0a0a0a;--ap-surface:#121212;--ap-surface-2:#181818;--ap-line:#242424;--ap-line-2:#303030;--ap-text:#ececec;--ap-muted:#8e8e8e;--ap-dim:#5f5f5f;--ap-white:#ffffff;--ap-live:#6ee7a3;--ap-radius:16px;--ap-side:232px;--ap-top:64px}
+html:has(body.autonom-app){background:var(--ap-bg)!important;color-scheme:dark!important}
+body.autonom-app,body.autonom-app.reference-explore,body.autonom-app.token-page.mh-site,body.autonom-app.reference-launch.mh-site{background:var(--ap-bg)!important;color:var(--ap-text)!important;font-family:var(--ref-body,Manrope,Inter,Arial,sans-serif);--bg:var(--ap-bg);--bg2:var(--ap-surface);--card:var(--ap-surface);--card2:var(--ap-surface-2);--line:var(--ap-line);--line2:var(--ap-line-2);--text:var(--ap-text);--muted:var(--ap-muted);--lime:var(--ap-white);--lime2:#f2f2f2;--mh-ink:var(--ap-text);--mh-accent:var(--ap-white);--ref-bg:var(--ap-bg);--ref-paper:var(--ap-surface);--ref-ink:var(--ap-text);--ref-muted:var(--ap-muted);--ref-line:var(--ap-line);--ref-accent:var(--ap-white)}
+body.autonom-app::before,body.autonom-app::after,.autonom-app #mh-live-space{display:none!important}
+/* ── shell: one top navigation bar ── */
+.autonom-app.app-ready .ref-header,.autonom-app.app-ready header.top,.autonom-app.app-ready .menubar{display:none!important}
+.app-topnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:18px;height:var(--ap-top);padding:0 28px;background:#0a0a0af2;backdrop-filter:blur(12px);border-bottom:1px solid var(--ap-line)}
+.app-topnav .app-brand{display:flex;align-items:center;gap:10px;color:var(--ap-text);text-decoration:none;font:600 18px/1 var(--ref-display,'Space Grotesk',sans-serif);letter-spacing:-.02em;flex:none}.app-topnav .app-brand img{width:30px;height:30px;border-radius:9px}
+.app-links{display:flex;align-items:center;gap:2px;margin-left:8px}.app-links a{padding:8px 12px;border-radius:999px;color:var(--ap-muted);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}.app-links a:hover{color:var(--ap-text)}.app-links a[aria-current="page"]{color:var(--ap-text);background:var(--ap-surface-2)}
+.app-topnav .app-search{flex:1;max-width:440px;margin-left:auto;display:flex;align-items:center;gap:9px;height:38px;padding:0 14px;border:1px solid var(--ap-line-2);border-radius:999px;background:var(--ap-surface);color:var(--ap-muted)}
+.app-topnav .app-search svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;flex:none}
+.app-topnav .app-search input{flex:1;min-width:0;background:none!important;border:0!important;outline:0;color:var(--ap-text)!important;font:inherit;font-size:14px;padding:0!important;height:auto!important;box-shadow:none!important;border-radius:0!important}
+.app-topnav .app-search a{color:inherit;text-decoration:none;font-size:14px}
+.app-topnav .app-actions{display:flex;align-items:center;gap:8px;flex:none}
+.app-topnav .app-pill{display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:999px;background:var(--ap-white);color:#0a0a0a;font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--ap-white)}
+.app-topnav #connect,.app-topnav .ref-button,.app-topnav .icon-button{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:999px;background:transparent!important;color:var(--ap-text)!important;border:1px solid var(--ap-line-2)!important;font-weight:500;font-size:14px;text-decoration:none;box-shadow:none!important;min-height:0!important;width:auto!important;margin:0!important}
+.app-topnav #connect:hover{border-color:#5a5a5a!important}.app-topnav #me{display:none}
+.autonom-app .app-content{min-height:100vh}
+.autonom-app .app-content>main,.autonom-app .app-content>.wrap{max-width:1180px;margin:0 auto;padding:28px 28px 60px}
+@media(max-width:900px){.app-topnav{padding:0 14px;gap:10px}.app-links{display:none}.app-topnav .app-search{display:none}}
+/* ── surfaces ── */
+.autonom-app .card,.autonom-app .ref-card,.autonom-app .broadcast-card,.autonom-app .trust-strip,.autonom-app .launch-setup,.autonom-app .launch-progress,.autonom-app .room-metric,.autonom-app .live-metric,.autonom-app .create-preview,.autonom-app .filter-panel,.autonom-app .ref-hero,.autonom-app .stage,.autonom-app .nowbar,.autonom-app .funding-banner,.autonom-app .ls-grid>div{background:var(--ap-surface)!important;border:1px solid var(--ap-line)!important;border-radius:var(--ap-radius)!important;color:var(--ap-text)!important;box-shadow:none!important}
+.autonom-app .ls-grid>div,.autonom-app .live-overview{background:var(--ap-surface-2)!important;border-color:var(--ap-line)!important}
+.autonom-app .live-overview{border-radius:var(--ap-radius)!important}
+.autonom-app .ref-hero{background:var(--ap-surface)!important;border:1px solid var(--ap-line)!important;color:var(--ap-text)!important}
+.autonom-app .trust-strip{margin:0 0 26px}.autonom-app .ref-explore{margin:0}.autonom-app .ref-hero{margin:0 0 26px}
+.autonom-app .hero-copy h1,.autonom-app h1,.autonom-app h2,.autonom-app h3{color:var(--ap-text)!important}
+.autonom-app .muted,.autonom-app .hint,.autonom-app small,.autonom-app .metric-note,.autonom-app .card-values span,.autonom-app .lead,.autonom-app .mh-card-help,.autonom-app .room-metric-note,.autonom-app .room-metric-label,.autonom-app .card-primary>span,.autonom-app .card-ticker,.autonom-app .ref-subtitle,.autonom-app .trust-steps>div{color:var(--ap-muted)!important}
+.autonom-app .trust-steps b{background:var(--ap-white);color:#0a0a0a}
+.autonom-app .broadcast-card .card-primary{border-top-color:var(--ap-line)!important}.autonom-app .card-primary strong{color:var(--ap-text)!important}
+.autonom-app .card-setup span{background:var(--ap-surface-2);border-color:var(--ap-line-2);color:var(--ap-text)}.autonom-app .card-setup b{color:var(--ap-muted)}
+.autonom-app .card-funding .bar,.autonom-app .pbar,.autonom-app .fb-bar{background:#262626!important;border:0!important}.autonom-app .card-funding .bar i,.autonom-app .pbar i,.autonom-app .fb-bar i{background:var(--ap-white)!important}
+.autonom-app .card-details{color:var(--ap-muted)}.autonom-app .card-details>summary{color:var(--ap-muted)}
+.autonom-app .community-avatar,.autonom-app .avatar{background:var(--ap-surface-2)!important;color:var(--ap-text)!important;border:1px solid var(--ap-line-2)}
+.autonom-app .stream-project-avatar{background:#ffffff14}
+/* ── controls ── */
+.autonom-app .ref-button.primary,.autonom-app .btn.lime,.autonom-app .chatin button,.autonom-app #pumpLaunch,.autonom-app #launch,.autonom-app .create-nav-actions .primary,.autonom-app button.primary{background:var(--ap-white)!important;color:#0a0a0a!important;border:1px solid var(--ap-white)!important;border-radius:999px!important;font-weight:600!important;box-shadow:none!important}
+.autonom-app .ref-button,.autonom-app .btn,.autonom-app .icon-button,.autonom-app .sort-tabs button,.autonom-app .filter-button,.autonom-app .status-tabs button,.autonom-app .view-toggle button,.autonom-app .room-text-button,.autonom-app .link-button,.autonom-app .chat-ask{background:transparent;color:var(--ap-text);border:1px solid var(--ap-line-2);border-radius:999px;box-shadow:none}
+.autonom-app .sort-tabs button[aria-pressed="true"],.autonom-app .sort-tabs button.on,.autonom-app .status-tabs button[aria-pressed="true"],.autonom-app .tabs button.on{background:var(--ap-white)!important;color:#0a0a0a!important;border-color:var(--ap-white)!important}
+.autonom-app .sort-tabs,.autonom-app .status-tabs,.autonom-app .view-toggle{background:transparent!important;border:0!important}
+.autonom-app input,.autonom-app textarea,.autonom-app select,.autonom-app .search,.autonom-app .contract-copy,.autonom-app .chatin input{background:var(--ap-surface-2)!important;color:var(--ap-text)!important;border:1px solid var(--ap-line-2)!important;border-radius:12px!important}
+.autonom-app ::placeholder{color:var(--ap-dim)!important;opacity:1}
+.autonom-app .search{border-radius:999px!important}
+.autonom-app .badge{background:var(--ap-surface-2);color:var(--ap-text);border:1px solid var(--ap-line-2)}.autonom-app .badge.live,.autonom-app .badge.unlock{background:#12261b;color:var(--ap-live);border-color:#1f3a2b}
+.autonom-app .card-primary.is-live strong i{background:var(--ap-live);box-shadow:0 0 0 0 #6ee7a366}
+.autonom-app a{color:inherit}.autonom-app .hint a,.autonom-app .muted a{color:var(--ap-text)}
+.autonom-app .hint.bad,.autonom-app .bad{color:#ff7b7b!important}.autonom-app .hint.ok,.autonom-app .ok{color:var(--ap-live)!important}
+.autonom-app hr,.autonom-app .kpis,.autonom-app .kpi,.autonom-app .live-metric,.autonom-app .room-metric{border-color:var(--ap-line)!important}
+/* ── launch page: form left, live token card right ── */
+.autonom-app.reference-launch .create-preview{position:sticky;top:calc(var(--ap-top) + 20px)}
+.autonom-app.reference-launch .create-preview-avatar{background:var(--ap-surface-2)!important;color:var(--ap-dim)!important;border:1px dashed var(--ap-line-2)!important;border-radius:14px!important}
+.autonom-app.reference-launch .create-nav{border-bottom-color:var(--ap-line)!important}.autonom-app.reference-launch .create-nav i{background:var(--ap-surface-2);color:var(--ap-muted);border:1px solid var(--ap-line-2)}.autonom-app.reference-launch .create-nav .is-active i{background:var(--ap-white);color:#0a0a0a;border-color:var(--ap-white)}
+.autonom-app.reference-launch .mh-step{background:var(--ap-white);color:#0a0a0a}
+.autonom-app.reference-launch .stock tr.pick.on,.autonom-app.reference-launch #stock tr.pick.on td{background:var(--ap-surface-2)!important}
+.autonom-app.reference-launch table th{color:var(--ap-muted)}.autonom-app.reference-launch table td,.autonom-app.reference-launch table th{border-color:var(--ap-line)!important}
+/* ── token room ── */
+.autonom-app.app-ready.token-page .top{display:none!important}
+.autonom-app.token-page .msgs,.autonom-app.token-page .chat{background:var(--ap-surface)!important;border-color:var(--ap-line)!important}
+.autonom-app.token-page .msg .who{color:var(--ap-text)}.autonom-app.token-page .msg .who .chat-share{color:var(--ap-muted)}
+.autonom-app.token-page .reply{background:var(--ap-surface-2);border:1px solid var(--ap-line);border-radius:12px;padding:10px 12px}
+.autonom-app.token-page .room-metrics{background:transparent!important;border:0!important;gap:12px}
+.autonom-app.token-page .room-value,.autonom-app.token-page .fb-head span{color:var(--ap-text)!important}
+.autonom-app.token-page .player{background:#000}.autonom-app.token-page .player .off{background:var(--ap-surface)}
+.autonom-app.token-page .desktop-panel>summary{color:var(--ap-text)}
+.autonom-app.token-page .conversation-heading,.autonom-app.token-page .chat-idea-entry{background:var(--ap-surface-2)!important;border-color:var(--ap-line)!important;color:var(--ap-text)!important}
+.autonom-app.token-page .chat-idea-entry button{background:var(--ap-white);color:#0a0a0a;border-radius:999px}
+.autonom-app.token-page .chat-allowance{color:var(--ap-muted)}.autonom-app.token-page .chat-allowance.bad{color:#ff7b7b}
+.autonom-app.token-page .chat-safety,.autonom-app.token-page .chat-compose-caption{color:var(--ap-dim)}
+/* ── footer ── */
+.autonom-app .ref-footer,.autonom-app footer{border-top:1px solid var(--ap-line);color:var(--ap-dim)}
+.app-footer{margin:40px 0 0;padding:28px 0 0;border-top:1px solid var(--ap-line);display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:20px;font-size:13px;color:var(--ap-dim)}
+.app-footer strong{display:block;color:var(--ap-text);font-weight:600;margin-bottom:8px;font-size:13px}.app-footer a{display:block;color:var(--ap-muted);text-decoration:none;margin:0 0 7px}.app-footer a:hover{color:var(--ap-text)}
+.app-footer .app-footer-brand{font:600 16px/1 var(--ref-display,'Space Grotesk',sans-serif);color:var(--ap-text)}.app-footer p{margin:8px 0 0;line-height:1.5}
+@media(max-width:700px){.app-footer{grid-template-columns:1fr 1fr}}
+/* ── polish after the first render ── */
+.app-topbar .app-search input{border:0!important;background:none!important;border-radius:0!important;padding:0!important;height:auto!important;box-shadow:none!important}
+.autonom-app .explore-toolbar .search{display:none}
+.autonom-app .ref-footer,.autonom-app main>footer:not(.app-footer){display:none!important}
+.autonom-app .live-filters{background:var(--ap-surface)!important;border:1px solid var(--ap-line-2);border-radius:999px;padding:4px}.autonom-app .live-filters button{color:var(--ap-muted);border-radius:999px}.autonom-app .live-filters button[aria-pressed="true"]{background:var(--ap-white)!important;color:#0a0a0a!important}
+.autonom-app .trust-live,.autonom-app .trust-foot,.autonom-app .trust-strip .trust-foot span{color:var(--ap-muted)!important}.autonom-app .trust-live i{background:var(--ap-live)!important}
+.autonom-app .sort-tabs button{color:var(--ap-muted)}
+.autonom-app.reference-launch .create-nav{border-bottom-color:var(--ap-line)!important}.autonom-app.reference-launch .create-nav button{color:var(--ap-muted)!important}.autonom-app.reference-launch .create-nav button[aria-current],.autonom-app.reference-launch .create-nav button.is-active,.autonom-app.reference-launch .create-nav button[aria-selected="true"]{color:var(--ap-text)!important;border-bottom-color:var(--ap-white)!important}
+.autonom-app.reference-launch .create-step-number{border-color:var(--ap-line-2)!important;background:transparent!important;color:var(--ap-muted)!important}.autonom-app.reference-launch .create-nav button[aria-current] .create-step-number,.autonom-app.reference-launch .create-nav button.is-active .create-step-number,.autonom-app.reference-launch .create-nav button[aria-selected="true"] .create-step-number{background:var(--ap-white)!important;color:#0a0a0a!important;border-color:var(--ap-white)!important}
+.autonom-app.reference-launch .create-nav b{color:inherit}
+.autonom-app.reference-launch .create-preview{border-left:0!important;padding:18px!important}
+/* ── token room: the light leftovers seen in the first render ── */
+.autonom-app.token-page .desktop-panel,.autonom-app.token-page details.desktop-panel,.autonom-app.token-page .stage-main,.autonom-app.token-page .chat,.autonom-app.token-page .card,.autonom-app.token-page .hub,.autonom-app.token-page .conversation-room{background:var(--ap-surface)!important;border-color:var(--ap-line)!important;color:var(--ap-text)!important}
+.autonom-app.token-page .desktop-panel>summary{background:transparent!important;color:var(--ap-text)!important;border-bottom:1px solid var(--ap-line)!important}
+.autonom-app.token-page .tabs{background:var(--ap-surface)!important;border-bottom:1px solid var(--ap-line)!important}.autonom-app.token-page .tabs button{background:transparent!important;color:var(--ap-muted)!important;border:0!important;border-bottom:2px solid transparent!important;border-radius:0!important}.autonom-app.token-page .tabs button.on{color:var(--ap-text)!important;border-bottom-color:var(--ap-white)!important}
+.autonom-app.token-page .tabs .chat-ask{border:1px solid var(--ap-line-2)!important;border-radius:999px!important;color:var(--ap-text)!important;margin:6px 8px!important}
+.autonom-app.token-page .chatnote,.autonom-app.token-page #dataConnection,.autonom-app.token-page .chat-state{background:var(--ap-surface-2)!important;color:var(--ap-muted)!important;border-color:var(--ap-line)!important}
+.autonom-app.token-page .chatin,.autonom-app.token-page .msgs,.autonom-app.token-page .chat-options,.autonom-app.token-page .chat-welcome{background:var(--ap-surface)!important;border-color:var(--ap-line)!important;color:var(--ap-text)!important}
+.autonom-app.token-page .chat-welcome{background:var(--ap-surface-2)!important}.autonom-app.token-page .chat-welcome p{color:var(--ap-muted)!important}
+.autonom-app.token-page .item,.autonom-app.token-page .hub-empty,.autonom-app.token-page .empty,.autonom-app.token-page .src div,.autonom-app.token-page .startup-note,.autonom-app.token-page .detailbox{background:var(--ap-surface-2)!important;border:1px solid var(--ap-line)!important;color:var(--ap-text)!important}
+.autonom-app.token-page .item .muted,.autonom-app.token-page .item.muted{color:var(--ap-muted)!important}
+.autonom-app.token-page .kpis .kpi b,.autonom-app.token-page .fund .big{color:var(--ap-text)!important}
+.autonom-app.token-page .ovr .badge,.autonom-app.token-page .player .ctl button{background:#ffffff14!important;color:var(--ap-text)!important;border:1px solid #ffffff22!important}
+.autonom-app.token-page .player .off .btn{background:var(--ap-white)!important;color:#0a0a0a!important}
+.autonom-app.token-page .foot,.autonom-app.token-page .section-summary span{color:var(--ap-dim)!important}
+.autonom-app.token-page .room-metric{background:var(--ap-surface)!important}
+.autonom-app.token-page .community-composer,.autonom-app.token-page .room-dialog,.autonom-app.token-page dialog{background:var(--ap-surface)!important;color:var(--ap-text)!important;border:1px solid var(--ap-line-2)!important}
+.autonom-app.token-page .idea-catalog button{background:var(--ap-surface-2)!important;color:var(--ap-text)!important;border-color:var(--ap-line-2)!important}
+.autonom-app.token-page .profile-ballot,.autonom-app.token-page .tally,.autonom-app.token-page .ballot{background:var(--ap-surface-2)!important;color:var(--ap-text)!important;border-color:var(--ap-line)!important}
+.autonom-app.token-page .conversation-heading strong,.autonom-app.token-page .conversation-heading span,.autonom-app.token-page .chat-idea-entry strong{color:var(--ap-text)!important}
+.autonom-app.token-page .conversation-heading span,.autonom-app.token-page .chat-idea-entry span{color:var(--ap-muted)!important}
+.autonom-app .create-form details>summary,.autonom-app details>summary{color:var(--ap-text)}
+
+/* ── plain document pages (docs, legal) ── */
+.autonom-app .notice,.autonom-app .doc-card{background:var(--ap-surface)!important;border:1px solid var(--ap-line)!important;color:var(--ap-text)!important;border-radius:12px}
+.autonom-app .eyebrow{color:var(--ap-muted)!important}
+.autonom-app main :is(p,li) a:not(.btn):not(.ref-button):not(.app-pill){text-decoration:underline;text-underline-offset:3px}
+
+/* ── hero with a product mock (owner 2026-09-26: no animated word, show the product) ── */
+.autonom-app .ref-hero{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:34px;align-items:center;min-height:0!important;padding:46px 48px!important;overflow:visible!important;background:radial-gradient(700px 300px at 85% 0%,#ffffff0d 0%,#ffffff00 70%),var(--ap-surface)!important}
+.autonom-app .ref-hero .hero-copy{max-width:none!important}.autonom-app .ref-hero .hero-copy h1{font-size:clamp(34px,4vw,58px)!important;letter-spacing:-.03em;line-height:1.04}.autonom-app .ref-hero .hero-copy p{font-size:16px;color:var(--ap-muted)!important;max-width:440px}
+.autonom-app .ref-hero .hero-link{position:static!important;grid-column:1/-1;justify-self:start;color:var(--ap-muted)}
+.hero-visual{position:relative}.mock-window{background:#0f0f0f;border:1px solid var(--ap-line-2);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px #00000080}
+.mock-bar{display:flex;align-items:center;gap:6px;padding:10px 12px;border-bottom:1px solid var(--ap-line);color:var(--ap-dim);font-size:11px}.mock-bar i{width:9px;height:9px;border-radius:50%;background:#2a2a2a}.mock-bar span{margin-left:8px;padding:3px 10px;border-radius:999px;background:var(--ap-surface-2);color:var(--ap-muted)}
+.mock-body{display:grid;grid-template-columns:1.35fr 1fr;gap:10px;padding:10px}
+.mock-screen{position:relative;aspect-ratio:16/10;border-radius:10px;background:linear-gradient(160deg,#1b2a23 0%,#0e1512 55%,#101010 100%);border:1px solid var(--ap-line);overflow:hidden}
+.mock-live{position:absolute;top:10px;left:10px;font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:999px;background:#e5484d;color:#fff}
+.mock-editor{position:absolute;left:14px;right:14px;top:44px;padding:10px 12px;border-radius:8px;background:#0b0b0bd9;border:1px solid #ffffff14;font-size:11.5px;line-height:1.5;color:#cfd4cc}.mock-editor b{display:block;color:var(--ap-live);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;margin-bottom:4px}.mock-editor p{margin:0}
+.mock-taskbar{position:absolute;left:0;right:0;bottom:0;height:22px;background:#0b0b0b;border-top:1px solid #ffffff10;display:flex;align-items:center;gap:6px;padding:0 10px}.mock-taskbar span{width:14px;height:10px;border-radius:3px;background:#ffffff1a}
+.mock-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--ap-muted);padding:8px 2px 0}
+.mock-side{display:flex;flex-direction:column;gap:10px}
+.mock-tile{padding:12px;border-radius:10px;background:var(--ap-surface-2);border:1px solid var(--ap-line)}.mock-tile small{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ap-muted)}.mock-tile strong{display:block;font:600 24px/1.2 var(--ref-display,'Space Grotesk',sans-serif);margin:4px 0 6px}.mock-tile .mock-fill{display:block;height:6px;border-radius:6px;background:#262626;overflow:hidden}.mock-tile .mock-fill em{display:block;height:100%;background:var(--ap-white)}.mock-tile span{display:block;font-size:10.5px;color:var(--ap-muted);margin-top:6px}
+.mock-chat{flex:1;display:flex;flex-direction:column;gap:6px;padding:10px;border-radius:10px;background:var(--ap-surface-2);border:1px solid var(--ap-line)}
+.mock-msg{font-size:11px;line-height:1.45;color:#d4d4d4;padding:7px 9px;border-radius:8px;background:#101010;border:1px solid #ffffff0f}.mock-msg b{display:block;font-size:10px;color:var(--ap-muted);margin-bottom:2px}.mock-msg.is-kurt{background:#161d18;border-color:#25342a}.mock-msg.is-kurt b{color:var(--ap-live)}
+@media(max-width:900px){.autonom-app .ref-hero{grid-template-columns:1fr;padding:28px 22px!important}.hero-visual{display:none}}
+.autonom-app .ref-hero .hero-copy{order:1}.autonom-app .ref-hero .hero-visual{order:2}.autonom-app .ref-hero .hero-link{order:3}
+.autonom-app .ref-hero .hero-copy .ref-button{text-decoration:none!important}
+/* native select popups keep readable options on every OS (owner 2026-09-27: model names invisible) */
+.autonom-app select option,.autonom-app select optgroup{color:#111!important;background:#fff!important}
+.autonom-app select{color-scheme:dark}
+/* ── launch step 2: readable stock table, quiet focus ring ── */
+.autonom-app.reference-launch #stock{border-collapse:separate;border-spacing:0;background:var(--ap-surface-2)!important;border:1px solid var(--ap-line)!important;border-radius:12px;overflow:hidden}
+.autonom-app.reference-launch #stock th{background:var(--ap-surface-2)!important;color:var(--ap-muted)!important;font-size:11px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--ap-line)!important}
+.autonom-app.reference-launch #stock td{color:var(--ap-text)!important;border-bottom:1px solid var(--ap-line)!important;background:transparent!important}
+.autonom-app.reference-launch #stock tr.pick:hover td{background:#ffffff08!important}.autonom-app.reference-launch #stock tr.pick.on td{background:#ffffff12!important}
+.autonom-app.reference-launch #stock .mh-pick{width:30px;height:30px;border-radius:999px;border:1px solid var(--ap-line-2)!important;background:transparent!important;color:var(--ap-text)!important;font-weight:600}.autonom-app.reference-launch #stock tr.on .mh-pick{background:var(--ap-white)!important;color:#0a0a0a!important;border-color:var(--ap-white)!important}
+.autonom-app.reference-launch #stockInfo,.autonom-app.reference-launch #modelInfo{color:var(--ap-muted)!important}
+.autonom-app :focus-visible{outline:2px solid #ffffff66!important;outline-offset:3px}
+.autonom-app .card:focus,.autonom-app .card:focus-visible,.autonom-app .create-panel:focus,.autonom-app .create-panel:focus-visible{outline:0!important;box-shadow:none!important}
+/* ── page transitions: same-origin navigations cross-fade instead of flashing (Chrome/Edge; others load as before) ── */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:ap-fade-out .16s ease-out both}::view-transition-new(root){animation:ap-fade-in .22s ease-out both}
+@keyframes ap-fade-out{to{opacity:0}}@keyframes ap-fade-in{from{opacity:0}}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none!important}}
+/* ── home: feature cards, how Kurt works, FAQ ── */
+.home-features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 26px}
+.home-feature{padding:20px 20px 18px;border:1px solid var(--ap-line);border-radius:var(--ap-radius);background:var(--ap-surface)}.home-feature i{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:11px;background:var(--ap-surface-2);border:1px solid var(--ap-line-2);margin-bottom:14px}.home-feature i svg{width:19px;height:19px;fill:none;stroke:var(--ap-text);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.home-feature h3{margin:0 0 6px;font-size:17px;letter-spacing:-.01em}.home-feature p{margin:0;color:var(--ap-muted);font-size:14px;line-height:1.55}
+.home-faq{margin:34px 0 10px;padding:26px 28px;border:1px solid var(--ap-line);border-radius:var(--ap-radius);background:var(--ap-surface)}.home-faq h2{margin:0 0 6px;font-size:24px;letter-spacing:-.02em}.home-faq>p{margin:0 0 14px;color:var(--ap-muted)}
+.home-faq details{border-top:1px solid var(--ap-line);padding:14px 0}.home-faq details:last-child{border-bottom:1px solid var(--ap-line)}.home-faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:600;font-size:15px}.home-faq summary::-webkit-details-marker{display:none}.home-faq summary::after{content:'+';color:var(--ap-muted);font-size:18px}.home-faq details[open] summary::after{content:'−'}
+.home-faq details p{margin:10px 0 0;color:var(--ap-muted);font-size:14px;line-height:1.6;max-width:760px}
+@media(max-width:900px){.home-features{grid-template-columns:1fr}}
+.autonom-app.reference-launch .stock{border:1px solid var(--ap-line)!important;border-radius:12px!important;background:var(--ap-surface-2)!important}
+
+/* ── coin page: full width, project column left, big live desktop + chat centre ── */
+.autonom-app.token-page .app-content>.wrap{max-width:none!important;padding:18px 24px 60px!important}
+.room-columns{display:grid;grid-template-columns:minmax(280px,340px) minmax(0,1fr);gap:18px;align-items:start;margin:0 0 18px}
+.room-left{display:flex;flex-direction:column;gap:14px;min-width:0}.room-left>*{margin:0!important}
+.room-left .launch-setup .ls-grid{grid-template-columns:1fr}.room-left .launch-setup .ls-head{flex-direction:column;align-items:flex-start;gap:4px}
+.room-main{min-width:0}
+.autonom-app.token-page .stage{grid-template-columns:minmax(0,1fr) 380px!important}
+.autonom-app.token-page .player{min-height:440px!important}
+.autonom-app.token-page .token-header{margin-bottom:14px!important}
+@media(max-width:1180px){.room-columns{grid-template-columns:1fr}.room-left{order:2}}
+@media(max-width:900px){.autonom-app.token-page .stage{grid-template-columns:1fr!important}.autonom-app.token-page .player{min-height:0!important}}
+/* ── home: larger cards and previews ── */
+@media(min-width:1000px){.autonom-app .ref-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:20px!important}}
+.autonom-app .broadcast-card .card-media{aspect-ratio:16/9!important}
+.room-left .btn,.room-left button{white-space:nowrap}
+/* chat replies and setup notices in the dark room (the light skin's deeper selectors won) */
+.autonom-app.token-page.mh-site .conversation-room .reply,.autonom-app.token-page .msg .reply{background:var(--ap-surface-2)!important;color:var(--ap-text)!important;border:1px solid var(--ap-line)!important}
+.autonom-app.token-page .reply .kurt-reply-label,.autonom-app.token-page .reply b{color:var(--ap-live)!important}
+.autonom-app.token-page .launch-progress .lp-funded,.autonom-app.token-page .launch-progress .lp-problem,.autonom-app.token-page .launch-progress .lp-note,.autonom-app.token-page .launch-progress p.notice{background:var(--ap-surface-2)!important;color:var(--ap-text)!important;border:1px solid var(--ap-line)!important}
+.autonom-app.token-page .launch-progress .lp-eyebrow,.autonom-app.token-page .launch-progress .lp-detail,.autonom-app.token-page .launch-progress .lp-update{color:var(--ap-muted)!important}
+.autonom-app.token-page .launch-progress .lp-count,.autonom-app.token-page .launch-progress a,.autonom-app.token-page .launch-progress button{background:transparent!important;color:var(--ap-text)!important;border:1px solid var(--ap-line-2)!important;border-radius:999px!important}

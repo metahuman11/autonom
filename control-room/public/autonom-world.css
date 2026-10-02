@@ -1,0 +1,49 @@
+/* Original vector workbench. Scoped artwork and native controls only. */
+.autonom-world{--aw-ink:#eef0d9;--aw-line:#3b493e;--aw-lime:#d5ef9e;--aw-muted:#a8b29f;position:relative;inline-size:100%;max-inline-size:900px;min-inline-size:0;margin-inline:auto;overflow:clip;color:var(--aw-ink);font-family:Geist,Arial,sans-serif;isolation:isolate}
+.autonom-world .aw-art-button{appearance:none;display:block;position:relative;width:100%;padding:0;border:0;border-radius:24px;background:transparent;color:inherit;cursor:pointer;touch-action:pan-y;-webkit-tap-highlight-color:transparent;overflow:visible}
+.autonom-world .aw-art-button:focus-visible{outline:2px solid var(--aw-lime);outline-offset:-12px}
+.autonom-world .aw-svg{display:block;inline-size:100%;block-size:auto;aspect-ratio:9/7;overflow:visible;transform:translate(var(--aw-x,0px),var(--aw-y,0px)) rotate(var(--aw-r,0deg));transform-origin:50% 63%;transition:transform .45s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.autonom-world .aw-toolbar{position:relative;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 18px;margin:-10px 18px 0}
+.autonom-world .aw-mode-group{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px;padding:4px;border:1px solid var(--aw-line);border-radius:12px;background:#182019}
+.autonom-world .aw-mode,.autonom-world .aw-motion{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-block-size:44px;padding:10px 15px;border:1px solid transparent;border-radius:8px;background:transparent;color:#bbc6b5;font:500 14px/1.3 Geist,Arial,sans-serif;text-align:center;cursor:pointer;transition:color .18s,background .18s,border-color .18s}
+.autonom-world .aw-mode:hover{color:#f5f5df;background:#253128}
+.autonom-world .aw-mode[aria-pressed="true"]{background:var(--aw-lime);color:#20311d;box-shadow:0 2px 0 #070c0773}
+.autonom-world .aw-mode:focus-visible,.autonom-world .aw-motion:focus-visible{outline:2px solid var(--aw-lime);outline-offset:3px}
+.autonom-world .aw-motion{padding-inline:10px;color:#bbc6b5}
+.autonom-world .aw-motion:hover:not(:disabled){color:#f5f5df;background:#253128}
+.autonom-world .aw-motion:disabled{cursor:default;color:#aab5a3;opacity:.85}
+.autonom-world .aw-motion-icon{display:inline-flex;align-items:center;justify-content:center;width:15px;height:16px;gap:3px;flex:none}
+.autonom-world .aw-motion-icon::before,.autonom-world .aw-motion-icon::after{content:"";display:block;width:3px;height:11px;border-radius:1px;background:currentColor}
+.autonom-world .aw-motion[aria-pressed="true"] .aw-motion-icon::before{width:0;height:0;border-block:6px solid transparent;border-inline-start:9px solid currentColor;background:transparent;border-radius:0}
+.autonom-world .aw-motion[aria-pressed="true"] .aw-motion-icon::after{display:none}
+.autonom-world .aw-caption{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:5px 12px;margin:12px 18px 0;color:var(--aw-muted);font-size:12px;line-height:1.5;text-align:center}
+.autonom-world .aw-directory{color:#c4cfba;font:inherit}
+.autonom-world .aw-directory[hidden]{display:none}
+.autonom-world .aw-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.autonom-world .aw-face,.autonom-world .aw-screen-community,.autonom-world .aw-screen-treasury{transition:opacity .18s}
+.autonom-world .aw-screen-community,.autonom-world .aw-screen-treasury{display:none}
+.autonom-world[data-mode="community"] .aw-face,.autonom-world[data-mode="treasury"] .aw-face{display:none}
+.autonom-world[data-mode="community"] .aw-screen-community,.autonom-world[data-mode="treasury"] .aw-screen-treasury{display:block}
+.autonom-world [data-aw-focus]{transition:filter .3s,opacity .3s}
+.autonom-world[data-mode="community"] .aw-orb,.autonom-world[data-mode="treasury"] .aw-store{filter:brightness(1.13)}
+.autonom-world .aw-orb{animation:aw-orbit 6s ease-in-out infinite;transform-origin:670px 160px}
+.autonom-world .aw-signal{animation:aw-transmit 3.6s ease-in-out infinite}
+.autonom-world .aw-arm-left{animation:aw-type-left 2.4s ease-in-out infinite;transform-origin:350px 300px}
+.autonom-world .aw-arm-right{animation:aw-type-right 2.4s ease-in-out infinite;transform-origin:567px 313px}
+.autonom-world .aw-eyes{animation:aw-blink 8s linear infinite;transform-origin:450px 270px}
+.autonom-world .aw-packet{animation:aw-packet-route 4.2s linear infinite}
+.autonom-world .aw-leds{animation:aw-led 3.7s ease-in-out infinite}
+.autonom-world .aw-steam{animation:aw-steam-rise 4.5s ease-in-out infinite;transform-origin:653px 407px}
+.autonom-world[data-motion="paused"] .aw-svg *{animation-play-state:paused!important}
+.autonom-world[data-motion="paused"] .aw-svg{transition:none}
+.autonom-world[data-tapped="true"] .aw-power{fill:#fffde7;stroke:#d5ef9e;stroke-width:4px}
+@keyframes aw-orbit{0%,100%{transform:translateY(0) rotate(-.6deg)}50%{transform:translateY(-4px) rotate(.6deg)}}
+@keyframes aw-type-left{0%,32%,58%,100%{transform:rotate(0deg)}12%,43%{transform:rotate(-.8deg)}22%,50%{transform:rotate(.5deg)}}
+@keyframes aw-type-right{0%,20%,53%,100%{transform:rotate(0deg)}29%,65%{transform:rotate(.7deg)}40%,74%{transform:rotate(-.5deg)}}
+@keyframes aw-blink{0%,44%,47%,100%{transform:scaleY(1)}45%,46%{transform:scaleY(.15)}}
+@keyframes aw-packet-route{to{stroke-dashoffset:-285}}
+@keyframes aw-transmit{0%,100%{opacity:.3}50%{opacity:.8}}
+@keyframes aw-led{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes aw-steam-rise{0%,100%{transform:translateY(2px);opacity:.22}50%{transform:translateY(-4px);opacity:.48}}
+@media(max-width:600px){.autonom-world .aw-toolbar{margin:-3px 8px 0;gap:4px 12px}.autonom-world .aw-mode{padding-inline:12px}.autonom-world .aw-motion{min-block-size:44px;font-size:13px}.autonom-world .aw-caption{margin-block-start:7px;font-size:11px;gap:3px 9px}.autonom-world .aw-art-button:focus-visible{outline-offset:-7px}}
+@media(prefers-reduced-motion:reduce){.autonom-world .aw-svg,.autonom-world .aw-svg *,.autonom-world button,.autonom-world [data-aw-focus]{animation:none!important;transition:none!important}.autonom-world .aw-svg{transform:none!important}}

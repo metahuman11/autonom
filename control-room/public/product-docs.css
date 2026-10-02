@@ -1,0 +1,54 @@
+/* The accepted charcoal/coral system, applied to the original public documents. */
+.product-docs{color-scheme:dark;background:var(--product-bg,#101013);color:var(--product-ink,#f7f3ef);font:400 16px/1.8 var(--product-font,Sora,Arial,sans-serif)}
+.product-docs main.product-docs-layout{display:grid;grid-template-columns:minmax(0,1fr);width:100%;max-width:1280px;margin:0 auto;padding:36px 22px 80px;gap:0}
+.product-docs-sidebar{display:none}
+.product-docs-mobile-toc{margin:0 0 32px;border:1px solid var(--product-line,#34343c);border-radius:14px;background:var(--product-surface,#19191e)}
+.product-docs-mobile-toc>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:52px;padding:13px 18px;font-size:14px;font-weight:600;list-style:none;cursor:pointer}
+.product-docs-mobile-toc>summary::-webkit-details-marker{display:none}
+.product-docs-mobile-toc>summary::after{content:'';width:8px;height:8px;border-inline-end:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin:0 3px 4px}
+.product-docs-mobile-toc[open]>summary::after{transform:rotate(225deg);margin-top:5px}
+.product-docs-mobile-toc nav{display:grid;padding:0 10px 12px}
+.product-docs-mobile-toc a{display:flex;align-items:center;min-height:44px;padding:10px 9px;border-radius:8px;color:var(--product-muted,#aaa9b3);font-size:14px;line-height:1.6;text-decoration:none}
+.product-docs-mobile-toc a:hover{background:var(--product-raised,#232329);color:var(--product-ink,#f7f3ef)}
+.product-docs-article{min-width:0;max-width:780px;width:100%;padding:0;overflow-wrap:anywhere}
+.product-docs-article h1{margin:0 0 26px;color:var(--product-ink,#f7f3ef);font:400 clamp(30px,6.6vw,46px)/1.2 var(--product-display,'Dela Gothic One',Arial,sans-serif);letter-spacing:-.04em;text-wrap:balance}
+.product-docs-article :is(p,li){max-width:70ch;color:#d2d0d8;font-size:15px;line-height:1.85}
+.product-docs-article p{margin:0 0 24px}
+.product-docs-article .product-docs-meta{margin:20px 0 24px;color:var(--product-muted,#aaa9b3);font-size:12px;line-height:1.75;letter-spacing:.015em}
+.product-docs-article h1+p{font-size:16px;line-height:1.85}
+.product-docs-article strong{color:var(--product-ink,#f7f3ef);font-weight:650}
+.product-docs-article h2{margin:48px 0 20px;padding-top:24px;border-top:1px solid var(--product-line,#34343c);color:var(--product-ink,#f7f3ef);font:600 23px/1.4 var(--product-font,Sora,Arial,sans-serif);letter-spacing:-.035em;text-wrap:balance}
+.product-docs-article h3{margin:30px 0 15px;color:var(--product-ink,#f7f3ef);font:600 20px/1.45 var(--product-font,Sora,Arial,sans-serif);letter-spacing:-.025em}
+.product-docs-article :is(h1,h2,h3){scroll-margin-top:104px}
+.product-docs-article .product-docs-part{margin-top:68px;padding-top:42px;border-top:1px solid var(--product-line,#34343c)}
+.product-docs-article :is(ol,ul){margin:0 0 28px;padding-inline-start:22px}
+.product-docs-article li{padding-inline-start:6px;margin:0 0 20px}
+.product-docs-article li::marker{color:var(--product-accent,#ff765e)}
+.product-docs-article a{color:var(--product-accent,#ff765e);text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.product-docs-article>a:first-child{display:inline-flex;align-items:center;min-height:44px;font-size:14px;text-decoration:none}
+.product-docs-article :is(.notice,.doc-card){padding:24px;margin:32px 0;border:1px solid var(--product-line,#34343c);border-inline-start:3px solid var(--product-accent,#ff765e);border-radius:0 14px 14px 0;background:var(--product-surface,#19191e);color:#d2d0d8}
+.product-docs-article :is(.notice,.doc-card)>strong{display:block;color:var(--product-ink,#f7f3ef);font-size:15px;line-height:1.7}
+.product-docs-article :is(.notice,.doc-card)>p{margin:12px 0 0;font-size:14px;line-height:1.85}
+.product-docs-article>small{display:block;margin-top:44px;padding-top:24px;border-top:1px solid var(--product-line,#34343c);color:var(--product-muted,#aaa9b3);font-size:12px}
+.product-docs :focus-visible{outline:2px solid var(--product-accent,#ff765e);outline-offset:4px}
+.product-docs ::selection{background:var(--product-accent,#ff765e);color:#101013}
+.product-docs-article>ol{counter-reset:playbook-step;list-style:none;padding-inline-start:0}
+.product-docs-article>ol>li{position:relative;counter-increment:playbook-step;padding:0 0 22px;padding-inline-start:44px;margin-bottom:22px;border-bottom:1px solid var(--product-line,#34343c)}
+.product-docs-article>ol>li::before{content:counter(playbook-step,decimal-leading-zero);position:absolute;inset-inline-start:0;top:0;color:var(--product-accent,#ff765e);font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.product-docs-article :is(h1,h2,h3):target{color:var(--product-accent,#ff765e)}
+@media(min-width:960px){
+ .product-docs main.product-docs-layout{grid-template-columns:230px minmax(0,780px);padding:60px 32px 100px;gap:64px}
+ .product-docs-sidebar{display:block;min-width:0;padding-top:4px}
+ .product-docs-sidebar nav{position:sticky;top:110px;max-height:calc(100dvh - 138px);overflow:auto;padding:0 18px 12px 0;scrollbar-width:thin}
+ .product-docs-sidebar h2{margin:0 0 18px;color:var(--product-ink,#f7f3ef);font-size:14px;line-height:1.6;font-weight:600}
+ .product-docs-sidebar a{display:block;min-height:44px;padding:10px 0;color:var(--product-muted,#aaa9b3);font-size:13px;line-height:1.65;text-decoration:none}
+ .product-docs-sidebar a:hover,.product-docs-sidebar a:focus-visible{color:var(--product-accent,#ff765e)}
+ .product-docs-sidebar a[href='#privacy']{margin-top:20px;padding-top:20px;border-top:1px solid var(--product-line,#34343c)}
+ .product-docs-mobile-toc{display:none}
+ .product-docs-article h1{font-size:clamp(40px,3.8vw,52px)}
+ .product-docs-article :is(p,li){font-size:16px}
+ .product-docs-article h2{font-size:26px}
+ .product-docs-article h1+p{font-size:17px}
+}
+@media(max-width:359px){.product-docs main.product-docs-layout{padding-inline:16px}.product-docs-article h1{font-size:28px}.product-docs-article :is(.notice,.doc-card){padding:18px}}
+@media(prefers-reduced-motion:reduce){.product-docs *{scroll-behavior:auto!important;transition:none!important}}

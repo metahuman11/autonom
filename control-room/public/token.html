@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonom · Kurt & your community</title>
+<meta name="description" content="Your community on Autonom: talk with Kurt, follow the work and see the shared budget, project ideas and holder votes.">
+<meta name="theme-color" content="#101013">
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png?v=space-logo-v2">
+<link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png?v=space-logo-v2">
+<meta property="og:site_name" content="Autonom">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Autonom · Your community">
+<meta property="og:description" content="Follow your community’s AI, shared budget and ideas as they take shape.">
+<meta property="og:image" content="https://autonom.fun/brand/autonom-social.jpg?v=20260917">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Autonom mark: an A carrying a lime node">
+<meta name="twitter:card" content="summary_large_image">
+
+
+
+
+
+
+
+<script defer src="/chat-motion.js?v=unified-20260930"></script>
+<script defer src="/room-chat.js?v=ai-status-20261002"></script>
+<script defer src="/wallet-proposals.js?v=unified-20260930"></script>
+<script defer src="/community-actions.js?v=unified-20260930"></script>
+<script defer src="/autonom-shell.js?v=unified-20260930"></script>
+<link rel="stylesheet" href="/product.css?v=unified-20260930">
+<link rel="stylesheet" href="/product-room.css?v=chat-allowance-20260930">
+<link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.15/hls.min.js">
+</head>
+<body class="token-page mh-site autonom-app product-room live-room product-app app-ready token-workspace room-polished" data-room-static="1" data-autonom-static="1">
+<header class="app-topnav"><a class="app-skip" data-product-copy="skip" href="#appMain">Skip to content</a><a class="app-brand" href="/" aria-label="Autonom home" data-product-label="brandHome"><img src="/brand/autonom-mark.png" width="32" height="32" alt=""><span>Autonom</span></a><nav class="app-links" id="appNavigation" aria-label="Main navigation" data-product-label="mainNav"><a class="app-mobile-link" href="/launch" data-i18n="create">Launch a project</a><a href="/#communities" data-i18n="explore">Explore</a><a href="/#how-it-works" data-i18n="navHow">How it works</a><a href="/agent-playbook.html" data-i18n="navDocs">Docs</a></nav><div class="app-actions"><a class="app-pill" href="/launch" data-i18n="create">Launch a project</a><span id="me" class="mono muted" style="font-size:12px"></span><button id="connect" class="btn lime">Connect wallet</button><button id="disconnect" class="btn" hidden>Disconnect</button></div><button class="app-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="appNavigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14M5 16h14"/></svg></button></header>
+<div class="app-content">
+
+<main class="wrap" id="appMain" tabindex="-1">
+  <section class="token-header room-identity" aria-label="Token details">
+    <div class="room-project-image"><div class="avatar big" id="av2">?</div><img id="projectLogo" width="64" height="64" alt="Project logo" hidden></div><div class="token-heading"><h1 id="pageTitle">Loading project…</h1><div class="token-meta"><span id="headerSymbol">$—</span><span id="headerChain">—</span><a id="projectXHeaderLink" class="room-project-x-link" target="_blank" rel="noopener noreferrer" hidden></a><button type="button" class="room-text-button" id="roomAboutButton" aria-haspopup="dialog" aria-controls="aboutDialog">About project</button><a class="room-text-button" id="roomTokenLink" target="_blank" rel="noopener noreferrer" hidden>View token ↗</a></div></div>
+    
+    
+  <section class="room-metrics" aria-label="Token and project overview"><div class="room-metric room-marketcap"><span class="room-metric-label">Est. market cap</span><strong class="room-value" id="roomMcap">—</strong><small class="room-metric-note" id="roomMcapNote">Waiting for price data</small></div><button class="room-metric room-balance" type="button" id="roomBudgetButton" aria-controls="budget"><span class="room-metric-label" id="roomBalanceLabel">Fund balance</span><strong id="budgetOverview" class="room-value">—</strong><small class="room-metric-note" id="roomBudgetNote">View funding</small></button></section></section>
+<details class="workspace-addresses" id="workspaceAddresses" open><summary>Addresses <span>Token contract · AI wallet</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7 5 5 5-5" stroke="currentColor" stroke-width="1.5"/></svg></summary><div class="room-contracts" aria-label="Project addresses"><div class="contract-wrap"><div class="contract-label"><span class="address-title">Token contract</span><a id="contractExplorer" href="#" target="_blank" rel="noopener noreferrer">Explorer ↗</a></div><button class="contract-copy" id="contract" type="button" aria-label="Copy token contract address" aria-describedby="copyStatus" disabled><code id="contractAddress">—</code><span class="copy-action"><svg class="copy-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h2"/></svg><svg class="copied-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m4 10 4 4 8-8"/></svg><span id="contractCopyLabel">Copy</span></span></button><div class="copy-status" id="copyStatus" role="status" aria-live="polite"></div></div><div class="contract-wrap" id="aiWalletWrap" hidden><div class="contract-label"><span id="aiWalletLabel" class="address-title">AI wallet</span><a id="aiWalletExplorer" href="#" target="_blank" rel="noopener noreferrer">Explorer ↗</a></div><button class="contract-copy" id="aiWalletCopy" type="button" aria-label="Copy the AI wallet address" aria-describedby="aiWalletCopyStatus"><code id="aiWalletAddress">—</code><span class="copy-action"><svg class="copy-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h2"/></svg><svg class="copied-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m4 10 4 4 8-8"/></svg><span id="aiWalletCopyLabel">Copy</span></span></button><div class="copy-status" id="aiWalletCopyStatus" role="status" aria-live="polite"></div><div class="address-note" id="aiWalletNote" role="note"></div></div></div></details>
+<nav class="workspace-mobile-nav" aria-label="Project workspace"><button type="button" data-workspace-view="live" aria-pressed="true">Live</button><button type="button" data-workspace-view="chat" aria-pressed="false">Chat</button><button type="button" data-workspace-view="work" aria-pressed="false">Work</button><button type="button" data-workspace-view="funds" aria-pressed="false">Funds</button></nav>
+<div class="room-workspace stage" id="live"><aside class="workspace-inspector" id="roomInspector" aria-label="Project funding and computer" tabindex="-1">
+<section class="workspace-funding-summary" aria-labelledby="workspaceFundingTitle"><div class="workspace-rail-heading"><h2 id="workspaceFundingTitle">Startup budget</h2><button type="button" data-workspace-open="budget" aria-controls="roomPanelBudget">Details <span aria-hidden="true">↗</span></button></div><div class="workspace-funding-amount"><strong id="workspaceFundNow">—</strong><span id="workspaceFundOf">Checking project funds</span></div><div class="workspace-funding-track" aria-hidden="true"><i id="workspaceFundBar"></i></div><p id="workspaceFundLine" role="status">Checking the current funding target.</p></section><section id="projectStages" class="project-stages" aria-labelledby="projectStagesTitle" hidden><div class="project-stages-heading"><h3 id="projectStagesTitle">Launch progress</h3><span id="projectStagesReserve"></span></div><ol id="projectStagesList" class="project-stages-list"></ol></section><section class="launch-setup" id="launchSetup" aria-label="What the creator chose" tabindex="-1">
+    <div class="ls-head"><strong>Computer &amp; AI</strong><span id="setupCreator">—</span></div>
+    <div class="ls-grid">
+      <div><small>Machine</small><strong id="setupMachine">—</strong><span id="setupMachineNote">Waiting for the plan</span></div>
+      <div><small>AI model</small><strong id="setupModel">—</strong><span id="setupModelNote">Waiting for the plan</span></div>
+      
+    </div>
+  </section></aside><section class="room-center" aria-label="AI desktop and project work"><details class="desktop-panel" id="desktopPanel" open><summary><span class="player-title"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>AI computer</span><small id="streamSummary">Connecting</small><div class="room-agent-status"><span class="room-status-dot" aria-hidden="true"></span><span>Kurt · </span><strong id="agentPresence">Checking…</strong></div></summary>
+    <div class="player" id="player">
+      <div class="ov"><div class="avatar" id="av">?</div><div><div id="pname" style="font-weight:800;line-height:1.1">…</div><div id="psym" class="mono" style="font-size:11px;color:var(--lime)"></div></div></div>
+      <div class="ovr player-toolbar"><div class="player-actions"><span class="badge dim" id="viewers" hidden>Viewers —</span><button class="badge dim" id="proto" type="button" title="Switch stream latency" hidden>Auto</button><span class="badge dim" id="livebadge">Checking</span><button class="player-icon-button" id="fsBtn" type="button" title="Enter fullscreen" aria-label="Enter fullscreen"><svg class="icon-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg><svg class="icon-collapse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h4V4m12 4h-4V4M8 20v-4H4m12 4v-4h4"/></svg></button></div></div>
+      <video id="video" autoplay muted playsinline hidden></video>
+      <div class="player-message" id="playerMessage" role="status" hidden></div>
+      <div class="ctl" id="ctl" hidden>
+        <button id="ppBtn" type="button" title="Pause" aria-label="Pause" data-paused="false"><svg class="icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 11 7-11 7Z"/></svg><svg class="icon-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></button>
+        <button id="muteBtn" type="button" title="Unmute" aria-label="Unmute" data-muted="true"><svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 5-5 4H3v6h3l5 4Z"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="icon-audio" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 5-5 4H3v6h3l5 4Z"/><path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg></button>
+        <input id="vol" type="range" min="0" max="1" step="0.05" value="1" title="Volume" aria-label="Volume">
+        <button id="liveBtn" class="livebtn" title="Jump to live">● LIVE</button>
+        <span class="spacer"></span>
+        <span id="ctlProto" class="muted" style="font-size:11px"></span>
+        <button id="fsBtn2" type="button" title="Enter fullscreen" aria-label="Enter fullscreen"><svg class="icon-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg><svg class="icon-collapse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h4V4m12 4h-4V4M8 20v-4H4m12 4v-4h4"/></svg></button>
+      </div>
+      <div class="off" id="off"><svg class="room-dormant-art" viewBox="0 0 240 138" fill="none" aria-hidden="true"><defs><linearGradient id="dormantFrame" x1="56" y1="12" x2="188" y2="120" gradientUnits="userSpaceOnUse"><stop stop-color="#aaa4a2"/><stop offset="1" stop-color="#373336"/></linearGradient><linearGradient id="dormantScreen" x1="77" y1="22" x2="169" y2="97" gradientUnits="userSpaceOnUse"><stop stop-color="#29252a"/><stop offset="1" stop-color="#151416"/></linearGradient></defs><ellipse cx="120" cy="126" rx="83" ry="7" fill="#09090a" opacity=".55"/><path d="M103 99v16l-18 8h70l-18-8V99" fill="#19181b" stroke="#494449"/><rect x="40" y="8" width="160" height="98" rx="8" fill="#18171a" stroke="url(#dormantFrame)"/><rect x="47" y="15" width="146" height="79" rx="3" fill="url(#dormantScreen)"/><path d="M47 30h146" stroke="#40383b"/><circle cx="55" cy="23" r="1.5" fill="#ed947d"/><circle cx="61" cy="23" r="1.5" fill="#63595d"/><circle cx="67" cy="23" r="1.5" fill="#63595d"/><path d="M60 41h45M60 49h28M60 72h15" stroke="#685861" stroke-width="2" stroke-linecap="round" opacity=".5"/><path d="m139 43-14 33m22-25 12 9-12 9m-27-18-12 9 12 9" stroke="#e79a84" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity=".65"/><path d="M101 121h39" stroke="#696066" stroke-linecap="round"/><circle cx="120" cy="100" r="1.5" fill="#786b70"/></svg><strong id="offlineTitle">Connecting to the computer</strong><div id="offwhy" class="muted"></div><div class="player-empty-actions"><button class="btn sm" id="retryPlayer" type="button">Reconnect</button><button class="btn sm" id="playerBudgetAction" type="button" data-workspace-open="budget" aria-controls="roomPanelBudget" hidden>View funding <span aria-hidden="true">↗</span></button></div></div>
+    </div>
+    </details><section class="workspace-dock" id="roomDock" aria-label="Project work and details"><div class="workspace-tabs" role="tablist" aria-label="Project details"><button type="button" id="roomTabIdeas" role="tab" aria-controls="roomPanelIdeas" aria-selected="true" data-workspace-tab="ideas">Ideas</button><button type="button" id="roomTabWork" role="tab" aria-controls="roomPanelWork" aria-selected="false" data-workspace-tab="work">Tasks</button><button type="button" id="roomTabBudget" role="tab" aria-controls="roomPanelBudget" aria-selected="false" data-workspace-tab="budget">Budget</button><button type="button" id="roomTabSetup" role="tab" aria-controls="roomPanelSetup" aria-selected="false" data-workspace-tab="setup">Setup</button><button type="button" id="roomTabServices" role="tab" aria-controls="roomPanelServices" aria-selected="false" data-workspace-tab="services">X & DEX</button></div><div class="workspace-panel" id="roomPanelIdeas" data-workspace-panel="ideas" role="tabpanel" aria-labelledby="roomTabIdeas" tabindex="0"><section class="card room-decisions" id="proposals" tabindex="-1"><div class="room-section-head"><div><h2>Ideas &amp; votes</h2><p>Propose what the AI should work on next.</p></div><button type="button" class="btn lime" id="suggestIdea">Suggest an idea</button></div><div class="hint bad" id="suggestHint" hidden></div><div class="list" id="props"></div><div class="room-empty" id="ideasEmpty">No proposals yet.</div><label class="room-history-toggle"><input type="checkbox" id="roomPastIdeas"> Show past decisions</label><details class="room-voting-rules"><summary>How voting works</summary><p id="proposalRules">Loading voting rules…</p></details></section></div><div class="workspace-panel" id="roomPanelWork" data-workspace-panel="work" role="tabpanel" aria-labelledby="roomTabWork" tabindex="0"><section class="room-work" id="roomWork" tabindex="-1"><div class="room-section-head"><h2 id="roomWorkStatus">Tasks and results</h2><small id="roomWorkCount">0 saved outputs</small></div><section class="card" id="work">
+    <div class="hubhead"><h2>Current work</h2><a class="btn sm lime" href="#proposals">Suggest an idea</a></div>
+    <p class="hint" id="digestDate">Today’s community update</p>
+    <div class="daily" id="dailyDigest"></div>
+    <div class="list" id="taskBoard"><div class="item muted">No tasks yet. Start with an idea below.</div></div>
+    <div class="hint" id="taskNotice" role="status"></div>
+    <div class="detailbox room-tool-limits" style="margin-top:14px"><h3>Tools &amp; approved budget</h3>
+    <p class="hint" id="runtimeStatus" role="status" aria-live="polite">Checking which tools this agent can use…</p>
+    <p class="hint" id="approvedWorkBudget"></p>
+    </div>
+  </section><section class="card" id="deliveries">
+    <div class="hubhead"><h2>Completed work</h2><span class="muted" style="font-size:12px">Saved outputs</span></div>
+    <div id="deliveryGallery"><div class="item muted">Reports and saved website versions will appear here.</div></div>
+    <details class="detailbox" style="margin-top:16px"><summary>Community memory · approved decisions</summary><div class="list" id="memoryItems"></div><p class="hint">Chat history provides context, not authority. Only approved decisions appear here.</p></details>
+  </section></section></div><div class="workspace-panel" id="roomPanelBudget" data-workspace-panel="budget" role="tabpanel" aria-labelledby="roomTabBudget" tabindex="0"><section class="room-budget" id="budget" tabindex="-1" aria-labelledby="roomBudgetTitle"><div class="room-section-head"><h2 id="roomBudgetTitle">Costs &amp; funding</h2><p>Creator fees, deposits and spending.</p></div><p id="projectStagesNote" class="project-stages-note"></p><section class="workspace-cost-policy" aria-label="Startup funding plan"><div><small>Startup budget</small><strong id="setupTarget">—</strong><span id="setupTargetNote">Collected in the AI wallet before the start</span></div></section><section class="card" id="funding" tabindex="-1">
+    <div class="fund">
+      <div>
+        <h3 id="fundTitle">Funding the agent</h3>
+        <div class="big"><span id="fundNow">—</span> <small id="fundOf">Checking the project budget</small></div>
+        <div class="pbar" id="fundingProgress" role="progressbar" aria-label="Project funding target" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="fundBar" style="width:0%"></i></div>
+        <div class="muted" id="fundLine" style="font-size:13px"></div>
+        <div class="startup-budget-note" id="fundBudgetNote">Funding progress is separate from server startup</div>
+        <div class="item" id="launchPackageBudget" hidden aria-live="polite">
+          <b>Startup budget</b>
+          <p class="hint" id="launchPackageBreakdown">Checking the project's saved funding terms.</p>
+          <p class="hint">Creator fees and deposits fund each stage. The current requirements and confirmed payments are shown below.</p>
+          <strong id="launchPackageStatus">Waiting for funding</strong>
+          <p class="hint" id="launchPackagePayment"></p>
+          <p class="hint" id="launchPackageSocial" hidden></p>
+        </div>
+        <div class="src" style="margin-top:12px">
+          <div><span id="fTaxLabel">Creator fees recorded</span><b id="fTax">$0</b><div class="muted" id="fTaxSub" style="font-size:11px"></div></div>
+          <div><span>Deposits</span><b id="fDep">$0</b><div class="muted" style="font-size:11px">sent to the treasury</div></div>
+          <div><span>Spent</span><b id="fSpent">$0</b><div class="muted" style="font-size:11px">recorded treasury outflows · excludes this cost plan</div></div>
+        </div>
+        <div class="hint" style="margin-top:12px"><span id="fWalletLabel">Treasury (ETH on Robinhood Chain) — anyone can top it up:</span> <span class="mono copy" id="fWallet" title="click to copy">—</span></div>
+      </div>
+      
+    </div>
+  </section><section class="card detailbox" id="market" tabindex="-1"><h2 class="room-section-title">Spending & activity</h2>
+    <div class="comm" style="align-items:center"><div><div class="muted" style="font-size:12px">Treasury & runway</div><div style="font-weight:800;font-size:18px" id="tname2">…</div><div class="mono muted" style="font-size:11px" id="twallet"></div></div><div class="right"><span class="badge unlock" id="lockbadge">…</span></div></div>
+    <div class="kpis" id="kpis2"></div>
+    <div class="hint" id="spendHint"></div>
+    <div class="two" style="margin-top:14px">
+      <div><h3>Recent treasury activity</h3><div class="list" id="ledger"></div></div>
+      <div id="legacySocialHistory" hidden><h3>Past simulation posts</h3><div class="list" id="casts"></div></div>
+    </div>
+  </section><nav class="workspace-legal" aria-label="Project information"><a href="/agent-playbook.html">Docs</a><a href="/terms">Terms &amp; fees</a><a href="/privacy#privacy">Privacy</a></nav></section></div><div class="workspace-panel" id="roomPanelSetup" data-workspace-panel="setup" role="tabpanel" aria-labelledby="roomTabSetup" tabindex="0"><section id="roomSetupDetails" tabindex="-1" aria-label="Server setup"></section><section class="workspace-startup-details"><div>
+        <h3 id="startsTitle">Starting your agent</h3>
+        <div class="startup-note" id="startupDetail" role="status" aria-live="polite">Waiting for the current startup status</div>
+        <ol class="starts startup-steps" id="starts" aria-label="Confirmed startup steps">
+          <li id="startup-funding"><i id="startup-funding-icon" aria-hidden="true">1</i><div><strong id="startup-funding-label">Project funded</strong><small id="startup-funding-detail"></small></div><span class="startup-state" id="startup-funding-status">Waiting</span></li>
+          <li id="startup-allocation"><i id="startup-allocation-icon" aria-hidden="true">2</i><div><strong id="startup-allocation-label">Server allocated</strong><small id="startup-allocation-detail"></small></div><span class="startup-state" id="startup-allocation-status">Waiting</span></li>
+          <li id="startup-boot"><i id="startup-boot-icon" aria-hidden="true">3</i><div><strong id="startup-boot-label">Environment prepared</strong><small id="startup-boot-detail"></small></div><span class="startup-state" id="startup-boot-status">Waiting</span></li>
+          <li id="startup-agent"><i id="startup-agent-icon" aria-hidden="true">4</i><div><strong id="startup-agent-label">AI connected</strong><small id="startup-agent-detail"></small></div><span class="startup-state" id="startup-agent-status">Waiting</span></li>
+          <li id="startup-stream"><i id="startup-stream-icon" aria-hidden="true">5</i><div><strong id="startup-stream-label">Live desktop online</strong><small id="startup-stream-detail"></small></div><span class="startup-state" id="startup-stream-status">Waiting</span></li>
+        </ol>
+        <div class="startup-updated" id="startupUpdated"></div>
+        <details class="hint startup-details" id="startupTechnical" hidden><summary>Latest startup detail</summary><p id="startupTechnicalText"></p></details>
+        <div class="hint" id="fundHint"></div>
+      </div></section><div class="nowbar"><span class="badge dim" id="nowbadge">Connecting</span><span id="nowtitle">Loading community status…</span><span class="sub" id="nowsub"></span></div><section class="card" id="howItWorks" hidden>
+    <div class="hubhead"><h2>How this project works</h2><span class="muted" style="font-size:12px">Plain summary</span></div>
+    <ol class="hiw" id="hiwList">
+      <li><strong>The token funds itself.</strong><small id="hiwTax">A share of every buy and sell goes to this project's treasury. Anyone can also deposit into it directly.</small></li>
+      <li><strong>Setup is funded in stages.</strong><small id="hiwPackage">Checking this project's saved funding terms.</small></li>
+      <li><strong>Running costs continue throughout.</strong><small id="hiwRun">The rented computer is billed by the hour and every AI request is paid one by one, both from the treasury. Nothing is charged to you.</small></li>
+      <li><strong>Holders decide what it does.</strong><small id="hiwHolder">Holders chat with the agent and vote on proposals. Chat alone never starts work or spends money.</small></li>
+    </ol>
+    <p class="hint" id="hiwNote">Funding is separate from startup: money arriving does not by itself mean a server was rented, a DEX Screener order was paid or an X account exists. Each of those is confirmed on its own below.</p>
+  </section></div><div class="workspace-panel" id="roomPanelServices" data-workspace-panel="services" role="tabpanel" aria-labelledby="roomTabServices" tabindex="0"><section id="roomServices" aria-label="X and DEX Screener" tabindex="-1"><section class="card" id="dexPayments" aria-labelledby="dexPaymentsTitle" tabindex="-1">
+    <div class="hubhead"><h2 id="dexPaymentsTitle">Optional DEX Screener requests</h2><span class="badge dim">Community vote required</span></div>
+    <p class="hint">Suggest an extra listing update or paid boost. Holders vote on the details and spending limit. Availability is shown below; voting does not place an order.</p>
+    <div class="two">
+      <div><h3>Listing update</h3><p class="hint">Logo, banner, description and social links</p><p class="hint" id="dexUpdateStatus">Checking payment availability…</p><button class="btn" type="button" id="suggestDexUpdate">Propose listing update</button></div>
+      <div><h3>Paid boost</h3><p class="hint">Paid visibility — not trading volume or guaranteed ranking</p><p class="hint" id="dexBoostStatus">Checking payment availability…</p><button class="btn" type="button" id="suggestDexBoost">Propose paid boost</button></div>
+    </div>
+    <p class="hint" id="dexAccounting">Payment balance not connected</p><div id="dexHistory" aria-live="polite"></div>
+    <details class="hint detailbox"><summary>What does a vote approve?</summary><p>A vote approves the exact request, its maximum budget and an expiry date. Provider support and the final price still need to be verified before an order can be placed.</p><p>This form does not pay a provider, transfer treasury funds or publish changes. A paid boost does not guarantee trading activity or ranking.</p></details>
+  </section><section class="card social-budget" id="socialBudget" hidden aria-labelledby="socialBudgetTitle" tabindex="-1">
+    <div class="hubhead"><h2 id="socialBudgetTitle">X / Twitter costs</h2><span class="badge dim" id="socialBadge">Not connected</span></div>
+    <p class="social-lead">Community-approved posts go out from this project’s X account. Every post is billed at the provider’s measured deduction, booked to the project at once and settled to operations in small batches.</p>
+    <div class="social-actual" id="socialActual"><b id="socialActualHead">Actual X usage: no posts yet</b><span id="socialActualNote">Posts made, booked and settled amounts appear here from the live ledger.</span></div>
+    <p class="social-note"><b>Provider · 21 September 2026:</b> the X posting API provider, documented $0.003 per posted tweet plus $0.00015 per verification read; the actual deduction is measured from the account balance around each post. This dated check is not a live status monitor.</p>
+    <div class="social-stats" aria-live="polite" aria-atomic="true">
+      <div><span>Planning budget · not deposited</span><strong id="socialUsageTotal">—</strong></div>
+      <div><span>Posts at published API rate only</span><strong id="socialPostCapacity">—</strong></div>
+      <div><span>Setup + Premium + usage budget</span><strong id="socialStartupTotal">—</strong></div>
+    </div>
+    <p id="socialProjection" class="social-projection" role="status">Loading reference pricing…</p>
+    <div class="detailbox"><h3 class="room-subheading">Enter confirmed costs and planned usage</h3>
+      <div class="social-inputs">
+        <label>One-time account setup · quoted cost ($)<input id="socialSetup" type="text" inputmode="decimal" placeholder="Not confirmed" maxlength="14"><small>No assumed fee. Enter 0 only if no setup charge applies.</small></label>
+        <label>Separate usage budget ($)<input id="socialBudgetAmount" type="text" inputmode="decimal" value="10" maxlength="14"><small>Unused budget is not an expense.</small></label>
+        <label>Premium subscription · per month ($)<input id="socialPremium" type="text" inputmode="decimal" placeholder="Enter your quote" maxlength="14"><small>Leave blank if the price is not known.</small></label>
+        <label>Posts planned this month<input id="socialPlannedPosts" type="text" inputmode="numeric" placeholder="Enter your planned count" maxlength="7"><small>Your plan, not a live post count.</small></label>
+      </div>
+      <p class="social-error" id="socialBudgetError" role="alert" hidden></p>
+      <p class="social-note">Changes are a temporary calculation, not a saved community decision or permission to spend.</p>
+    </div>
+    <p class="social-note" id="socialPriceNote"></p>
+    <p class="social-note">Account setup and Premium are separate from usage. AI content generation, reading data and network fees are excluded. x402 is a payment method; it does not create an X account.</p>
+    <details class="detailbox"><summary>Prices, requirements and sources · checked 15 September 2026</summary>
+      <p class="social-note"><b>X Premium:</b> the official US web price is $8/month or $84/year, before applicable taxes and payment fees. Country and purchase channel affect pricing. Basic is not the blue-check tier; a new account’s eligibility/review must also pass. No US price is automatically applied to your account. <a href="https://help.x.com/en/using-x/x-premium" target="_blank" rel="noopener noreferrer">X subscription prices ↗</a></p>
+    </details>
+  </section><section class="card" id="xAccountCard" hidden aria-labelledby="xAccountTitle" tabindex="-1">
+    <div class="hubhead"><h2 id="xAccountTitle">This project's X account</h2><span class="badge" id="xAccountBadge">—</span></div>
+    <p class="hint" id="xAccountHint">Holding more than 1% of the supply lets you post and change the account's name, bio, location, website, logo and banner — signed with your wallet, no vote. Every action is billed to the project at what the X API deducts.</p>
+    <div class="two">
+      <div>
+        <h3>Post</h3>
+        <textarea id="xText" rows="3" maxlength="280" placeholder="What should the project say?"></textarea>
+        <p class="hint"><span id="xTextCount">0</span>/280</p>
+        <button class="btn" type="button" id="xPost">Post to X</button>
+      </div>
+      <div>
+        <h3>Account identity</h3>
+        <label class="hint" for="xName">Display name</label><input id="xName" maxlength="50" placeholder="Autonom Agent">
+        <label class="hint" for="xBio">Bio</label><textarea id="xBio" rows="2" maxlength="160" placeholder="What this project is"></textarea>
+        <label class="hint" for="xLocation">Location</label><input id="xLocation" maxlength="30" placeholder="Istanbul">
+        <label class="hint" for="xWebsite">Website (https)</label><input id="xWebsite" maxlength="100" placeholder="https://autonom.fun">
+        <button class="btn" type="button" id="xProfile">Save profile</button>
+      </div>
+    </div>
+    <div class="two">
+      <div><h3>Logo</h3><p class="hint">PNG or JPEG, 400x400 recommended, up to 500 KB</p><input type="file" id="xAvatarFile" accept="image/png,image/jpeg"><button class="btn" type="button" id="xAvatar">Change logo</button></div>
+      <div><h3>Banner</h3><p class="hint">PNG or JPEG, 1500x500 recommended, up to 700 KB</p><input type="file" id="xBannerFile" accept="image/png,image/jpeg"><button class="btn" type="button" id="xBanner">Change banner</button></div>
+    </div>
+    <p class="hint" id="xActionNote" aria-live="polite"></p>
+    <div id="xActionLog" aria-live="polite"></div>
+    <details class="hint detailbox"><summary>What cannot be changed here</summary><p>The @username and the login stay with the operator: X's API cannot rename an account. An account is assigned to one project and is never reassigned. Posting has a 2-minute gap and 24 posts a day; identity changes have a 30-second gap and 20 a day.</p></details>
+  </section></section></div></section></section><aside class="chat conversation-room"><div class="conversation-heading"><div><strong>Conversation</strong><span id="dataConnection" class="chat-connection" role="status" data-state="connecting">Connecting…</span></div><button class="chat-expand" type="button" aria-pressed="false" aria-label="Expand chat" title="Expand chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path></svg></button></div><details class="project-x-milestone" id="projectXMilestone" aria-labelledby="projectXTitle"><summary class="project-x-head"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l8.2-9.4L.8 2h6.5l5.8 7.6L18.9 2Zm-1.1 18h1.8L6.3 3.9H4.4L17.8 20Z" fill="currentColor"/></svg><h3 id="projectXTitle">X account</h3><span id="projectXStatus">Checking</span><a id="projectXPublicLink" target="_blank" rel="noopener noreferrer" hidden></a></summary><p id="projectXDetail">Checking account setup.</p><div class="project-x-progress" id="projectXProgress" role="progressbar" aria-label="X account funding" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="projectXBar"></i></div><small id="projectXAmounts"></small></details><div class="chat-idea-entry"><div><strong>Want the AI to do something?</strong><span>Suggest it. Let the community decide.</span></div><button type="button">Suggest an idea</button></div>
+      <div class="tabs"><button class="on" data-tab="chat">Chat</button><button data-tab="log">Activity</button><button type="button" class="chat-ask">Ask Kurt</button></div>
+      <div class="chatnote" id="chatnote" role="status" aria-live="polite">Everyone can read. Connect a holder wallet to join the conversation.</div>
+      <details id="usageAllowance" class="chat-usage" hidden>
+        <summary><span class="chat-usage-label" id="usageLabel">AI availability</span><strong id="usageRemaining">Checking…</strong><svg viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <div class="chat-usage-body"><p id="usageNotice"></p><dl id="usageDetails" class="chat-usage-breakdown"></dl><p id="chatAllowance" class="chat-allowance" hidden></p></div>
+      </details>
+      
+      <div class="msgs" id="msgs" aria-label="Community messages"></div>
+      <fieldset id="taskPermissions" hidden style="border:0;margin:0;padding:8px 12px;font-size:12px">
+        <legend>Actions for this message only</legend>
+        <label><input type="checkbox" id="allowWrite" disabled> Create or edit files</label>
+        <label style="display:block;margin-top:5px"><input type="checkbox" id="allowPublish" disabled> Publish a public website</label>
+        <div class="muted" style="margin-top:5px">Selected actions need your signature and use your AI allowance. Otherwise, this is chat only.</div>
+      </fieldset>
+      <div class="chat-composer"><p class="chat-compose-caption" id="chatComposeCaption">Message the community · @Kurt for AI</p>
+      <form class="chatin" id="msgForm"><input id="msgText" aria-label="Community message or @Kurt question" aria-describedby="chatComposeCaption chatSendStatus" placeholder="Message the community…" maxlength="2000" autocomplete="off"><button id="sendMessage" type="submit" aria-label="Connect wallet to send message" data-connected="false">Connect to send</button></form>
+      <div id="chatSendStatus" class="chat-send-status" role="status" aria-live="polite"></div></div>
+      <label class="research-control" hidden><input type="checkbox" id="researchMode" disabled> Research with public sources <span title="Your topic is sent to Wikipedia and Crossref">ⓘ</span></label>
+      
+    <details class="chat-options"><summary>Chat settings</summary><div style="padding:0 12px 8px"><p id="voiceNotice" class="hint" role="status" aria-live="polite">Voice is not connected yet. Text replies remain available.</p><audio id="replyAudio" controls preload="none" aria-label="Kurt’s saved voice reply" style="width:100%;max-width:100%;margin-top:6px" hidden></audio></div><details id="profileOptions" hidden style="padding:8px 12px;font-size:12px;color:var(--muted)"><summary style="cursor:pointer">Add a name · optional</summary><form class="chatin" id="nameForm" hidden style="border-top:0;padding:8px 0"><input id="nameInput" aria-label="Optional username" placeholder="Your name (3–20 characters)" maxlength="20" pattern="[A-Za-z0-9_]{3,20}"><button type="submit" title="Save name with a separate wallet signature">Save</button></form></details><div id="sessionHint">Approve chat once for 1 hour · no transfers or voting access</div><p class="chat-safety">Community messages do not use AI credit. Questions to @Kurt use your AI allowance. Chat never authorizes work or spending. Never post passwords or recovery phrases.</p></details></aside></div>
+
+<div id="roomCompatibility" hidden><div class="room-metric room-rewards"><span class="room-metric-label" id="roomRewardsLabel">Creator fees</span><strong class="room-value" id="roomRewards">—</strong><small class="room-metric-note" id="roomRewardsNote">Checking rewards</small></div><strong id="watchingCount">—</strong><span class="metric-note" id="watchingNote">Checking stream viewers</span><a class="metric-note" href="#funding" id="budgetOverviewNote">Balance & costs</a><div class="live-metric live-funding funding-banner" id="fundingBanner" aria-label="Startup funding">
+      <div class="fb-head"><small id="fbTitle">Startup fund</small><span id="fbPct">—</span></div>
+      <div class="pbar fb-bar" id="fbProgress" role="progressbar" aria-label="Startup funding target" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="fbBar" style="width:0%"></i></div>
+      <div class="fb-line"><span id="fbAmounts">Checking the project budget</span><span id="fbToGo"></span></div>
+      <p class="fb-how" id="fbHow"></p>
+    </div><span id="socialSummary">Not connected</span><span id="xAccountSummary">Holders above 1% drive it</span><div id="roomLegacyMarket" hidden><section class="card" id="marketcard" hidden>
+    <div class="comm" style="align-items:center"><div><div class="muted" style="font-size:12px" id="marketDesc">Token market · Pons bonding curve on Robinhood Chain</div><div style="font-weight:800;font-size:18px" id="mname">…</div><div class="mono muted" style="font-size:11px" id="maddr"></div></div>
+      <div class="right"><span class="badge lime" id="mphase">…</span><a class="btn sm" id="tradeLink" target="_blank">Trade on Pons ↗</a><a class="btn sm" id="explorerLink" target="_blank">Explorer ↗</a></div></div>
+    <div class="kpis" id="mkpis"></div>
+    <div class="hint" id="mkpiNote"></div>
+    <div style="margin-top:14px;display:flex;gap:6px;align-items:center"><h3 style="margin:0;flex:1">Chart</h3><button class="btn sm" data-tf="1m">1m</button><button class="btn sm lime" data-tf="5m">5m</button><button class="btn sm" data-tf="1h">1h</button></div>
+    <div id="chart" style="height:320px;margin-top:8px;border:1px solid var(--line);border-radius:12px;overflow:hidden"></div>
+    <div class="hint" id="gradhint"></div>
+    <div class="two" style="margin-top:14px"><div><h3>Recent trades</h3><div class="list" id="mtrades"></div></div><div><h3 id="mtaxTitle">Creator tax → treasury</h3><div class="list" id="mtax"></div></div></div>
+  </section></div><button data-tab="holders">Holders</button></div><dialog id="aboutDialog" class="community-composer room-dialog" aria-labelledby="aboutDialogTitle"><div class="community-composer-head"><h2 id="aboutDialogTitle">About this project</h2><button type="button" class="btn" data-close-dialog="aboutDialog">Close</button></div><div class="room-dialog-body"><section class="card" id="community">
+    <div class="comm">
+      
+      <div style="min-width:0;flex:1">
+        <div class="muted" style="font-size:12px">Token community · <span>Operated by an AI agent</span></div>
+        <h1><span id="cname">…</span> <span class="tick" id="csym">$…</span></h1>
+        <div class="muted" id="cdesc" style="margin-top:6px"></div>
+        <div class="chips" id="chips"></div>
+      </div>
+      <div class="right"><a class="btn sm" id="domain" target="_blank" rel="noopener noreferrer">Website ↗</a></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+  </section><div class="project-profile">
+      
+      <div class="project-profile-copy"><span class="project-eyebrow">PROJECT PROFILE · REPRESENTED BY KURT</span><h3 id="projectName">Project identity</h3><p id="projectTagline"></p><p id="projectDescription"></p><span class="hint" id="projectVersion"></span></div>
+      <button type="button" class="btn" id="editProjectProfile">Propose a profile change</button>
+    </div><details class="hint detailbox"><summary>What does Kurt know about this project?</summary><p id="projectAudience"></p><p id="projectLogoBrief"></p><p>Approved profile information is included in future AI requests. It cannot change Kurt’s permissions or the on-chain token. Profile changes do not grant spending or posting permissions.</p><div id="projectHistory"></div></details><span class="metric-note" id="agentPresenceNote">Waiting for an update</span><p class="hint">Token holders: <strong id="holderOverview">—</strong></p></div></dialog><dialog id="ideaComposer" class="community-composer room-dialog" aria-labelledby="ideaComposerTitle" aria-describedby="ideaComposerIntro"><div class="community-composer-head"><h2 id="ideaComposerTitle">Suggest an idea</h2><button type="button" class="btn" data-close-dialog="ideaComposer">Close</button></div><div class="community-composer-body">
+<p class="idea-intro" id="ideaComposerIntro">Describe the work you want the AI to do. Holders vote before it starts.</p>
+<form class="form idea-form" id="propForm">
+          <label class="full">Type of work<select id="propType"><option value="TASK">Research or write something</option><option value="WEBSITE_UPDATE">Update the project website</option><option value="MISSION_CHANGE">Change the project goals</option><option value="X_POST">Post on the project X account</option><option value="PROJECT_PROFILE_UPDATE">Update the project name or logo</option><option value="DEX_UPDATE">Update the DEX Screener listing</option><option value="DEX_BOOST">Request a paid DEX Screener boost</option></select></label>
+          <label class="full">Title<input id="propTitle" maxlength="120" required placeholder="e.g. Create a welcome guide"></label>
+          <label class="full">Your idea<textarea id="propText" rows="4" maxlength="2000" placeholder="Describe the result you want and any details Kurt should follow." required></textarea></label>
+          <fieldset id="projectFields" class="project-fields full" hidden>
+            <p class="hint full" id="projectEditNotice"></p>
+            <label>Project display name<input id="profileDisplayName" maxlength="60"></label>
+            <label>Brand color<input id="profileBrandColor" type="color" value="#52748a"></label>
+            <label class="full">Short tagline<input id="profileTagline" maxlength="120"></label>
+            <label class="full">What is this project?<textarea id="profileDescription" maxlength="1000" rows="3"></textarea></label>
+            <label class="full">Who is it for?<input id="profileAudience" maxlength="240"></label>
+            <label class="full">Logo direction — description, not image generation<textarea id="profileLogoBrief" maxlength="500" rows="2"></textarea></label>
+            <label class="full">Upload a logo for this vote<input id="profileLogoFile" type="file" accept="image/png,image/jpeg,image/webp"><span class="hint">PNG, JPEG or WebP up to 2 MB. Converted locally to a small PNG; no image service is called.</span></label>
+            <div class="full"><img id="profileLogoPreview" width="64" height="64" alt="Proposed logo preview" hidden><label><input id="profileRemoveLogo" type="checkbox"> Remove the current logo</label><span class="hint" id="profileLogoNotice" role="status"></span></div>
+          </fieldset>
+          <fieldset id="dexFields" class="project-fields full" hidden>
+            <legend>Exact purchase approval</legend><p class="hint full" id="dexProposalNotice"></p>
+            <label>Maximum purchase cost (USD)<input id="dexMaxCost" inputmode="decimal" placeholder="Enter a spending limit"></label>
+            <label>Maximum network fee (USD)<input id="dexMaxFee" inputmode="decimal" placeholder="A budget limit, not a live fee quote"></label>
+            <p class="hint full">Limits are not quotes or deposits. Approval expires seven days after voting ends. No automatic top-up, bridge or renewal.</p>
+            <div id="dexUpdateFields" class="full">
+              <label>Description<textarea id="dexDescription" rows="3" maxlength="1000"></textarea></label>
+              <label>Public logo URL<input id="dexIcon" type="url" maxlength="500" placeholder="https://…"></label>
+              <label>Public banner URL<input id="dexBanner" type="url" maxlength="500" placeholder="https://…"></label>
+              <label>Website (optional)<input id="dexWebsite" type="url" maxlength="500"></label>
+              <label>X profile (optional)<input id="dexX" type="url" maxlength="500"></label>
+              <p class="hint">Use public HTTPS URLs without login, query parameters or fragments. Preparation stores these links only; it does not upload them to Padre.</p>
+            </div>
+            <div id="dexBoostFields" class="full" hidden><label>Exact Boost quantity<input id="dexBoostCount" inputmode="numeric" maxlength="6"></label><p class="hint">Purchase API not verified. This vote cannot trigger payment until a supported integration is reviewed.</p></div>
+          </fieldset>
+          <button class="btn lime full" type="submit">Send to community vote <span aria-hidden="true">→</span></button>
+        </form>
+<div class="hint idea-signature-note" id="propHint" role="status" aria-live="polite">Your wallet signs the proposal. Submitting it does not start work or spend funds.</div>
+<details class="idea-examples"><summary>Try an example</summary><div class="idea-catalog">
+          
+          
+          
+          
+          
+          
+          
+          
+        <button type="button" data-template="report"><b>Research</b><span>Sources, competitors and user needs</span></button><button type="button" data-template="content"><b>Write content</b><span>Draft posts, articles and translations</span></button><button type="button" data-template="website"><b>Create a website</b><span>A simple public page about the project</span></button></div><details class="community-more-ideas"><summary>More examples</summary><div class="idea-catalog"><button type="button" data-template="identity"><b>Identity & logo direction</b><span>Names, slogan and a written design brief</span></button><button type="button" data-template="roadmap"><b>Roadmap & priorities</b><span>Propose the next goals and milestones</span></button><button type="button" data-template="community"><b>Community guides</b><span>Welcome guides, FAQs and event plans</span></button><button type="button" data-template="transparency"><b>Progress & transparency</b><span>Explain recorded work and spending</span></button><button type="button" data-template="mission"><b>Change the mission</b><span>Vote on the agent’s ongoing focus</span></button></div></details></details>
+</div></dialog></main>
+
+
+<script src="/launch-progress.js?v=site-consistency-20260930"></script>
+<script src="/live-token.js?v=site-consistency-20260930"></script>
+<script src="/chat-session.js?v=unified-20260930"></script>
+<script src="/project-community.js?v=ai-status-20261002"></script>
+<script src="/social-budget.js?v=unified-20260930"></script>
+<script src="/dex-payments.js?v=room-clarity-20260930"></script>
+<script src="/voice-playback.js?v=unified-20260930"></script>
+<script src="/wallet-mobile.js?v=unified-20260930"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.15/hls.min.js"></script>
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const publicLink = (value, origin) => { try { const u = new URL(value); return u.protocol === "https:" && u.origin === origin && !u.username && !u.password ? u.href : "#"; } catch { return "#"; } };
+const rawToken = location.pathname.split("/").pop();
+const SOLANA = !/^0x/i.test(rawToken);            // a base58 mint: Solana project (Phantom / Solflare, SOL units)
+const token = SOLANA ? rawToken : rawToken.toLowerCase();
+const UNIT = SOLANA ? "SOL" : "ETH";
+const money = (n) => "$" + Number(n || 0).toFixed(2);
+const short = (a) => a ? a.slice(0, 6) + "…" + a.slice(-4) : "—";
+const COLORS = ["#bfd2c5", "#dfbea7", "#bdcbe1", "#b8d8ce", "#d8c4db", "#dfd0ac"];
+const colorOf = (a) => COLORS[parseInt(String(a).slice(2, 6), 16) % COLORS.length];
+/// "0.30% of every buy and sell on the curve" — the creator fee this coin's venue pays, from
+/// the indexed market; a plain phrase when the rate is not known.
+function creatorFeeText(t){
+  const bps=Number(t.market?.creatorTaxBps??t.funding?.creatorTaxBps??t.onchain?.creatorTaxBps);
+  return Number.isFinite(bps)&&bps>0?`${(bps/100).toFixed(bps%100?2:0)}% of every buy and sell${t.onchain?.pump&&!t.market?.graduated?' on the curve':''}`:'a share of every buy and sell';
+}
+function viewerPresentation(t) {
+  const v=t.viewers || {};
+  const fresh=v.telemetryFresh===true && v.status==='fresh' && Number.isSafeInteger(v.viewers) && v.viewers>=0;
+  return {value:fresh?v.viewers.toLocaleString():'—',label:fresh?`${v.viewers.toLocaleString()} watching`:'Viewers —',
+    note:fresh?(v.ready?'Active playback sessions':'Stream is offline'):(v.status==='stale'?'Count temporarily unavailable':'Waiting for viewer data')};
+}
+function fundingPresentation(t) {
+  const f=t.funding||{}, l=t.lock||{}, finite=v=>typeof v==='number'&&Number.isFinite(v)&&v>=0;
+  const balance=finite(f.treasuryUsd)?f.treasuryUsd:finite(l.treasuryUsd)?l.treasuryUsd:finite(t.budget?.remainingUsd)?t.budget.remainingUsd:null;
+  const target=finite(f.activationUsd)?f.activationUsd:finite(l.activationUsd)?l.activationUsd:finite(t.plan?.activationUsd)?t.plan.activationUsd:null;
+  const complete=t.startup?.version===1&&t.startup.fundingComplete===true||balance!==null&&target>0&&balance>=target;
+  const progress=complete?100:balance!==null&&target>0?Math.min(100,Math.max(0,Math.round(balance/target*100))):0;
+  return {balance,target,complete,progress,missing:balance!==null&&target>0?Math.max(0,target-balance):null};
+}
+// Public funding progress uses the same total as project cards and the header.
+// The original fundingPresentation remains wallet-only for startup readiness.
+function fundingDisplay(t) {
+  const view=globalThis.GatewayProjectFunds.model(t);
+  return {...view,balance:view.totalUsd,target:view.targetUsd,complete:view.targetReached,
+    progress:view.progressPct??0,missing:view.remainingUsd};
+}
+function fundingDescription(t) {
+  const f=fundingDisplay(t);
+  if(f.balance===null)return 'Updating project funds…';
+  if(f.target===null)return 'Choose a computer and AI model to set the initial budget.';
+  if(f.pendingCollection)return 'Initial target reached. Setup waits for reward collection.';
+  if(f.complete)return 'Initial budget collected. Follow computer setup for the next step.';
+  return `${money(f.balance)} of ${money(f.target)} collected · ${money(f.missing)} to go.`;
+}
+/// "0.1" for a sliver, "32" once it is worth an integer: the share of the startup target collected.
+function fundingPercent(fund){
+  const raw=fund.complete?100:fund.balance!==null&&fund.target>0?Math.min(100,Math.max(0,fund.balance/fund.target*100)):0;
+  return raw>0&&raw<10?raw.toFixed(1):String(Math.round(raw));
+}
+function startupPresentation(t) {
+  const f=fundingPresentation(t),v=t.vps||{},paused=t.lock?.state==='paused'||t.funding?.state==='paused';
+  const running=v.mode==='real'&&v.state==='running'&&!['stopping','reconciliation_required'].includes(v.phase);
+  const online=running&&(typeof v.health?.agentOnline==='boolean'?v.health.agentOnline:t.runtime?.online===true);
+  const streaming=running&&t.viewers?.telemetryFresh===true&&t.viewers.ready===true;
+  const registered=running&&Boolean(v.registeredAt);
+  const note=String(t.lock?.note||'').slice(0,500);
+  const failed=Boolean(note&&/^start failed:/i.test(note)),blocked=Boolean(t.lock?.blockedReason&&!['paused'].includes(t.lock.blockedReason));
+  let state=paused?'paused':streaming?'live':online?'waiting_stream':registered?'starting_agent':running||['renting','booting'].includes(v.phase)?'starting':f.complete?'awaiting_server':'funding';
+  let title=paused?'Startup paused':streaming?'The computer is live':online?'Connecting the live desktop':registered?'Connecting Kurt':running?'Preparing the server':f.complete?'Finding an available computer':'Waiting for funding';
+  let detail=paused?'Adding funds does not restart a paused project.':streaming?'The stream is confirmed by the broadcast server.':online?'Kurt is connected. The live desktop has not been confirmed yet.':registered?'The server has checked in. Waiting for a fresh AI connection.':running?'The rented server is preparing its environment.':f.complete?'The funding target is reached. No server allocation has been confirmed yet.':f.target>0?`${money(f.missing)} still needed to reach the startup target.`:'A startup plan has not been selected yet.';
+  if((failed||blocked)&&!running&&!paused){state='blocked';title='Computer setup is delayed';detail=/offer.*unavailable|approved price|refresh the quote/i.test(note)?'The selected server is unavailable at the approved price. A suitable server has not been allocated.':'Server startup needs attention. Funding is separate from server availability.';}
+  const rows=[
+    {id:'funding',label:'Project funded',status:f.complete?'complete':paused?'pending':'active',detail:f.target>0&&f.balance!==null?`${money(f.balance)} / ${money(f.target)}`:'Waiting for a funding plan'},
+    {id:'allocation',label:'Server allocated',status:running?'complete':failed||blocked?'error':f.complete&&!paused?'active':'pending',detail:running?'Server allocation confirmed':f.complete?'Waiting for confirmed allocation':''},
+    {id:'boot',label:'Environment prepared',status:registered?'complete':running?'active':'pending',detail:running&&v.bootStep?String(v.bootStep).slice(0,180):''},
+    {id:'agent',label:'AI connected',status:online?'complete':registered&&!paused?'active':'pending',detail:online?'Fresh controller connection confirmed':''},
+    {id:'stream',label:'Live desktop online',status:streaming?'complete':online?'active':'pending',detail:streaming?'Fresh stream confirmation received':''},
+  ];
+  const raw=t.startup;
+  if(raw?.version===1&&Array.isArray(raw.steps)){
+    for(const step of rows){const saved=raw.steps.find(s=>s?.id===step.id);if(saved&&['pending','active','complete','error'].includes(saved.status)){step.status=saved.status;step.label=String(saved.label||step.label).slice(0,100);step.detail=String(saved.detail||'').slice(0,240);step.ms=Number.isFinite(saved.ms)&&saved.ms>=0?saved.ms:null;step.elapsedMs=Number.isFinite(saved.elapsedMs)&&saved.elapsedMs>=0?saved.elapsedMs:null;}}
+    state=String(raw.state||state);title=String(raw.title||title).slice(0,180);detail=String(raw.detail||detail).slice(0,500);
+    if(raw.state==='live'&&!streaming){state=online?'waiting_stream':'starting';title='Waiting for a fresh connection';detail='Startup has progressed, but the live desktop has not been confirmed by fresh stream data.';}
+  }
+  if(!online&&rows[3].status==='complete')rows[3].status=registered?'active':'pending';
+  if(!streaming&&rows[4].status==='complete')rows[4].status=online?'active':'pending';
+  const displayed=fundingDisplay(t);
+  if(rows[0].status!=='complete')rows[0].detail=displayed.balance===null?'Updating project funds…':displayed.target>0?`${money(displayed.balance)} / ${money(displayed.target)}`:'Initial budget not set';
+  if(state==='funding') { title=displayed.targetReached?'Funding target reached':'Waiting for funding';detail=fundingDescription(t); }
+  const timing=raw?.version===1&&raw.timing&&typeof raw.timing==='object'?raw.timing:null;
+  return {state,title,detail,steps:rows,note,timing,updatedAt:raw?.updatedAt||((running&&v.bootStepAt)||null),nextRetryAt:raw?.nextRetryAt||null};
+}
+// Measured elapsed time, never an estimate: callers pass only recorded spans.
+function duration(ms){
+  if(!Number.isFinite(ms)||ms<0)return'';
+  const total=Math.round(ms/1000);
+  if(total<60)return total+' s';
+  const m=Math.floor(total/60),sec=total%60;
+  if(m<60)return sec?m+' m '+sec+' s':m+' m';
+  const h=Math.floor(m/60);
+  if(h<48)return (m%60)?h+' h '+(m%60)+' m':h+' h';
+  const dd=Math.floor(h/24);return (h%24)?dd+' d '+(h%24)+' h':dd+' d';
+}
+function projectPresentation(t) {
+  const v=t.vps||{}, paused=t.lock?.state==='paused'||t.funding?.state==='paused';
+  const stream=t.viewers?.telemetryFresh===true?t.viewers.ready:null;
+  const live=!paused&&v.mode==='real'&&v.state==='running'&&stream===true;
+  const starting=['renting','booting'].includes(v.phase);
+  if(paused)return{live:false,label:'Paused',title:'Agent paused',description:'The project is paused. Adding funds alone will not restart it.',agent:'Paused',agentNote:'Messages stay saved'};
+  if(v.reconciliationRequired||v.health?.status==='attention_required')return{live:false,label:'Needs attention',title:'The computer needs attention',description:'A payment or server check needs operator review.',agent:'Paused',agentNote:'Operator review needed'};
+  if(v.state==='stopping'||v.phase==='stopping'||v.health?.status==='stopping')return{live:false,label:'Stopping',title:'The server is shutting down',description:'Waiting for the server provider to confirm shutdown.',agent:'Stopping',agentNote:'No new work will start'};
+  if(starting){const s=startupPresentation(t);return{live:false,label:'Starting',title:s.title,description:s.detail,agent:'Starting',agentNote:'Setting up the project'};}
+  const online=v.health?.agentOnline??(t.runtime?.online===true);
+  const agentPaused=t.agent?.state==='paused'||v.health?.status==='paused';
+  if(v.mode==='sim')return{live:false,label:'Demo',title:'Simulation only',description:'Demo mode. No computer or live stream is connected.',agent:'Demo',agentNote:'No real AI connection'};
+  if(agentPaused)return{live,label:live?'Live · AI paused':'AI paused',title:live?'Desktop live · Kurt is paused':'Kurt is paused',description:'The AI is not processing new work. Saved messages will remain here.',agent:'Paused',agentNote:'Not processing new work'};
+  if(live)return{live:true,label:'Live',title:'Kurt’s desktop is live',description:'Watch the stream, join the conversation or suggest an idea.',agent:online?'Online':'Reconnecting',agentNote:online?'Ready for community messages':'Waiting for the AI connection'};
+  if(v.state==='running')return{live:false,label:'Connecting',title:online?'Connecting the live stream':'Waiting for the agent',description:'The computer is running. Reconnecting to its live screen.',agent:online?'Online':'Reconnecting',agentNote:online?'Chat is available':'Waiting for an update'};
+  if(fundingPresentation(t).complete){const s=startupPresentation(t);return{live:false,label:'Funded',title:s.title,description:s.detail,agent:'Not started',agentNote:['blocked','retry_wait'].includes(s.state)?'Server allocation delayed':'Waiting for a server'};}
+  if(t.lock?.state==='locked'){const f=fundingDisplay(t);return{live:false,label:'Funding',title:f.targetReached?'Funding target reached':'Waiting for funding',description:fundingDescription(t),agent:'Not started',agentNote:f.targetReached?'Waiting for reward collection':'Waiting for funding'};}
+  return{live:false,label:'Offline',title:'The computer is offline',description:'The live screen will appear here when the computer connects.',agent:'Offline',agentNote:'Messages stay saved'};
+}
+const onScreen = new URLSearchParams(location.search).get("screen") === "1";   // opened on the agent's own desktop: no player-in-player
+let me = null, last = null, tab = "chat";
+
+// ── player: WebRTC (WHEP, sub-second) first, HLS as the fallback ─────────────
+let mode = null, pc = null, hls = null, starting = false, playerEpoch = 0, playerAbort = null;
+let desktopLive = false, desktopWhy = '';
+// A hidden tab keeps the stream and its sound running, like any video site (owner 2026-09-24: switching
+// tabs must not cut the audio); the player is released only when the desktop is not live, the panel is
+// closed or this is the broadcast screen itself.
+const desktopWanted = () => desktopLive && !onScreen && $("#desktopPanel").open;
+// The live desktop is never collapsed (owner 2026-09-23: "live desktop kapanmasın").
+$("#desktopPanel").open = true;
+$("#desktopPanel").querySelector?.("summary")?.addEventListener("click", (e) => e.preventDefault());
+// Live sound is on unless this viewer muted it (owner 2026-09-23: "her zaman live sesi açık olsun").
+// Browsers allow unmuted playback only after a gesture or for sites played before: try, and if the
+// browser refuses, stay muted until the first tap or key anywhere on the page.
+const soundPreferred = () => { try { return localStorage.getItem("gw.muted") !== "1"; } catch { return true; } };
+let gestureArmed = false;
+function unmuteOnGesture() { if (gestureArmed) return; gestureArmed = true; const h = () => { const v = $("#video"); if (soundPreferred() && v.muted) { v.muted = false; if (v.volume === 0) v.volume = 1; } }; for (const ev of ["pointerdown", "keydown", "touchstart"]) document.addEventListener?.(ev, h, { once: true, passive: true }); }
+function armSound() {
+  const v = $("#video");
+  if (!soundPreferred() || !mode) return;
+  v.muted = false; if (v.volume === 0) v.volume = 1;
+  const p = v.play?.(); if (p?.catch) p.catch(() => { v.muted = true; v.play?.().catch(() => {}); unmuteOnGesture(); });
+}
+$("#video").addEventListener("playing", () => { const v = $("#video"); if (v.muted && soundPreferred()) armSound(); });
+function playerMessage(message) { $("#playerMessage").textContent=message; $("#playerMessage").hidden=!message; }
+function releasePlayer() {
+  playerEpoch++; playerAbort?.abort(); playerAbort=null; starting=false;
+  const oldPc=pc; pc=null; try { oldPc?.close(); } catch {}
+  const oldHls=hls; hls=null; oldHls?.destroy();
+  const v=$("#video"); v.srcObject=null; v.removeAttribute("src"); v.load?.(); mode=null;
+}
+async function playWhep(epoch, signal) {
+  const v = $("#video");
+  const mine = pc = new RTCPeerConnection({ iceServers: [] });
+  const current=()=>epoch===playerEpoch&&mine===pc&&!signal.aborted;
+  mine.addTransceiver("video", { direction: "recvonly" }); mine.addTransceiver("audio", { direction: "recvonly" });
+  mine.ontrack = (e) => { if(current())v.srcObject = e.streams[0]; };
+  const offer = await mine.createOffer(); if(!current())throw new Error('cancelled'); await mine.setLocalDescription(offer);
+  await new Promise((r) => { if (mine.iceGatheringState === "complete") return r(); const t = setTimeout(r, 1500); mine.onicegatheringstatechange = () => { if (mine.iceGatheringState === "complete") { clearTimeout(t); r(); } }; });
+  if(!current())throw new Error('cancelled');
+  const res = await fetch(`/whep/live/${token}/whep`, { method: "POST", signal, headers: { "Content-Type": "application/sdp" }, body: mine.localDescription.sdp });
+  if (res.status !== 201) throw new Error(`WHEP ${res.status}`);
+  const answer=await res.text(); if(!current())throw new Error('cancelled');
+  await mine.setRemoteDescription({ type: "answer", sdp: answer });
+  await new Promise((r, j) => { const t = setTimeout(() => j(new Error("WebRTC connect timeout")), 8000); const check=()=>{ if(!current()||["failed","closed"].includes(mine.connectionState)){clearTimeout(t);j(new Error('connection unavailable'));}else if(mine.connectionState==='connected'){clearTimeout(t);r();} }; mine.onconnectionstatechange=check;check(); });
+  if(!current())throw new Error('cancelled');
+  mine.onconnectionstatechange = () => {
+    if (!current()) return;
+    if (mine.connectionState === "failed" || mine.connectionState === "closed") rtcDropped();
+    if (mine.connectionState === "disconnected") setTimeout(() => { if (mine === pc && mine.connectionState === "disconnected") rtcDropped(); }, 6000);
+  };
+  mode = "webrtc";
+}
+function playHls() {
+  const v = $("#video"); const src = `/hls/live/${token}/index.m3u8`;
+  // Safari plays HLS natively (and its MSE path is flaky with low-latency parts); everyone else gets hls.js.
+  const native = v.canPlayType("application/vnd.apple.mpegurl");
+  if (native) { v.src = src; }
+  else if (window.Hls && Hls.isSupported()) {
+    const mine = hls = new Hls({ lowLatencyMode: true, liveSyncDurationCount: 2, manifestLoadingMaxRetry: 20, levelLoadingMaxRetry: 20, fragLoadingMaxRetry: 20 });
+    let mediaRecoveries=0;
+    mine.on(Hls.Events.ERROR, (_, d) => { if (mine!==hls||!d.fatal)return; playerMessage('Stream interrupted. Reconnecting…'); if (d.type === Hls.ErrorTypes.NETWORK_ERROR) setTimeout(() => {if(mine===hls&&desktopWanted())mine.loadSource(src);}, 3000); else if (d.type === Hls.ErrorTypes.MEDIA_ERROR&&mediaRecoveries++<2) mine.recoverMediaError(); else stop('Playback could not recover. Refresh the stream to try again.'); });
+    mine.loadSource(src); mine.attachMedia(v);
+  } else v.src = src;
+  v.muted = true; v.play?.().catch(() => {});
+  mode = "hls";
+}
+async function start() {
+  if (starting || mode || !desktopWanted()) return; starting = true;
+  const epoch=playerEpoch, abort=playerAbort=new AbortController();
+  $("#video").hidden = false; $("#off").hidden = true; $("#ctl").hidden = false;
+  playerMessage('Connecting to the live stream…');
+  // HLS is the default (works everywhere, ~2-3 s behind); WebRTC only when asked for
+  // with the ⚡ button or ?rtc=1 — and if it fails or drops, HLS takes over silently.
+  const wantRtc = new URLSearchParams(location.search).get("rtc") === "1" || localStorage.getItem("gw.rtc") === "1";
+  if (wantRtc) { const timeout=setTimeout(()=>abort.abort(),12000);try { await playWhep(epoch,abort.signal); } catch (e) { if(epoch!==playerEpoch)return; const oldPc=pc;pc=null;try { oldPc?.close(); } catch {} $("#video").srcObject = null; } finally {clearTimeout(timeout);} }
+  if(epoch!==playerEpoch)return;
+  if (!desktopWanted()) { stop(desktopWhy); starting = false; return; }
+  if (!mode) playHls();
+  $("#proto").textContent = mode === "webrtc" ? "Low latency" : "Auto";
+  $("#proto").className = "badge " + (mode === "webrtc" ? "lime" : "dim");
+  $("#proto").title = mode === "webrtc" ? "Use automatic playback" : "Use low-latency playback";
+  starting = false;
+  armSound();
+}
+function stop(why) {
+  releasePlayer(); playerMessage('');
+  $("#video").hidden = true; $("#ctl").hidden = true;
+  $("#off").hidden = false; $("#offwhy").textContent = why || "";
+  $("#proto").textContent = "Auto"; $("#proto").className = "badge dim";
+}
+// A dropped WebRTC connection becomes HLS instead of a blank player.
+function rtcDropped() { if (mode !== "webrtc") return; if (!desktopWanted()) return stop(desktopWhy); releasePlayer(); localStorage.setItem("gw.rtc", "0"); playerMessage('Reconnecting with the standard player…'); playHls(); $("#proto").textContent = "Auto"; $("#proto").className = "badge dim"; }
+$("#proto").onclick = () => { const on = mode === "webrtc"; localStorage.setItem("gw.rtc", on ? "0" : "1"); releasePlayer(); start(); };
+$("#retryPlayer").onclick = async () => { stop(desktopWhy); try { await refresh(); } catch {} if(desktopWanted())start(); };
+$("#video").addEventListener('playing',()=>playerMessage(''));
+for(const event of ['waiting','stalled'])$("#video").addEventListener(event,()=>{if(desktopWanted()&&mode)playerMessage('Buffering the stream…');});
+$("#video").addEventListener('error',()=>{if(desktopWanted()&&mode)stop('The stream could not be loaded. Refresh the stream to try again.');});
+function attach(live, why) {
+  desktopLive = live; desktopWhy = why || '';
+  if (onScreen) { $("#video").hidden = true; $("#offwhy").textContent = live ? "This is Kurt’s broadcast screen. The player stays off to avoid a screen-within-a-screen." : "The desktop stream is not live."; $("#retryPlayer").hidden=true; return; }
+  if (desktopWanted()) { if (!mode) start(); }
+  else if (mode || starting) stop(why);
+  else $("#offwhy").textContent = desktopWhy;
+}
+$("#desktopPanel").addEventListener('toggle', () => attach(desktopLive, desktopWhy));
+document.addEventListener('visibilitychange', () => { attach(desktopLive, desktopWhy); if (!document.hidden) resumePlayer('visible'); });
+
+// ── coming back to the tab, a stall or a lost network: recover without a page reload ──────────
+// (owner 2026-09-24: "geri gelirken siteyi yenilemem gerekiyor"). Browsers may pause or starve a
+// background media element; on return the player rejoins the live edge, restarts a dead element,
+// and a watchdog rebuilds the player when playback stops advancing for 15 s.
+let userPaused = false, lastProgressAt = Date.now(), lastTime = -1;
+const liveEdgeOf = (v) => { try { if (hls && hls.liveSyncPosition) return hls.liveSyncPosition; if (v.seekable?.length) return v.seekable.end(v.seekable.length - 1); } catch {} return null; };
+function resumePlayer(reason) {
+  if (!desktopWanted()) return;
+  if (!mode) { start(); return; }
+  if (userPaused) return;
+  const v = $("#video");
+  if (v.error) { playerMessage('Reconnecting to the live stream…'); releasePlayer(); start(); return; }
+  try { hls?.startLoad?.(); } catch {}
+  const e = liveEdgeOf(v); if (e != null && Number.isFinite(e) && e - v.currentTime > 6) v.currentTime = Math.max(0, e - 0.5);
+  if (v.paused) v.play?.().catch(() => {});
+  if (v.muted && soundPreferred()) armSound();
+  lastProgressAt = Date.now(); lastTime = -1;
+}
+setInterval(() => {
+  const v = $("#video");
+  if (document.hidden || !desktopWanted() || !mode || userPaused || starting) { lastProgressAt = Date.now(); return; }
+  if (v.currentTime !== lastTime) { lastTime = v.currentTime; lastProgressAt = Date.now(); return; }
+  if (Date.now() - lastProgressAt > 15_000) { playerMessage('Stream stalled. Reconnecting…'); releasePlayer(); start(); lastProgressAt = Date.now(); lastTime = -1; }
+}, 5000);
+window.addEventListener('pageshow', () => resumePlayer('pageshow'));
+window.addEventListener('online', () => resumePlayer('online'));
+// ── end of the recovery block ──
+
+// ── wallet + signed actions (same envelope the gateway verifies) ─────────────
+function canonicalize(v) {
+  if (v === null) return "null";
+  if (typeof v !== "object") return JSON.stringify(v);
+  if (Array.isArray(v)) return "[" + v.map(canonicalize).join(",") + "]";
+  return "{" + Object.keys(v).filter((k) => v[k] !== undefined).sort().map((k) => JSON.stringify(k) + ":" + canonicalize(v[k])).join(",") + "}";
+}
+const hexNonce = () => "0x" + [...crypto.getRandomValues(new Uint8Array(16))].map((b) => b.toString(16).padStart(2, "0")).join("");
+const toHex = (str) => "0x" + [...new TextEncoder().encode(str)].map((b) => b.toString(16).padStart(2, "0")).join("");
+// base58 (Solana signatures are sent to the server as base58 text).
+const B58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+const toBase58 = (bytes) => { const b = Array.from(bytes); let zeros = 0; while (zeros < b.length && b[zeros] === 0) zeros++; const digits = []; for (const byte of b.slice(zeros)) { let carry = byte; for (let i = 0; i < digits.length; i++) { carry += digits[i] * 256; digits[i] = carry % 58; carry = Math.floor(carry / 58); } while (carry > 0) { digits.push(carry % 58); carry = Math.floor(carry / 58); } } return "1".repeat(zeros) + digits.reverse().map((d) => B58[d]).join(""); };
+const solanaProvider = () => window.phantom?.solana || window.solana || window.solflare || null;
+/// One signature over the canonical JSON: Ed25519 signMessage on Solana, EIP-191 personal_sign on EVM.
+async function signPayload(payload, wallet) {
+  if (SOLANA) { const p = solanaProvider(); if (!p) throw new Error("No Solana wallet found."); const r = await p.signMessage(new TextEncoder().encode(canonicalize(payload)), "utf8"); return toBase58(r.signature || r); }
+  return window.ethereum.request({ method: "personal_sign", params: [toHex(canonicalize(payload)), wallet] });
+}
+let walletBusy = false, messageBusy = false, noteUntil = 0;
+const chatSession = GatewayChatSession({ token, origin: location.origin, nonce: hexNonce, requestId: () => crypto.randomUUID(),
+  sign: (payload, wallet) => signPayload(payload, wallet) });
+function renderChatComposer() {
+  const button = $("#sendMessage"), form = $("#msgForm");
+  $("#msgText").disabled = messageBusy;
+  button.dataset.connected = String(!!me);
+  if (messageBusy) return;
+  const retry = !!me && form.dataset.sendState === "error" && button.dataset.retry === "true";
+  button.disabled = walletBusy;
+  button.textContent = !me ? "Connect to send" : retry ? "Retry" : "Send";
+  button.setAttribute("aria-label", !me ? "Connect wallet to send message" : retry ? "Retry message" : "Send message");
+}
+function walletUI() {
+  // A phone without an injected wallet sees the "open in your wallet app" buttons right away.
+  if (!me && window.GatewayWalletMobile?.isMobile() && (SOLANA ? !solanaProvider() : !window.ethereum)) window.GatewayWalletMobile.offer({ chain: SOLANA ? "solana" : "evm", anchor: $("#connect") });
+  $("#me").textContent = me ? short(me) : "";
+  $("#connect").textContent = me ? "Wallet connected" : "Connect wallet";
+  $("#connect").disabled = walletBusy || !!me;
+  $("#disconnect").hidden = !me;
+  $("#disconnect").disabled = walletBusy;
+  $("#allowWrite").checked = false; $("#allowPublish").checked = false;
+  renderChatComposer();
+  render(last);
+}
+async function connect() {
+  if (walletBusy || me) return;
+  if (SOLANA ? !solanaProvider() : !window.ethereum) {
+    // No injected wallet (a phone browser, or no extension): hand the page to the wallet app instead.
+    window.GatewayWalletMobile?.offer({ chain: SOLANA ? "solana" : "evm", anchor: $("#connect") });
+    note(SOLANA ? "No Solana wallet found — open this page inside Phantom or Solflare (buttons under Connect), or install the extension." : "No wallet found — open this page inside MetaMask (button under Connect), or install the extension.", true); return;
+  }
+  walletBusy = true; walletUI();
+  try {
+    if (SOLANA) {
+      const r = await solanaProvider().connect();
+      const pk = (r?.publicKey || solanaProvider().publicKey)?.toString();
+      if (!pk) throw new Error("No wallet selected.");
+      me = pk;   // base58, case-sensitive: never lowercased
+    } else {
+      const [a] = await window.ethereum.request({ method: "eth_requestAccounts" });
+      if (!a) throw new Error("No wallet selected.");
+      me = a.toLowerCase();
+    }
+    await chatSession.setWallet(me, { revoke: false });
+    note(chatSession.active() ? "Welcome back. Your chat approval is still active." : "Wallet connected. Your first message asks for a chat-only approval.");
+  } finally { walletBusy = false; walletUI(); }
+}
+async function signed(type, route, fields, extra = null) {
+  if (!me) { await connect(); if (!me) throw new Error("connect a wallet first"); }
+  const wallet = me;
+  const payload = { schemaVersion: 1, type, tokenAddress: token, holder: wallet, timestamp: new Date().toISOString(), nonce: hexNonce(), ...fields };
+  const signature = await signPayload(payload, wallet);
+  if (me !== wallet) throw new Error("Wallet changed. Please try again.");
+  const r = await fetch(`/api/site/holder/${token}/${route}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ payload, signature, ...(extra || {}) }) });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || `HTTP ${r.status}`);
+  return j;
+}
+function note(m, bad = false, transient = true) { if (transient) noteUntil = Date.now() + 10_000; const el = $("#chatnote"); el.textContent = m; el.className = "chatnote " + (bad ? "bad" : ""); el.hidden = !m; }
+function walletError(e) { return e.code === 4001 || e.code === "ACTION_REJECTED" ? "Approval cancelled. Your message is still here — send when ready." : ["TimeoutError", "AbortError"].includes(e.name) ? "Connection took too long. Your draft is saved here; try sending again." : e.message; }
+$("#connect").onclick = () => connect().catch((e) => note(walletError(e), true));
+// A phone without an injected wallet sees the "open in your wallet app" buttons without clicking first (after the room layout settled).
+setTimeout(() => { if (!me && window.GatewayWalletMobile?.isMobile() && (SOLANA ? !solanaProvider() : !window.ethereum)) window.GatewayWalletMobile.offer({ chain: SOLANA ? "solana" : "evm", anchor: $("#connect") }); }, 800);
+$("#disconnect").onclick = async () => {
+  me = null; walletBusy = true; walletUI();
+  try { await chatSession.setWallet(null); note("Disconnected. Chat approval has been revoked."); }
+  catch { note("Disconnected here. Could not revoke the server session; it expires within 1 hour.", true); }
+  finally { walletBusy = false; walletUI(); }
+};
+solanaProvider()?.on?.("accountChanged", (pk) => {
+  if (walletBusy || !me || !SOLANA) return;
+  if (pk && pk.toString() === me) return;
+  me = null; walletBusy = true; walletUI();
+  chatSession.setWallet(null).then(() => note("Wallet changed. Connect the wallet you want to use.")).catch(() => note("Wallet changed. Previous chat approval expires within 1 hour.", true)).finally(() => { walletBusy = false; walletUI(); });
+});
+window.ethereum?.on?.("accountsChanged", (accounts) => {
+  if (SOLANA || walletBusy) return;
+  if (!me || accounts[0]?.toLowerCase() === me) return;
+  me = null; walletBusy = true; walletUI();
+  chatSession.setWallet(null).then(() => note("Wallet changed. Connect the wallet you want to use.")).catch(() => note("Wallet changed. Previous chat approval expires within 1 hour.", true)).finally(() => { walletBusy = false; walletUI(); });
+});
+// Fullscreen: the whole player (overlays included) where the browser allows it, the bare video on iOS.
+function goFull() {
+  const box = $("#player"), v = $("#video");
+  if (document.fullscreenElement) { document.exitFullscreen?.(); return; }
+  if (box.requestFullscreen) box.requestFullscreen().catch(() => v.webkitEnterFullscreen?.());
+  else if (box.webkitRequestFullscreen) box.webkitRequestFullscreen();
+  else v.webkitEnterFullscreen?.();
+}
+$("#fsBtn").onclick = goFull; $("#fsBtn2").onclick = goFull;
+document.addEventListener('fullscreenchange', () => {
+  const full=Boolean(document.fullscreenElement);
+  for(const id of ['#fsBtn','#fsBtn2']) { const button=$(id); button.title=full?'Exit fullscreen':'Enter fullscreen'; button.setAttribute('aria-label',button.title); button.dataset.fullscreen=String(full); }
+});
+$("#video").ondblclick = goFull;
+// Live controls: play/pause, sound, volume, "● LIVE" (click = jump to the live edge), fullscreen. No timeline.
+const V = $("#video");
+const liveEdge = () => { try { if (hls && hls.liveSyncPosition) return hls.liveSyncPosition; if (V.seekable?.length) return V.seekable.end(V.seekable.length - 1); } catch {} return null; };
+function goLive() { const e = liveEdge(); if (e != null && Number.isFinite(e)) V.currentTime = Math.max(0, e - 0.5); V.play?.().catch(() => {}); }
+$("#ppBtn").onclick = () => { if (V.paused) { userPaused = false; goLive(); } else { userPaused = true; V.pause(); } };
+$("#muteBtn").onclick = () => { V.muted = !V.muted; if (!V.muted && V.volume === 0) V.volume = 1; try { localStorage.setItem("gw.muted", V.muted ? "1" : "0"); } catch {} };
+$("#vol").oninput = () => { V.volume = Number($("#vol").value); V.muted = V.volume === 0; };
+$("#liveBtn").onclick = goLive;
+$("#video").onclick = () => { $("#player").classList.toggle("touch"); };
+setInterval(() => {
+  if (V.hidden) return;
+  $("#ppBtn").dataset.paused = String(V.paused);
+  $("#ppBtn").title = V.paused ? "Play" : "Pause"; $("#ppBtn").setAttribute('aria-label',$("#ppBtn").title);
+  $("#muteBtn").dataset.muted = String(V.muted || V.volume === 0);
+  $("#muteBtn").title = V.muted || V.volume === 0 ? "Unmute" : "Mute"; $("#muteBtn").setAttribute('aria-label',$("#muteBtn").title);
+  const e = liveEdge(); const behind = e != null && Number.isFinite(e) && e - V.currentTime > 8;
+  $("#liveBtn").textContent = V.paused ? "● paused" : behind ? "● go live" : "● LIVE"; $("#liveBtn").classList.toggle("behind", behind || V.paused);
+  $("#ctlProto").textContent = mode === "webrtc" ? "WebRTC" : mode === "hls" ? "HLS" : "";
+}, 500);
+$("#nameForm").onsubmit = async (e) => { e.preventDefault(); const username = $("#nameInput").value.trim(); if (!username) return; try { await signed("holder_username", "username", { username }); note(`Saved — you are @${username}.`); refresh(); } catch (err) { note("Refused: " + err.message, true); } };
+$("#msgForm").onsubmit = async (e) => {
+  e.preventDefault(); const text = $("#msgText").value.trim(); if (!text || messageBusy || walletBusy) return;
+  messageBusy = true; $("#sendMessage").disabled = true; $("#msgText").disabled = true;
+  delete $("#sendMessage").dataset.retry;
+  let delivered = false, sendFailure = null;
+  note("", false, false);
+  window.GatewayChatMotion?.send('sending');
+  $("#sendMessage").textContent = me ? "Sending…" : "Connect in wallet";
+  $("#sendMessage").setAttribute("aria-label", me ? "Sending message" : "Connect in your wallet");
+  try {
+    // Drafts are available before connection. Only an explicit Send starts wallet approval.
+    if (!me) await connect();
+    if (!me) throw new Error("Connect a holder wallet to send. Your draft is still here.");
+    $("#sendMessage").textContent = "Sending…";
+    $("#sendMessage").setAttribute("aria-label", "Sending message");
+    await chatSession.send(text, () => {
+      window.GatewayChatMotion?.send('authorizing');
+      $("#sendMessage").textContent = "Approve in wallet";
+      $("#sendMessage").setAttribute("aria-label", "Approve chat in your wallet");
+    });
+    delivered = true;
+    $("#msgText").value = ""; $("#allowWrite").checked = false; $("#allowPublish").checked = false;
+    refresh();
+  } catch (err) { sendFailure = err; }
+  finally {
+    messageBusy = false;
+    window.GatewayChatMotion?.send(delivered ? 'sent' : 'error');
+    if (!delivered) {
+      const q = last?.holders?.find(h => h.address === me)?.quota;
+      $("#chatSendStatus").textContent = window.GatewayConversation?.sendError(sendFailure, q, last) || walletError(sendFailure);
+      $("#chatSendStatus").dataset.state = 'error';
+      $("#msgForm").dataset.sendState = 'error';
+      const canRetry = window.GatewayConversation?.canRetry(sendFailure) !== false;
+      $("#sendMessage").dataset.retry = String(canRetry);
+    }
+    renderChatComposer();
+  }
+};
+let proposalBusy=false;
+$("#propForm").onsubmit = async (e) => {
+  e.preventDefault();
+  if(proposalBusy)return;
+  const type = $("#propType").value, title = $("#propTitle").value.trim(), text = $("#propText").value.trim();
+  const submit=e.currentTarget.querySelector('[type="submit"]');proposalBusy=true;submit.disabled=true;
+  try {
+    const payloadFor = type==='TOKEN_LAUNCH'?window.GatewayActions.payload():['TREASURY_BUY','TREASURY_BURN'].includes(type)?window.GatewayWallet.payload():['DEX_UPDATE','DEX_BOOST'].includes(type)?window.GatewayDex.payload():type==='PROJECT_PROFILE_UPDATE'?window.GatewayProject.payload():{ X_POST: { text }, FARCASTER_POST: { text }, TASK: { description: text }, WEBSITE_UPDATE: { description: text, permissions: ["write", "publish"] }, MISSION_CHANGE: { mission: text } }[type];
+    await signed("holder_proposal", "proposal", { proposalType: type, title, proposalPayload: payloadFor }); $("#propHint").textContent = "Proposal opened — voting is on. Nothing changes before approval."; $("#propHint").className = "hint ok"; refresh();
+  } catch (err) { $("#propHint").textContent = "Refused: " + err.message; $("#propHint").className = "hint bad"; }
+  finally{proposalBusy=false;submit.disabled=false;}
+};
+$("#props").onclick = async (e) => { const b = e.target.closest("[data-vote]"); if (!b) return;
+  const id = b.dataset.id, card = b.closest(".item"), input = card?.querySelector(`[data-vote-comment="${id}"]`), comment = (input?.value || "").trim();
+  const say = (text, bad) => { voteNotes[id] = { text, bad, at: Date.now() }; const el = card?.querySelector(`[data-vote-status="${id}"]`); if (el) { el.textContent = text; el.className = "hint vote-status " + (bad ? "bad" : "ok"); } $("#propHint").textContent = text; $("#propHint").className = "hint " + (bad ? "bad" : "ok"); };
+  try { await signed("holder_vote", "vote", { proposalId: id, support: b.dataset.vote === "yes", ...(comment ? { comment } : {}) }); say("Vote recorded.", false); refresh(); } catch (err) { say("Refused: " + err.message, true); } };
+document.querySelectorAll(".tabs button").forEach((b) => (b.onclick = () => { tab = b.dataset.tab; document.querySelectorAll(".tabs button").forEach((x) => x.classList.toggle("on", x === b)); render(last); }));
+
+// ── funding: what unlocks the agent, and where the money came from ───────────
+function renderUsageAllowance(q, t) {
+  const panel = $("#usageAllowance"), line = $("#chatAllowance");
+  const state = window.GatewayConversation?.allowance(me ? q : null, t);
+  panel.hidden = !me && !state?.projectStatus;
+  line.hidden = true; line.textContent = '';
+  if (panel.hidden) return;
+  $("#usageLabel").textContent = state?.scope === 'project' ? 'Project AI budget' : 'Your AI availability';
+  panel.dataset.state = state?.state || 'unknown';
+  $("#usageRemaining").textContent = state?.label || 'Checking…';
+  $("#usageDetails").innerHTML = state?.rows?.map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('') || '';
+  $("#usageNotice").textContent = state?.notice || 'Your AI allowance is not available yet.';
+  line.textContent = state?.renewal || ''; line.hidden = !line.textContent;
+}
+
+function renderLaunchPackage(t) {
+  const p=t.launchPackage,panel=$('#launchPackageBudget');if(!panel)return;
+  panel.hidden=!p;if(!p)return;
+  const put=(id,value)=>{const node=$(id);if(node.textContent!==value)node.textContent=value;};
+  const amount=n=>Number.isSafeInteger(n)&&n>=0?money(n/1e6):'—';
+  const social=p.version>=2?p.socialAccountBudgetMicros:0;
+  const valid=[1,2,3,4,5].includes(p.version)&&p.required===true&&[p.activationMicros,p.dexBudgetMicros,p.operatingMicros,social].every(n=>Number.isSafeInteger(n)&&n>=0)&&
+    p.activationMicros>0&&(p.dexBudgetMicros>0||p.version===4||p.dexAllocationWaived===true)&&p.operatingMicros>0&&(p.version<2||p.version===4||social>0)&&(p.version===5 ? p.staged===true&&p.activationMicros===p.operatingMicros&&p.totalOnboardingMicros===p.operatingMicros+social+p.dexBudgetMicros : p.activationMicros===p.dexBudgetMicros+p.operatingMicros+social);
+  if(!valid){
+    put('#launchPackageBreakdown','Saved launch package terms are unavailable.');
+    put('#launchPackageStatus','Funding terms need review');put('#launchPackagePayment','Payment and allocation details are unavailable.');
+    $('#launchPackageSocial').hidden=true;return;
+  }
+  put('#launchPackageBreakdown',p.version===5?`${amount(p.operatingMicros)} initial AI & computer budget → ${amount(social)} X account → up to ${amount(p.dexBudgetMicros)} required DEX setup. Usage costs continue between stages.`:`${amount(p.activationMicros)} startup target · ${amount(p.operatingMicros)} AI & computer${social?` · ${amount(social)} X account`:''}${p.dexBudgetMicros>0?` · ${amount(p.dexBudgetMicros)} existing DEX allocation`:''}`);
+  // Operator detail is plain text from the server and is only ever written through textContent.
+  const note=value=>typeof value==='string'&&value.trim()?` · Detail: ${value.slice(0,200)}`:'';
+  put('#launchPackageStatus',p.statusText||'Checking startup funding');
+  put('#launchPackagePayment',p.dexBudgetMicros===0?'DEX Screener is optional and excluded from the startup target.':(p.paid===true
+    ? `DEX payment confirmed · ${amount(p.spentMicros)} spent · ${p.publication==='published'?'Profile publication confirmed':'Profile publication not yet verified'}`
+    : `No DEX payment confirmed · ${amount(p.reservedMicros)} in launch reserves${p.automaticPaymentConnected===false?' · Automatic checkout is not connected yet':p.automaticPaymentConnected===true?'':' · Service readiness is checked before payment'}`)+(p.paid===true?'':note(p.detail)));
+  $('#launchPackageSocial').hidden=!social;
+  if(social){
+    const account=p.socialAccount,paid=account?.paid===true,acquired=account?.acquired===true;
+    const waiting=t.social?.milestone?.state==='waiting_for_account'&&t.social.milestone.funded===true&&account?.paid===false&&account?.spentMicros===0&&account?.reservedMicros===social;
+    put('#launchPackageSocial',waiting?`X account · ${amount(social)} reserved, not charged · Waiting for an available verified account. No additional X setup funding is needed.`:`X account · ${amount(social)} budget cap · ${acquired?'account ready':account?.acquisitionConnected===false?'setup not connected':'setup pending'} · ${paid?`${amount(account.spentMicros)} paid`:'not paid'}${paid?'':note(account?.detail)}`);
+  }
+}
+// What the creator chose, for everyone: the machine, the AI model, the daily rate and the startup
+// budget (owner 2026-09-24: "hangileri ne seçmiş developer ... herkes görsün"). Every value is the
+// project's own plan or saved terms; a missing plan shows what is still being chosen.
+function renderLaunchSetup(t){
+  const panel=$('#launchSetup');if(!panel)return;
+  const put=(id,value)=>{const node=$(id),text=String(value??'');if(node&&node.textContent!==text)node.textContent=text;};
+  const p=t.plan,o=p?.offer,pkg=t.launchPackage,num=v=>typeof v==='number'&&Number.isFinite(v);
+  const short=w=>typeof w==='string'&&w.length>12?`${w.slice(0,4)}…${w.slice(-4)}`:w||'';
+  put('#setupCreator',t.creator?`Creator ${short(t.creator)}`:'');
+  if(!p){
+    put('#setupMachine','Not chosen yet');put('#setupMachineNote',t.lock?.note||'The creator picks a GPU machine from the control room');
+    put('#setupModel','Not chosen yet');put('#setupModelNote','The AI model is part of the plan');
+    put('#setupTarget',num(pkg?.activationMicros)?money(pkg.activationMicros/1e6):num(t.lock?.activationUsd)?money(t.lock.activationUsd):'—');put('#setupTargetNote','Collected in the AI wallet before the start');
+    return;
+  }
+  const gpu=o?.gpu||(p.gpuName?`${p.numGpus||1}x ${p.gpuName}`:'—');
+  const geo=typeof o?.geo==='string'&&o.geo.trim()?o.geo.split(',')[0].trim():'';
+  put('#setupMachine',gpu);
+  put('#setupMachineNote',[num(o?.dph)?`$${o.dph.toFixed(2)}/h`:'',geo,num(o?.ramGb)?`${Math.round(o.ramGb)} GB RAM`:''].filter(Boolean).join(' · ')||'GPU machine rented when funded');
+  put('#setupModel',p.modelName||p.model||'—');
+  put('#setupModelNote',t.budget?.aiModelCompatibility?.supported===false?'This document-reading model cannot run agent chat. Your selection is unchanged.':[p.provider?`via ${String(p.provider).replace(/-x402$/,'')}`:'',num(p.promptUsd)&&num(p.completionUsd)?`$${Number(p.promptUsd.toFixed(4))}/M in · $${Number(p.completionUsd.toFixed(4))}/M out`:''].filter(Boolean).join(' · ')||'Pay-per-token');
+  const target=num(pkg?.activationMicros)?pkg.activationMicros/1e6:num(t.lock?.activationUsd)?t.lock.activationUsd:num(p.activationUsd)?p.activationUsd:null;
+  put('#setupTarget',target!==null?money(target):'—');
+  const social=pkg&&pkg.version>=2?pkg.socialAccountBudgetMicros:0;
+  put('#setupTargetNote',pkg?.version===5 ? `Initial operating funds · X ${money(social/1e6)} next · DEX setup last · computer up to $1/h` : pkg&&num(pkg.dexBudgetMicros)&&num(pkg.operatingMicros)
+    ?`${money(pkg.operatingMicros/1e6)} AI & computer${num(social)&&social>0?` · ${money(social/1e6)} X account`:''}${pkg.dexBudgetMicros>0?` · ${money(pkg.dexBudgetMicros/1e6)} existing DEX allocation`:''}`
+    :'Collected in the AI wallet before the start');
+}
+// Plain-language summary of this project. Every number comes from the project's own
+// saved terms or plan; when one is missing the line stays generic instead of guessing.
+function renderHowItWorks(t){
+  const panel=$('#howItWorks');if(!panel)return;
+  const put=(id,value)=>{const node=$(id);if(node&&node.textContent!==value)node.textContent=value;};
+  const bps=Number(t.onchain?.creatorTaxBps??t.market?.creatorTaxBps),wallet=t.treasury?.wallet||t.funding?.wallet||'';
+  put('#hiwTax',t.onchain?.pump
+    ? `This coin trades on pump.fun. pump.fun's creator fee — ${creatorFeeText(t)} — is paid to this project's AI wallet${wallet?` (${wallet.slice(0,4)}…${wallet.slice(-4)})`:''}, never to holders. Anyone can also send SOL to that wallet directly.`
+    : Number.isFinite(bps)&&bps>0
+    ? `Every buy and sell pays a ${(bps/100).toFixed(bps%100?2:0)}% creator tax into this project's treasury. Anyone can also deposit into it directly.`
+    : "Trading fees collected for this token fund its treasury. Anyone can also deposit into it directly.");
+  const pkg=t.launchPackage,social=pkg&&pkg.version>=2?pkg.socialAccountBudgetMicros:0;
+  const usable=pkg&&[pkg.activationMicros,pkg.dexBudgetMicros,pkg.operatingMicros,social].every(n=>Number.isSafeInteger(n)&&n>=0)&&pkg.activationMicros===pkg.dexBudgetMicros+pkg.operatingMicros+social;
+  put('#hiwPackage',pkg?.version===5 ? `Start with ${money(pkg.operatingMicros/1e6)} for metered AI and computer time. Then fund ${money(social/1e6)} X setup, then required DEX Screener setup up to ${money(pkg.dexBudgetMicros/1e6)}. Running costs remain protected while later stages fill. Holder work opens once setup is complete.` : usable
+    ? `${money(pkg.activationMicros/1e6)} startup target: ${money(pkg.operatingMicros/1e6)} for AI and computer time${social?`, ${money(social/1e6)} for an X account`:''}${pkg.dexBudgetMicros>0?`, ${money(pkg.dexBudgetMicros/1e6)} for an existing DEX allocation`:'. DEX Screener is optional'}.`
+    : "A one-off setup amount is collected before the agent starts. This project has no saved funding terms yet.");
+  const dph=Number(t.plan?.offer?.dph),step=Number(t.plan?.promptUsd)&&Number(t.plan?.completionUsd)?(10000*t.plan.promptUsd+1000*t.plan.completionUsd)/1e6:NaN;
+  put('#hiwRun',[Number.isFinite(dph)&&dph>0?`The rented computer costs $${dph.toFixed(4)} an hour`:'The rented computer is billed by the hour',
+    Number.isFinite(step)&&step>0?`and a typical AI step costs about $${step.toFixed(4)}`:'and every AI request is paid one by one'].join(' ')+'. Both come out of the treasury, never out of your wallet.');
+  const min=Number(t.orderMinPct),hours=Number(t.usagePolicy?.periodHours);
+  put('#hiwHolder',`Holders chat with the agent and vote on proposals; chat alone never starts work or spends money.${Number.isFinite(min)&&min>0?` Holding more than ${min}% of the supply also lets you drive the X account without a vote.`:''}${Number.isFinite(hours)&&hours>0?` Each holder gets a share of the treasury's chat budget every ${hours} hours.`:''}`);
+}
+/// The wallet the AI owns, shown under the contract: on pump.fun coins it is the on-chain
+/// creator, so pump.fun's creator fee lands here and nowhere else.
+function renderAiWallet(t){
+  const wrap=$('#aiWalletWrap');if(!wrap)return;
+  const wallet=t.treasury?.wallet||t.funding?.wallet||null,solana=t.chain==='solana',pump=!!t.onchain?.pump;
+  if(!wallet){wrap.hidden=true;return;}
+  wrap.hidden=false;
+  const put=(id,value)=>{const node=$(id);if(node&&node.textContent!==value)node.textContent=value;};
+  put('#aiWalletLabel','AI wallet');
+  put('#aiWalletAddress',wallet);
+  const explorer=$('#aiWalletExplorer');if(explorer)explorer.href=solana?`https://solscan.io/account/${wallet}`:`https://robin.etherscan.io/address/${wallet}`;
+  const depositNetwork=solana?'Send SOL on Solana only.':t.chain==='robinhood'?'Send ETH on Robinhood Chain only.':'Check the project network before sending funds.';
+  put('#aiWalletNote','Creator fees and deposits fund this project’s AI and computer. '+depositNetwork);
+  const btn=$('#aiWalletCopy');if(btn)btn.onclick=async()=>{try{if(!navigator.clipboard?.writeText)throw new Error('unavailable');await navigator.clipboard.writeText(wallet);put('#aiWalletCopyLabel','Copied');setTimeout(()=>put('#aiWalletCopyLabel','Copy'),1500);}catch{put('#aiWalletCopyLabel','Select & copy');}};
+}
+/// The meter under the header: how much of the startup target is in, what is still missing, and
+/// exactly how to fill it (which coin, which wallet, about how much). Never the only place —
+/// the funding card below repeats it — but the one a visitor sees first.
+function renderFundingBanner(t){
+  const wrap=$('#fundingBanner');if(!wrap)return;
+  const fund=fundingDisplay(t),paused=t.lock?.state==='paused'||t.funding?.state==='paused',solana=t.chain==='solana';
+  const put=(id,value)=>{const node=$(id),text=String(value??'');if(node&&node.textContent!==text)node.textContent=text;};
+  const running=t.vps?.mode==='real'&&t.vps?.state==='running'&&!paused;
+  if(wrap.classList)wrap.classList.toggle('is-live',!!running);
+  if(running){
+    // The machine is on: what matters now is how long the treasury lasts, not the startup target.
+    const finite=v=>typeof v==='number'&&Number.isFinite(v)&&v>=0;
+    const days=[finite(t.budget?.runwayHours)?t.budget.runwayHours/24:null,t.spend?.remaining?.days].find(finite)??null;   // actual burn first, the plan tariff only as a fallback
+    const burn=Number(t.budget?.burnPerHourUsd),unit=solana?'SOL':'ETH',w=t.treasury?.wallet||t.funding?.wallet||'',shortW=w?`${w.slice(0,4)}…${w.slice(-4)}`:'the AI wallet';
+    const pct=days===null?0:Math.min(100,Math.round(days/30*100));
+    const width=`${Math.max(days>0?2:0,pct)}%`;const bar=$('#fbBar');if(bar.style.width!==width)bar.style.width=width;const cls=days>0?'on some':'on';if(bar.className!==cls)bar.className=cls;
+    const prog=$('#fbProgress');prog.setAttribute('aria-valuenow',String(pct));prog.setAttribute('aria-valuetext',days!==null?`about ${days.toFixed(1)} days of runway`:'running');
+    put('#fbTitle',t.vps?.phase==='live'?'Live · running on its treasury':'Starting · running on its treasury');
+    put('#fbPct',days!==null?`≈ ${days.toFixed(1)} days`:'running');
+    put('#fbAmounts',`${fund.balance===null?'—':money(fund.balance)} project funds${finite(burn)&&burn>0?` · current costs ${money(burn)}/h`:''}`);
+    put('#fbToGo',fund.target>0&&fund.balance!==null&&fund.balance<fund.target?`started early · startup target was ${money(fund.target)}`:'');
+    put('#fbHow',`Keep it running: send ${unit} ${solana?'on Solana':'on Robinhood Chain'} to the AI wallet ${shortW}. The computer pauses when its operating funds run out.`);
+    return;
+  }
+  const raw=fund.complete?100:fund.balance!==null&&fund.target>0?Math.min(100,Math.max(0,fund.balance/fund.target*100)):0;
+  const width=`${Math.max(raw>0?1:0,Math.round(raw))}%`;const bar=$('#fbBar');if(bar.style.width!==width)bar.style.width=width;
+  const barClass=(fund.complete?'on':'')+(raw>0&&!fund.complete?' some':'');if(bar.className!==barClass.trim())bar.className=barClass.trim();
+  const prog=$('#fbProgress');prog.setAttribute('aria-valuenow',String(Math.round(raw)));prog.setAttribute('aria-valuetext',fund.complete?'Startup funding target reached':fund.target>0?`${fundingPercent(fund)}% of the startup target`:'No startup target yet');
+  put('#fbTitle',paused?'Project paused':fund.complete?'Startup fund · complete':fund.target>0?'Startup fund':'Startup fund · plan pending');
+  put('#fbPct',fund.complete?'target reached':fund.target>0?`${fundingPercent(fund)}% funded`:'—');
+  put('#fbAmounts',fund.balance===null?'Checking the project budget':fund.target>0?`${money(fund.balance)} of ${money(fund.target)} collected`:`${money(fund.balance)} in the treasury`);
+  put('#fbToGo',fund.complete?'':fund.missing!==null?`${money(fund.missing)} to go`:'');
+  const wallet=t.treasury?.wallet||t.funding?.wallet||'',shortWallet=wallet?`${wallet.slice(0,4)}…${wallet.slice(-4)}`:'the AI wallet';
+  const unitUsd=Number(solana?(t.treasury?.solUsd??t.market?.solUsd):(t.treasury?.ethUsd??t.funding?.ethUsd)),unit=solana?'SOL':'ETH';
+  const approx=fund.missing!==null&&fund.missing>0&&Number.isFinite(unitUsd)&&unitUsd>0?` (≈ ${(fund.missing/unitUsd).toFixed(unit==='SOL'?2:4)} ${unit} at $${unitUsd.toLocaleString("en-US",{maximumFractionDigits:2})}/${unit})`:'';
+  put('#fbHow',paused?'The project is paused. Adding funds alone will not restart it.'
+    :fund.complete?fundingDescription(t)
+    :fund.target>0?`Send ${unit} ${solana?'on Solana':'on Robinhood Chain'} to the AI wallet ${shortWallet}${approx}. Once funds are collected, automatic setup checks computer availability.${t.onchain?.pump?" pump.fun's creator fee on every trade fills the same wallet.":''}`
+    :'The startup target appears once a machine is chosen for this project. Anything sent to the AI wallet stays in its treasury.');
+}
+function renderFunding(t) {
+  const f=t.funding||{},fund=fundingDisplay(t),startup=startupPresentation(t),paused=t.lock?.state==='paused'||f.state==='paused';
+  const put=(id,value)=>{const node=$(id),text=String(value??'');if(node.textContent!==text)node.textContent=text;};
+  renderAiWallet(t);renderFundingBanner(t);
+  put('#fTaxLabel','Creator fees recorded');
+  put('#fWalletLabel',t.chain==='solana'?'AI wallet · SOL on Solana:':'AI wallet · ETH on Robinhood Chain:');
+  const running=t.vps?.mode==='real'&&t.vps?.state==='running'&&!paused,earlyStart=running&&fund.target>0&&fund.balance!==null&&fund.balance<fund.target;
+  put('#fundTitle',running?'Project funds':paused?'Funding · paused':'Startup funding');
+  put('#workspaceFundingTitle',running?'Fund balance':'Startup budget');
+  put('#fundNow',fund.balance===null?'—':money(fund.balance));
+  put('#fundOf',running?'for ongoing project costs':fund.target>0?`of ${money(fund.target)} initial budget`:'project funds');
+  const width=`${fund.progress}%`;if($("#fundBar").style.width!==width)$("#fundBar").style.width=width;
+  const barClass=fund.complete?'on':'';if($("#fundBar").className!==barClass)$("#fundBar").className=barClass;
+  $("#fundingProgress").setAttribute('aria-valuenow',String(fund.progress));
+  $("#fundingProgress").setAttribute('aria-valuetext',earlyStart?'Running on its treasury':fund.complete?'Startup funding target reached':fund.balance===null?'Funding data unavailable':`${fund.progress}% of startup target`);
+  put('#fundLine',paused?'Paused. Adding funds will not restart the project.':running?'Creator rewards and deposits support ongoing work.':fundingDescription(t));
+  put('#fundBudgetNote',fund.pendingCollection?'The target is reached; setup waits for reward collection.':'Project funds include wallet funds and current creator rewards. Setup and payments use collected funds.');
+  renderLaunchPackage(t);renderHowItWorks(t);renderLaunchSetup(t);
+  $("#fTax").textContent = typeof f.taxUsd==='number'&&Number.isFinite(f.taxUsd)?money(f.taxUsd):'—'; $("#fTaxSub").textContent = f.creatorTaxBps != null ? `${f.creatorTaxBps / 100}% of every buy & sell · ${f.taxTrades} trades · ${(v => v !== 0 && Math.abs(v) < 1e-5 ? v.toFixed(9).replace(/0+$/, "") : v.toFixed(5))(Number(f.taxEth || 0))} ${UNIT}` : t.treasury?.mode==='sim'||t.vps?.mode==='sim'?"Simulated trade fees":"Fee rate unavailable";
+  $("#fDep").textContent = typeof f.depositsUsd==='number'&&Number.isFinite(f.depositsUsd)?money(f.depositsUsd):'—'; $("#fSpent").textContent = typeof f.spentUsd==='number'&&Number.isFinite(f.spentUsd)?money(f.spentUsd):'—';
+  $("#fWallet").textContent = f.wallet || "—"; $("#fWallet").onclick = async () => {if(!f.wallet)return;try{if(!navigator.clipboard?.writeText)throw new Error('unavailable');await navigator.clipboard.writeText(f.wallet);note('Treasury address copied.');}catch{note('Copy unavailable. Select and copy the treasury address.',true);}};
+  put('#startsTitle',startup.title);put('#startupDetail',startup.detail);
+  const problem=startup.steps.some(s=>s.status==='error')||['blocked','retry_wait','attention_required'].includes(startup.state);
+  const noteClass='startup-note'+(problem?' error':'');if($('#startupDetail').className!==noteClass)$('#startupDetail').className=noteClass;
+  const labels={pending:'Waiting',active:'In progress',complete:'Confirmed',error:'Delayed'};
+  for(const [index,step] of startup.steps.entries()){
+    const row=$('#startup-'+step.id),cls=step.status==='complete'?'on':step.status;
+    if(row.className!==cls)row.className=cls;
+    if(step.status==='active')row.setAttribute('aria-current','step');else row.removeAttribute('aria-current');
+    put('#startup-'+step.id+'-icon',step.status==='complete'?'✓':step.status==='error'?'!':index+1);
+    put('#startup-'+step.id+'-label',step.label);put('#startup-'+step.id+'-detail',step.detail);
+    const took=step.status==='complete'?duration(step.ms):step.status==='active'?duration(step.elapsedMs):'';
+    put('#startup-'+step.id+'-status',took?labels[step.status]+' · '+took:labels[step.status]);
+  }
+  const timestamp=Date.parse(startup.updatedAt||''),retry=Date.parse(startup.nextRetryAt||'');
+  const total=startup.timing&&Number.isFinite(startup.timing.totalMs)?duration(startup.timing.totalMs):'';
+  put('#startupUpdated',[total?(startup.timing.complete?'Funding to live screen took '+total:'Running for '+total+' since funding'):null,Number.isFinite(timestamp)?'Last startup update · '+new Date(timestamp).toLocaleTimeString():null,Number.isFinite(retry)?'Next availability check · '+new Date(retry).toLocaleTimeString():null].filter(Boolean).join(' · '));
+  $('#startupTechnical').hidden=!startup.note;put('#startupTechnicalText',startup.note);
+  $("#fundHint").textContent = "Chat is public. Never share passwords, private keys or other personal information.";
+}
+
+// ── market: chart, trades, graduation ────────────────────────────────────────
+let chart = null, series = null, tf = "5m", lastCandleKey = "";
+const fmtEth = (n, d = 6) => { if (n == null) return "—"; const v = Number(n); const s = v !== 0 && Math.abs(v) < 10 ** -d ? v.toFixed(Math.min(12, 2 - Math.floor(Math.log10(Math.abs(v))))) : v.toFixed(d); return s.replace(/\.?0+$/, "") + " " + UNIT; };
+function renderMarket(t) {
+  const m = t.market, card = $("#marketcard");
+  if (!t.onchain || !m) { card.hidden = true; return; }
+  card.hidden = false;
+  const ethUsd = (SOLANA ? t.treasury?.solUsd : t.treasury?.ethUsd) || 0;
+  const usd = (eth) => { if (eth == null || !ethUsd) return ""; const v = eth * ethUsd; return ` (${v.toLocaleString(undefined, v < 0.01 ? { maximumSignificantDigits: 3 } : { maximumFractionDigits: v < 1 ? 4 : 0 })})`; };
+  const PUMP = !!t.onchain?.pump, onCurve = PUMP && !m.graduated;
+  $("#mname").textContent = `${t.name} · $${t.symbol}`; $("#maddr").textContent = SOLANA ? `mint ${t.address}${m.pair ? ` · pool ${m.pair}` : ""}` : `token ${t.address} · curve ${m.curve || ""}`;
+  $("#marketDesc").textContent = PUMP ? `Token market · pump.fun ${onCurve ? "bonding curve" : "PumpSwap pool"} on Solana` : SOLANA ? `Token market · ${m.dexId ? String(m.dexId) : "Solana"} pool via Helius` : "Token market · Pons bonding curve on Robinhood Chain";
+  $("#mphase").textContent = SOLANA ? (m.phase === "curve" ? "bonding curve" : "Solana AMM") : m.graduated ? "graduated · Uniswap V4" : "bonding curve"; $("#mphase").className = "badge " + (m.graduated || SOLANA ? "unlock" : "lime");
+  if (PUMP && t.onchain.pumpUrl) { $("#tradeLink").textContent = "Trade on pump.fun ↗"; $("#tradeLink").href = publicLink(t.onchain.pumpUrl, "https://pump.fun"); $("#explorerLink").href = publicLink(m.explorer || t.onchain.explorer || `https://solscan.io/token/${t.address}`, "https://solscan.io"); }
+  else if (SOLANA) { $("#tradeLink").textContent = "Trade on Jupiter ↗"; $("#tradeLink").href = publicLink(m.tradeApp || `https://jup.ag/swap/SOL-${t.address}`, "https://jup.ag"); $("#explorerLink").href = publicLink(m.explorer || t.onchain.explorer || `https://solscan.io/token/${t.address}`, "https://solscan.io"); }
+  else { $("#tradeLink").href = publicLink(t.onchain.pons || "https://www.ponsfamily.com/launchpad/", "https://www.ponsfamily.com"); $("#explorerLink").href = publicLink(m.explorer || t.onchain.explorer, "https://robin.etherscan.io"); }
+  $("#mkpis").innerHTML = [["Price", fmtEth(m.priceEth, 10) + usd(m.priceEth)], ["Market cap", fmtEth(m.mcapEth, 3) + usd(m.mcapEth)], [onCurve ? "Liquidity (curve)" : SOLANA ? "Liquidity (pool)" : "Liquidity (curve)", SOLANA && m.liquidityUsd != null ? `$${Number(m.liquidityUsd).toLocaleString(undefined, { maximumFractionDigits: 0 })}` : fmtEth(m.quoteReserveEth, 4) + usd(m.quoteReserveEth)], ["24h volume", fmtEth(m.volume24hEth, 4) + usd(m.volume24hEth)], ["Trades", m.tradeCount], [PUMP ? "Creator fee → AI wallet" : "Creator tax", `${(m.creatorTaxBps || 0) / 100}% → ${fmtEth(m.creatorTaxEarnedEth, 5)}`]].map(([k, v]) => `<div class="kpi"><span>${k}</span><b>${esc(v)}</b></div>`).join("");
+  $("#mkpiNote").textContent = `Price = the last trade${PUMP ? " on pump.fun" : ""}, in ${UNIT}${ethUsd ? ` and in dollars at ${ethUsd.toLocaleString(undefined, { maximumFractionDigits: 2 })} per ${UNIT}` : ""} · Market cap = price × ${m.totalSupply ? Number(m.totalSupply).toLocaleString() : "the total"} supply · Liquidity = the ${UNIT} ${onCurve ? "held by the curve" : SOLANA ? "in the pool" : "in the curve"} · 24h volume = ${UNIT} traded in the last 24 hours.`;
+  $("#mtaxTitle").textContent = PUMP ? "Creator fee → AI wallet" : "Creator tax → treasury";
+  $("#gradhint").textContent = PUMP ? (onCurve ? `On pump.fun's bonding curve: each buy moves the price up the curve and each sell down; when the curve sells out the coin graduates to a PumpSwap pool${m.progress != null ? ` · ${(m.progress * 100).toFixed(1)}% of the curve sold` : ""}. pump.fun's creator fee on every trade is paid to this project's AI wallet. Price and market cap are read from the curve itself, trades from pump.fun's own records${m.updatedAt ? " · updated " + new Date(m.updatedAt).toLocaleTimeString() : ""}` : `Graduated from the pump.fun curve: trading continues on PumpSwap and the creator share of every trade there is still collected for the AI wallet${m.updatedAt ? " · updated " + new Date(m.updatedAt).toLocaleTimeString() : ""}`) : SOLANA ? `Trading on ${m.dexId ? String(m.dexId) : "a Solana pool"} · holders and trades read through Helius${m.updatedAt ? " · updated " + new Date(m.updatedAt).toLocaleTimeString() : ""}` : m.graduated ? "Graduated: the curve is closed, trading continues on Uniswap V4." : (m.progress != null ? `Graduation: ${(m.progress * 100).toFixed(1)}% of ${fmtEth(m.graduationThresholdEth, 2)} in the curve · ${m.updatedAt ? "chain read " + m.updatedAt.slice(11, 19) + " UTC" : ""}${m.error ? " · " + m.error : ""}` : "");
+  $("#mtrades").innerHTML = (m.trades || []).slice(0, 25).map((x) => `<div class="item"><b class="${x.side === "buy" ? "ok" : "bad"}">${esc(String(x.side).toUpperCase())}</b> ${fmtEth(x.quoteEth, 5)} → ${Number(x.tokens).toLocaleString(undefined, { maximumFractionDigits: 0 })} $${esc(t.symbol)} <span class="mono muted">${esc(short(x.who))}</span><div class="muted" style="font-size:11px">${new Date(x.ts * 1000).toLocaleString()} · <a href="${SOLANA ? "https://solscan.io/tx/" : "https://robin.etherscan.io/tx/"}${encodeURIComponent(String(x.tx))}" target="_blank" rel="noopener noreferrer" class="muted">tx ↗</a></div></div>`).join("") || `<div class="item muted">No trades yet.</div>`;
+  $("#mtax").innerHTML = (m.trades || []).filter((x) => x.creatorTaxEth > 0).slice(0, 25).map((x) => `<div class="item"><span class="ok">+${fmtEth(x.creatorTaxEth, 6)}</span> from a ${esc(x.side)} · <span class="muted" style="font-size:11px">${new Date(x.ts * 1000).toLocaleTimeString()}</span></div>`).join("") || `<div class="item muted">${PUMP ? `Nothing collected yet — pump.fun pays ${creatorFeeText(t)} to this project's AI wallet, never to holders.` : `Nothing earned yet — every buy and sell pays ${(m.creatorTaxBps || 0) / 100}% into the treasury.`}</div>`;
+  const candles = (m.candles || {})[tf] || [];
+  if (window.LightweightCharts && !chart) {
+    chart = LightweightCharts.createChart($("#chart"), { layout: { background: { color: "#ffffff" }, textColor: "#61737d" }, grid: { vertLines: { color: "#f0f4f4" }, horzLines: { color: "#f0f4f4" } }, rightPriceScale: { borderColor: "#e1e7e8" }, timeScale: { borderColor: "#e1e7e8", timeVisible: true, secondsVisible: false }, autoSize: true });
+    series = chart.addCandlestickSeries({ upColor: "#39896a", downColor: "#bf6166", borderVisible: false, wickUpColor: "#39896a", wickDownColor: "#bf6166", priceFormat: { type: "price", precision: 10, minMove: 0.0000000001 } });
+  }
+  const key = tf + ":" + candles.length + ":" + (candles.at(-1)?.close ?? "");
+  if (series && key !== lastCandleKey) { series.setData(candles.map((c) => ({ time: c.time, open: c.open, high: c.high, low: c.low, close: c.close }))); chart.timeScale().fitContent(); lastCandleKey = key; }
+}
+document.querySelectorAll("[data-tf]").forEach((b) => (b.onclick = () => { tf = b.dataset.tf; document.querySelectorAll("[data-tf]").forEach((x) => x.classList.toggle("lime", x === b)); lastCandleKey = ""; renderMarket(last); }));
+
+// ── rendering ─────────────────────────────────────────────────────────────────
+const when = (iso) => iso ? new Date(iso).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "";
+function refresh() { return liveData.refresh(); }
+function messageState(m, t) {
+  if (m.cancelledAt || m.revokedAt) return "Withdrawn";
+  if (m.chatState === "failed") return "Response unavailable · your message is saved";
+  if (m.chatState === "working") return Date.now() - Date.parse(m.statusAt || "") > 120000 ? "Response delayed · your message is saved" : "Preparing a response…";
+  return t.vps?.state === "running" ? "Message received · waiting for the agent" : "Message saved · agent is offline";
+}
+// ── the project's X account: holders above 1 % act on it directly ───────────
+let xBusy = false;
+const xNote = (m, bad = false) => { const el = $("#xActionNote"); el.textContent = m; el.className = "hint" + (bad ? " bad" : ""); };
+const xFieldBusy = () => { for (const id of ["xPost", "xProfile", "xAvatar", "xBanner"]) $("#" + id).disabled = xBusy; };
+async function sha256Hex(bytes) { return [...new Uint8Array(await crypto.subtle.digest("SHA-256", bytes))].map((b) => b.toString(16).padStart(2, "0")).join(""); }
+const toBase64 = (bytes) => { let s = ""; for (const b of new Uint8Array(bytes)) s += String.fromCharCode(b); return btoa(s); };
+function renderXAccount(t) {
+  const a = t.social?.actions, card = $("#xAccountCard");
+  const mine = me && (t.holders || []).find((h) => h.address === me);
+  const allowed = !!(a?.enabled && mine && mine.role === "order");
+  card.hidden = !allowed;
+  if (!allowed) return;
+  const x = t.social?.x, p = t.social?.profile;
+  $("#xAccountBadge").textContent = x ? "@" + x.handle : "not assigned";
+  $("#xAccountSummary").textContent = x ? `@${x.handle} · you hold ${Number(mine.sharePct || 0).toFixed(2)}%` : "no account yet";
+  $("#xAccountHint").textContent = `Holding more than ${a.minSharePct}% of ${t.symbol} lets you post and change the account's name, bio, location, website, logo and banner — signed with your wallet, no vote. Every action is billed to the project at what the X API deducts.`;
+  // Prefill identity fields from what X last confirmed, without fighting a wallet that is typing.
+  for (const [id, value] of [["#xName", p?.name], ["#xBio", p?.bio], ["#xLocation", p?.location], ["#xWebsite", p?.website]]) {
+    const el = $(id);
+    if (document.activeElement !== el && !el.value && typeof value === "string" && !value.startsWith("https://t.co/")) el.value = value;
+  }
+  const rows = (a.recent || []).slice(-8).reverse();
+  $("#xActionLog").innerHTML = rows.map((r) => {
+    const what = r.kind === "post" ? "post" : r.kind === "delete" ? "deleted a post" : r.kind === "profile" ? "profile" : r.kind === "avatar" ? "logo" : "banner";
+    const state = r.state === "applied" ? "ok" : ["refused", "failed"].includes(r.state) ? "bad" : "";
+    return `<div class="item"><b class="${state}">${esc(what)}</b> <span class="muted">${esc(r.state)}</span>${r.reason ? ` · ${esc(r.reason)}` : ""}${r.url ? ` · <a href="${publicLink(r.url, "https://x.com")}" target="_blank" rel="noopener">view ↗</a>` : ""}<div class="muted" style="font-size:11px">${esc(String(r.holder || "").slice(0, 6))}… · ${esc(String(r.createdAt || "").slice(0, 16).replace("T", " "))}</div></div>`;
+  }).join("") || '<div class="muted" style="font-size:12px">No account actions yet.</div>';
+  xFieldBusy();
+}
+/// One signed account action. `extra` carries image bytes bound by the signed sha256.
+async function xAction(fields, extra = null, done = "Sent to X.") {
+  if (xBusy) return;
+  xBusy = true; xFieldBusy(); xNote("Waiting for your wallet signature…");
+  try {
+    const r = await signed("holder_x_action", "x-action", fields, extra);
+    const state = r.action?.state;
+    xNote(state === "applied" ? done : state === "waiting" ? "X API credits are exhausted; this is retried automatically." : state === "uncertain" ? "X did not confirm the outcome. An operator will reconcile it; nothing is re-sent." : `X reported: ${state || "no result"}${r.action?.reason ? " · " + r.action.reason : ""}`, !["applied", "waiting"].includes(state));
+    if (state === "applied" && fields.action === "post") $("#xText").value = "";
+    // The live stream pushes the new snapshot (the action is already persisted server-side).
+  } catch (e) { xNote(walletError(e), true); }
+  finally { xBusy = false; xFieldBusy(); }
+}
+async function xImageAction(kind, inputId) {
+  const file = $(inputId).files?.[0];
+  if (!file) { xNote("Choose a PNG or JPEG first.", true); return; }
+  const limit = kind === "avatar" ? (last?.social?.actions?.limits?.avatarBytes || 512000) : (last?.social?.actions?.limits?.bannerBytes || 716800);
+  if (file.size > limit) { xNote(`That file is ${Math.round(file.size / 1024)} KB; the limit is ${Math.round(limit / 1024)} KB.`, true); return; }
+  const bytes = await file.arrayBuffer();
+  await xAction({ action: kind, imageSha256: await sha256Hex(bytes) }, { image: toBase64(bytes) }, kind === "avatar" ? "Logo changed on X." : "Banner changed on X.");
+  $(inputId).value = "";
+}
+$("#xText").addEventListener("input", () => { $("#xTextCount").textContent = String([...$("#xText").value].length); });
+$("#xPost").onclick = () => xAction({ action: "post", text: $("#xText").value.trim() }, null, "Posted on X.");
+$("#xProfile").onclick = () => {
+  const profile = {};
+  for (const [field, id] of [["name", "#xName"], ["bio", "#xBio"], ["location", "#xLocation"], ["website", "#xWebsite"]]) {
+    const v = $(id).value.trim();
+    if (v) profile[field] = v;
+  }
+  if (!Object.keys(profile).length) { xNote("Fill at least one field.", true); return; }
+  return xAction({ action: "profile", profile }, null, "Profile updated on X.");
+};
+$("#xAvatar").onclick = () => xImageAction("avatar", "#xAvatarFile");
+$("#xBanner").onclick = () => xImageAction("banner", "#xBannerFile");
+
+function render(t) {
+  if (!t || String(t.address).toLowerCase() !== token.toLowerCase()) return;
+  window.GatewayProject?.render(t);
+  window.GatewayLaunchProgress?.render(t);
+  window.GatewayWallet?.render(t);
+  window.GatewayActions?.render(t);
+  window.GatewaySocialBudget?.render(t);
+  window.GatewayDex?.render(t);
+  window.GatewayVoice?.render(t);
+  renderCommunity(t);
+  const runtime = t.runtime || {};
+  $("#runtimeStatus").textContent = !runtime.online
+    ? "Agent offline or reconnecting. Messages stay saved. File work and publication wait until the agent is ready."
+    : runtime.files
+    ? "Available: chat, reports and scoped file editing" + (runtime.preview ? ", plus temporary HTML/CSS website previews." : ". Website publication is unavailable.") + " X posts and DEX purchases use the separate approval controls."
+    : "Available: chat and written reports. File tools are not activated. X posts and DEX purchases use separate approval controls.";
+  const workPolicy = t.approvedWorkPolicy;
+  $("#approvedWorkBudget").textContent = workPolicy
+    ? `Approved AI work: up to ${workPolicy.maxCalls} model calls, at most $${(workPolicy.maxCallMicros / 1e6).toFixed(2)} per quoted call and $${(workPolicy.maxTotalMicros / 1e6).toFixed(2)} per proposal. These are spending ceilings, not prices. Uncertain payments stay reserved; no automatic paid retry.`
+    : "Approved work requires a verified spending policy before it can run.";
+  $("#pageTitle").textContent = t.name;
+  $("#headerSymbol").textContent = '$'+t.symbol;
+  $("#headerChain").textContent = t.chain==='robinhood'?'Robinhood':t.chain==='solana'?'Solana':String(t.chain||'Network unavailable');
+  const addressValid=/^0x[a-fA-F0-9]{40}$/.test(t.address)||(t.chain==='solana'&&/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(t.address));
+  $("#contractAddress").textContent = addressValid?t.address:'Address unavailable';
+  $("#contract").disabled=!addressValid; $("#contract").title=addressValid?t.address:'';
+  $("#contract").onclick=async()=>{
+    try { if(!addressValid||!navigator.clipboard?.writeText)throw new Error('unavailable');await navigator.clipboard.writeText(t.address);$("#copyStatus").textContent='Contract address copied'; }
+    catch { $("#copyStatus").textContent='Copy unavailable. Select and copy the address above.'; }
+  };
+  $("#contractExplorer").href=addressValid&&t.chain==='robinhood'?`https://robin.etherscan.io/token/${t.address}`:addressValid&&t.chain==='solana'?`https://solscan.io/token/${t.address}`:'#';
+  $("#contractExplorer").hidden=!(addressValid&&(t.chain==='robinhood'||t.chain==='solana'));
+  const state=projectPresentation(t), viewing=viewerPresentation(t), live=state.live;
+  $("#watchingCount").textContent=viewing.value; $("#watchingNote").textContent=viewing.note;
+  $("#watchingCount").title='Active video playback sessions, not unique people or page visits';
+  $("#agentPresence").textContent=state.agent; $("#agentPresenceNote").textContent=state.agentNote;
+  // The room layout (project-community.js) rebuilds the header strip and drops the original
+  // metric section, so every target here may be gone: write what exists, never throw.
+  { const fp=fundingPresentation(t),setText=(id,text)=>{const node=$(id);if(node&&node.textContent!==text)node.textContent=text;};
+    // GatewayRoom owns the shared total-fund display; payment readiness stays server-controlled.
+    // The percentage and the bar live in the startup-fund tile (owner 2026-09-24); the balance shows the money.
+    const note=fp.target>0?(fp.complete?'Target reached · balance & costs':`${fundingPercent(fp)}% funded · ${money(fp.missing)} to go`):'Balance & costs';
+    setText("#budgetOverviewNote",note); }
+  $("#holderOverview").textContent=(t.holders||[]).length.toLocaleString();
+  $("#streamSummary").textContent=live?'Streaming now':state.label;
+  $("#offlineTitle").textContent=state.title;
+  const initials = t.symbol.slice(0, 2).toUpperCase(), color = colorOf(t.address);
+  for (const id of ["#av", "#av2"]) { $(id).textContent = initials; $(id).style.background = color; }
+  $("#pname").textContent = t.name; $("#psym").textContent = "$" + t.symbol;
+  $("#livebadge").className = "badge " + (live ? "live" : "dim"); $("#livebadge").textContent = state.label;
+  $("#viewers").textContent = viewing.label;
+  // A telemetry outage hides the count but must not tear down an existing stream.
+  const keepPlayback=t.viewers?.telemetryFresh!==true&&t.vps?.mode==='real'&&t.vps?.state==='running'&&t.vps?.streamLive===true&&!['paused','attention_required','stopping'].includes(t.vps?.health?.status)&&t.lock?.state!=='paused'&&t.funding?.state!=='paused';
+  attach(live||keepPlayback, state.description);
+  // Player chrome follows the confirmed stream state; funding is a local navigation action.
+  $("#player").dataset.stream = live||keepPlayback?'live':'offline';
+  $("#viewers").hidden=!(live||keepPlayback);
+  $("#proto").hidden=!(live||keepPlayback);
+  $("#retryPlayer").hidden=onScreen||state.label==='Funding';
+  $("#playerBudgetAction").hidden=onScreen||state.label!=='Funding';
+
+  renderMarket(t); renderFunding(t);
+  // The X account panel lives in its own section; guarded so partial harnesses can render without it.
+  if (typeof renderXAccount === "function") renderXAccount(t);
+  // now bar
+  $("#nowbadge").className = "badge " + (live ? "live" : "dim"); $("#nowbadge").textContent = state.label;
+  $("#nowtitle").textContent = state.title; $("#nowsub").textContent = state.description;
+
+  // community
+  $("#cname").textContent = t.name; $("#csym").textContent = "$" + t.symbol; $("#cdesc").textContent = t.website?.content || "";
+  $("#domain").href = `/w/${encodeURIComponent(t.address)}`; $("#domain").textContent = (t.website?.temporary ? "Website preview" : "Website") + " ↗";
+  const P = t.plan;
+  $("#chips").innerHTML = [P ? `AI <b>${esc(P.modelName)}</b>` : null, P?.offer ? `Machine <b>${esc(P.offer.gpu||"Selected computer")}</b> · ${Number.isFinite(Number(P.offer.dph))?"$"+Number(P.offer.dph).toFixed(2):"—"}/h` : null, `Chain <b>${esc(t.chain)}</b>`, `Agent <b>${esc(t.agent?.state || "—")}</b>`, `X account <b>${t.social?.x?.handle?esc('@'+t.social.x.handle):'Not assigned'}</b>`].filter(Boolean).map((c) => `<span class="chip">${c}</span>`).join("");
+  $("#kpis").innerHTML = [["Token holders", t.holders.length], ["Community ideas", t.proposals.length], ["Watching now", viewing.value]].map(([k, v]) => `<div class="kpi"><span>${k}</span><b>${esc(v)}</b></div>`).join("");
+
+  // treasury / runway
+  const sp = t.spend || {}, R = sp.remaining || {}, L = t.lock || {}, tr = t.treasury || {};
+  $("#tname2").textContent = `${t.name} treasury`; $("#twallet").textContent = tr.wallet ? `${tr.wallet} · ${tr.chain === "solana" ? "send SOL on Solana" : "send ETH on Robinhood"}` : tr.mode==='sim'?"Simulated treasury":"Wallet unavailable";
+  const funded=fundingPresentation(t).complete;
+  $("#lockbadge").className = "badge " + (funded&&L.state!=='paused' ? "unlock" : "lock"); $("#lockbadge").textContent = L.state==='paused'?'Paused':funded?'Funding target reached':L.state==='no_plan'?'No plan yet':`Funding · target ${money(L.activationUsd)}`;
+  const aiAvailability = t.budget?.aiAvailability;
+  const aiAvailableLabel = t.budget?.aiModelCompatibility?.supported === false ? 'Model incompatible' : aiAvailability?.status === 'ready' && Number.isSafeInteger(t.budget.aiAvailableMicros)
+    ? money(t.budget.aiAvailableMicros / 1e6)
+    : aiAvailability?.status === 'review_required' ? 'Needs a check' : aiAvailability?.status === 'budget_paused' ? 'Paused' : 'Checking…';
+  $("#kpis2").innerHTML = [["Available for payments", money(t.budget.remainingUsd)], ["Burn / hour", money(t.budget.burnPerHourUsd)], ["AI spent", `${money(sp.total?.aiUsd)} · ${sp.total?.aiRequests || 0} req`], ["AI tokens", `${((sp.total?.promptTokens || 0) / 1000).toFixed(1)}k / ${((sp.total?.completionTokens || 0) / 1000).toFixed(1)}k`], ["VPS spent", `${money(sp.total?.vpsUsd)} · ${sp.total?.vpsHours || 0} h`], ["≈ VPS hours left", R.vpsHours == null ? "—" : R.vpsHours + " h"], ["AI available now", aiAvailableLabel], ["≈ Days at plan burn", R.days == null ? "—" : R.days + " d"]].map(([k, v]) => `<div class="kpi"><span>${k}</span><b>${esc(v)}</b></div>`).join("");
+  const price=(n,d=2)=>typeof n==='number'&&Number.isFinite(n)?'$'+n.toFixed(d):'—';
+  $("#spendHint").textContent = sp.model ? `${sp.model} · AI ${price(sp.perMillionTokensUsd,4)}/M tokens (10:1 input/output estimate) · computer ${price(sp.hourlyUsd)}/h. Actual AI tokens and computer time are billed to the project.` : "";
+  $("#ledger").innerHTML = (t.treasuryLedger || []).slice(0, 12).map((l) => `<div class="item"><span class="${l.deltaMicros < 0 ? "bad" : "ok"}">${l.deltaMicros < 0 ? "−" : "+"}${money(Math.abs(l.deltaMicros) / 1e6)}</span> ${esc(l.reason)}${l.tx ? ` <span class="mono muted">${esc(String(l.tx).slice(0, 12))}…</span>` : ""}<div class="muted" style="font-size:11px">${esc((l.simAt || "").slice(0, 16).replace("T", " "))}</div></div>`).join("") || `<div class="item muted">—</div>`;
+  $("#legacySocialHistory").hidden=!(t.casts||[]).length;
+  $("#casts").innerHTML = `<div class="item muted">Historical simulation records, not public X posts.</div>` + (t.casts || []).map((c) => `<div class="item">${esc(c.text)}<div class="muted" style="font-size:11px">Simulation · ${esc((c.simAt || "").slice(0, 16).replace("T", " "))}</div></div>`).join("");
+
+  // chat / holders / log tab
+  const box = $("#msgs");
+  if (tab !== 'chat') { delete box.dataset.chatMarkup; window.GatewayChatMotion?.leave(box); }
+  if (tab === "chat") {
+    const items = (t.messages || []).slice(-60);
+    const followChat = box.scrollHeight - box.scrollTop - box.clientHeight < 80;
+    const previousScroll = box.scrollTop;
+    const nameOf = (a) => (t.profiles || {})[a] ? "@" + t.profiles[a] : short(a);
+    const chatHTML = window.GatewayConversation ? window.GatewayConversation.messages(items,t,me) : items.map((m) => `<div class="msg"><div class="av" style="background:${colorOf(m.holder)}">${esc(((t.profiles || {})[m.holder] || (m.holder.startsWith("0x") ? m.holder.slice(2) : m.holder)).slice(0, 2).toUpperCase())}</div><div class="body"><div class="who">${esc(nameOf(m.holder))}${m.holder === me ? " (you)" : ""}${m.role === "order" ? ` <span class="badge lime" style="font-size:9px;padding:1px 6px">task eligible · ${esc(m.sharePct)}%</span>` : (m.sharePct != null ? `<span>${esc(m.sharePct)}%</span>` : "")}<span>${when(m.createdAt)}</span></div><div class="txt">${esc(m.text)}</div>${m.reply ? `<div class="reply"><b style="color:var(--lime)">Kurt</b> ${esc(m.reply.text)} ${window.GatewayVoice?.button(m.reply) || ''}</div>` : `<div class="chat-state">${esc(messageState(m, t))}</div>`}</div></div>`).join("") || `<div class="muted" style="text-align:center;padding:40px 10px">No messages yet. Holders can talk to the agent here; holders above ${esc(t.orderMinPct)}% can explicitly authorize actions.</div>`;
+    if(window.GatewayChatMotion)window.GatewayChatMotion.render(box,chatHTML);
+    else {
+      if(box.dataset.chatMarkup !== chatHTML){box.innerHTML=chatHTML;box.dataset.chatMarkup=chatHTML;}
+      box.scrollTop = followChat ? 1e9 : previousScroll;
+    }
+  } else if (tab === "holders") {
+    const taskThreshold = t.governancePolicy?.version === 2 ? "more than 1% of total supply" : `at least ${t.orderMinPct}% of eligible supply`;
+    box.innerHTML = `<table><tr><th>Holder</th><th>Share</th><th>Role</th></tr>${t.holders.map((h) => `<tr${h.address === me ? ' class="ok"' : ""}><td>${h.username ? `<b>@${esc(h.username)}</b> <span class="mono muted" style="font-size:11px">${esc(short(h.address))}</span>` : `<span class="mono">${esc(short(h.address))}</span>`}${h.address === me ? " (you)" : ""}</td><td>${Number(h.sharePct).toFixed(2)}%</td><td>${h.role === "order" ? `<span class="badge lime" style="font-size:9px">can authorize tasks</span>` : `<span class="muted">chats</span>`}</td></tr>`).join("")}</table><div class="hint" style="padding:8px 4px">Chat is read-only by default. Holders with ${esc(taskThreshold)} can explicitly sign action permissions when tools are available. Balances are read from the chain.</div>`;
+  } else {
+    box.innerHTML = (t.statusLog || []).map((l) => `<div class="item"><b>${esc(l.event)}</b> ${esc(l.message)}<div class="muted" style="font-size:11px">${esc((l.at || "").slice(0, 16).replace("T", " "))}</div></div>`).join("") || `<div class="muted" style="text-align:center;padding:40px 10px">No agent log yet.</div>`;
+  }
+  const mine = me && t.holders.find((h) => h.address === me);
+  renderUsageAllowance(mine?.quota, t);
+  const myName = me && (t.profiles || {})[me];
+  $("#nameForm").hidden = !(me && !myName);
+  $("#profileOptions").hidden = !(me && !myName);
+  renderChatComposer();
+  $("#sessionHint").textContent = chatSession.active() ? "Chat approved · no wallet popups until this 1-hour session expires" : "First message: approve chat for 1 hour · no transfers or voting access";
+  $("#taskPermissions").hidden = true;
+  $("#allowPublish").disabled = t.runtime?.preview !== true;
+  if ($("#allowPublish").disabled) $("#allowPublish").checked = false;
+  if ($("#taskPermissions").hidden) { $("#allowWrite").checked = false; $("#allowPublish").checked = false; }
+  $("#msgText").placeholder = me ? (mine ? `Chat as @${myName || short(me)}…` : "This wallet holds no " + t.symbol) : "Write a message…";
+  if (!messageBusy && Date.now() > noteUntil) {
+    if (!me) note("Write your message, then connect a wallet holding $" + t.symbol + " to send.", false, false);
+    else if (mine) note("", false, false);
+    else note("Hold $" + t.symbol + " to join. Your balance is checked when you send.", false, false);
+  }
+
+  // proposals
+  const labels = { DEX_UPDATE:'Dex Update', DEX_BOOST:'Dex Boost', PROJECT_PROFILE_UPDATE:"Official project profile", X_POST: "X post", FARCASTER_POST: "Social post", TASK: "Agent task", WEBSITE_UPDATE: "Website update", MISSION_CHANGE: "Change the mission", voting: "Open for voting", approved: "Approved", rejected: "Not approved", in_progress: "In progress", done: "Completed", rejected_by_rules: "Cannot apply" };
+  const friendly = v => labels[v] || String(v || "").replaceAll("_", " ");
+  $("#proposalRules").textContent = t.governancePolicy?.version === 2
+    ? `New ideas: hold more than 1% of total token supply to propose work. Voting lasts ${t.settings?.votingHours || 0} hours. More than 15% of total supply must vote Yes, and Yes must exceed No. Balances are fixed at the opening block, so moving tokens cannot create extra votes. Earlier proposals keep their original rules. Approval never overrides safety restrictions.`
+    : `To suggest an idea, hold at least ${(t.settings?.proposalMinBps || 0) / 100}% of tokens held outside the bonding curve. Voting lasts ${t.settings?.votingHours || 0} hours and uses balances recorded when the idea opens. At least ${(t.settings?.quorumBps || 0) / 100}% of that snapshot must vote, with more than ${(t.settings?.passBps || 0) / 100}% of voting weight in favour. Approved ideas must still follow the agent’s safety rules.`;
+  $("#props").innerHTML = (t.proposals || []).map(p => {
+    const cancelled = p.cancelledAt || p.revokedAt, open = p.status === "voting" && !cancelled;
+    const saved = t.community?.artifacts?.some(a => a.proposalId === p.id);
+    const agentLabel = p.result?.paymentState==='paid' ? 'Payment confirmed · publication unverified' : p.agentStatus === "done" && ["TASK", "WEBSITE_UPDATE"].includes(p.type) ? saved ? "Output saved" : "No saved output" : friendly(p.agentStatus);
+    return `<div class="item" data-idea-state="${open ? 'voting' : !cancelled && p.status === 'approved' ? 'approved' : 'closed'}"><b>${esc(p.title)}</b> <span class="badge ${open ? "lime" : "dim"}">${esc(cancelled ? "Withdrawn" : friendly(p.status))}</span> ${p.agentStatus ? `<span class="badge dim">${esc(p.result?.profileVersion?'Profile updated · v'+p.result.profileVersion:agentLabel)}</span>` : ""}<div class="muted" style="font-size:12px;margin:4px 0">${esc(friendly(p.type))} · ${esc(p.voteCount)} votes · ${esc(p.payload?.text || p.payload?.description || p.payload?.mission || "")}</div>${p.result?.tweetUrl ? `<div class="muted" style="font-size:12px;margin:2px 0"><a href="${esc(p.result.tweetUrl)}" target="_blank" rel="noopener noreferrer">View the post on X ↗</a></div>` : ""}${window.GatewayProject.ballot(p)}${window.GatewayDex.ballot(p)}${window.GatewayWallet?.ballot(p)||""}${window.GatewayActions?.ballot(p)||""}${p.agentReason?`<p class="hint">${esc(p.agentReason)}</p>`:''}${voteMeter(p)}${open ? `<div class="ballot-row"><input class="vote-comment-input" data-vote-comment="${esc(p.id)}" maxlength="280" placeholder="Add a comment with your vote (optional)"><button class="btn sm lime" data-vote="yes" data-id="${esc(p.id)}">Yes</button> <button class="btn sm" data-vote="no" data-id="${esc(p.id)}">No</button></div>` : ""}${voteNote(p.id)}</div>`;
+  }).join("") || `<div class="item muted">No ideas yet. Suggest something you would like the agent to build.</div>`;
+  const gate = suggestGate(t, me), suggestBtn = $("#suggestIdea"), suggestHint = $("#suggestHint");
+  if (suggestBtn) { suggestBtn.disabled = gate.blocked; suggestBtn.title = gate.reason; suggestBtn.classList?.toggle("is-blocked", gate.blocked); }
+  if (suggestHint) { suggestHint.textContent = gate.reason; suggestHint.hidden = !gate.reason; }
+  window.GatewayRoom?.render(t);
+}
+// Vote outcomes shown on the card itself for half a minute, surviving re-renders.
+const voteNotes = {};
+function voteNote(id) {
+  const n = voteNotes[id], live = n && Date.now() - n.at < 30_000;
+  return `<div class="hint vote-status${live ? (n.bad ? " bad" : " ok") : ""}" data-vote-status="${esc(id)}">${live ? esc(n.text) : ""}</div>`;
+}
+// Yes/No as a share of the governing supply against the threshold, and who voted (with comments).
+function voteMeter(p) {
+  const v = p.votesSummary; if (!v || typeof v !== "object") return "";
+  const yes = Number(v.yesPct) || 0, no = Number(v.noPct) || 0, need = Number(v.version === 2 ? v.approvalPct : v.quorumPct) || 0;
+  const width = need > 0 ? Math.min(100, (yes / need) * 100) : Math.min(100, yes);
+  const state = v.passing ? "Passing" : v.closed ? "" : need > 0 ? `Needs ${Math.max(0, need - yes).toFixed(2)}% more Yes` : "";
+  const rule = v.version === 2 ? `needs more than ${need.toFixed(0)}% of total supply${v.requireMajority ? " · Yes over No" : ""}` : `needs ${need.toFixed(0)}% turnout · ${Number(v.passPct) || 0}% of votes in favour`;
+  const shortAddr = (a) => (a = String(a || ""), a.length > 12 ? a.slice(0, 6) + "…" + a.slice(-4) : a);
+  const voters = (Array.isArray(v.voters) ? v.voters : []).map((x) => `<li><span class="voter">${x.username ? "@" + esc(x.username) : `<span class="mono">${esc(shortAddr(x.holder))}</span>`}</span><span class="badge ${x.support ? "lime" : "dim"}" style="font-size:9px">${x.support ? "Yes" : "No"}</span><span class="muted">${(Number(x.sharePct) || 0).toFixed(2)}%</span>${x.comment ? `<div class="vote-comment">${esc(x.comment)}</div>` : ""}</li>`).join("");
+  return `<div class="tally${v.passing ? " is-passing" : ""}"><div class="tally-row"><b>Yes ${yes.toFixed(2)}%</b><span class="muted">· No ${no.toFixed(2)}%</span><span class="${v.passing ? "ok" : "muted"}">· ${esc(state)}</span><span class="muted">· ${esc(rule)}</span></div><div class="tally-bar" role="progressbar" aria-valuemin="0" aria-valuemax="${need || 100}" aria-valuenow="${yes}"><span style="width:${width.toFixed(1)}%"></span></div>${voters ? `<ul class="voters">${voters}</ul>` : `<div class="muted" style="font-size:12px">No votes yet.</div>`}</div>`;
+}
+// Whether the connected wallet may open a proposal at all; the server decides for real, this
+// only keeps a wallet below the threshold from hitting "Refused" after typing an idea.
+function suggestGate(t, wallet) {
+  if (!wallet) return { blocked: false, reason: "" };
+  const mine = (t.holders || []).find((h) => h.address === wallet), held = Number(mine?.sharePct) || 0;
+  const v2 = t.governancePolicy?.version === 2, need = v2 ? Number(t.governancePolicy.proposalPct ?? 1) : (Number(t.settings?.proposalMinBps) || 0) / 100;
+  if (v2 ? held > need : held >= need) return { blocked: false, reason: "" };
+  return { blocked: true, reason: `Suggesting work needs ${v2 ? "more than" : "at least"} ${need}% of ${v2 ? "total token supply" : "eligible supply"} · you hold ${held.toFixed(2)}%` };
+}
+function renderCommunity(t) {
+  const c = t.community || {}, d = c.digest || {};
+  $("#digestDate").textContent = `Today’s update · ${d.date || "—"} · UTC`;
+  $("#dailyDigest").innerHTML = [["messages", d.messages || 0], ["replies", d.replies || 0], ["outputs saved", d.delivered || 0], ["open votes", d.openVotes || 0], ["recorded spend", money(d.spentUsd || 0)]].map(([label, value]) => `<span><b>${esc(value)}</b> ${label}</span>`).join("");
+  const states = { voting: "Voting", queued: "In the queue", in_progress: "Working", done: "Output saved", paused: "Paused", cancelled: "Cancelled", not_approved: "Not approved", rejected_by_rules: "Cannot proceed", reported_complete: "Reported complete · output not verified" };
+  $("#taskBoard").innerHTML = (c.tasks || []).map(x => `<div class="item workrow"><div class="body"><b>${esc(x.title)}</b><p>${esc(x.reason || (x.endsAt && x.state === "voting" ? "Voting closes " + new Date(x.endsAt).toLocaleString() : ""))}</p></div><span class="badge ${x.state === "done" ? "lime" : "dim"}">${esc(x.state === "done" && x.profileVersion ? "Profile updated · v" + x.profileVersion : states[x.state] || x.state)}</span>${me === x.proposer && ["voting", "queued"].includes(x.state) && (x.state === "voting" || x.type === "HOLDER_TASK") ? `<button class="btn sm" data-cancel="${esc(x.id)}">Withdraw</button>` : ""}</div>`).join("") || `<div class="item muted">No tasks yet. Suggest a report, written content or a static website below.</div>`;
+  $("#deliveryGallery").innerHTML = (c.artifacts || []).map(a => `<a class="delivery" href="/api/site/token/${token}/deliveries/${encodeURIComponent(a.id)}" download><b>${esc(a.title)}</b><span class="muted" style="font-size:12px">${a.kind === "website" ? "Website source" : "Written output"} · ${Math.ceil(a.bytes / 1024)} KB · Download ↓</span></a>`).join("") || `<div class="item muted">Nothing delivered yet. Completed outputs will be saved here for everyone.</div>`;
+  $("#memoryItems").innerHTML = (c.memory || []).map(x => `<div class="item"><b>${esc(x.title)}</b><div class="hint">Approved decision · ${esc(x.sourceId)}</div></div>`).join("") || `<div class="item muted">No approved decisions yet.</div>`;
+}
+$("#taskBoard").onclick = async e => {
+  const b = e.target.closest("[data-cancel]"); if (!b) return;
+  b.disabled = true;
+  try { await signed("holder_cancel", "cancel", { taskId: b.dataset.cancel }); $("#taskNotice").textContent = "Withdrawn. Existing published outputs were not deleted."; refresh(); }
+  catch (error) { $("#taskNotice").textContent = walletError(error); }
+  finally { b.disabled = false; }
+};
+document.querySelectorAll("[data-template]").forEach(button => button.onclick = () => {
+    const templates = window.GatewayProject.templates;
+  const [type, title, text] = templates[button.dataset.template];
+  $("#propType").value = type; $("#propTitle").value = title; $("#propText").value = text;
+  $("#propType").dispatchEvent(new Event('change'));
+  $("#propText").focus();
+});
+const liveData = GatewayLiveToken({ token, onSnapshot: t => { last = t; window.GatewayDex?.syncClock?.(t); }, render: t => { last = t; render(t); }, status: state => {
+  $("#dataConnection").textContent = { live: "Live updates", connecting: "Connecting…", reconnecting: "Reconnecting…" }[state];
+  $("#dataConnection").dataset.state = state;
+} });
+liveData.start();
+window.addEventListener("pagehide", () => liveData.stop());
+window.addEventListener("pageshow", () => liveData.start());
+document.addEventListener("visibilitychange", () => { if (document.hidden) liveData.stop(); else liveData.start(); });
+</script>
+
+<footer class="app-footer"><a class="app-footer-brand" href="/">Autonom</a><nav aria-label="Information" data-product-label="infoNav"><a href="/#communities" data-i18n="explore">Explore</a><a href="/#how-it-works" data-i18n="navHow">How it works</a><a href="/agent-playbook.html" data-i18n="navDocs">Docs</a><a href="/terms" data-product-copy="terms">Terms &amp; fees</a><a href="/privacy#privacy" data-product-copy="privacy">Privacy</a></nav><small>© 2026 Autonom</small></footer></div>
+</body>
+</html>

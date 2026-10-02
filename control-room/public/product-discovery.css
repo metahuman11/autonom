@@ -1,0 +1,315 @@
+/* Real community projects. Presentation only; the directory/preview controllers own state. */
+.product-home .cinema-discovery {
+  --feed-bg:#10120f;
+  --feed-surface:#191d17;
+  --feed-white:#f1f0e9;
+  --feed-accent:#d9f96f;
+  --feed-muted:#b2b8a9;
+  --feed-line:#384032;
+  --feed-line-soft:#2d3528;
+  --feed-font:'Geist',Arial,sans-serif;
+  padding:24px 0 50px;
+  background:var(--feed-bg);
+  color:var(--feed-white);
+  color-scheme:dark;
+  font:400 16px/1.5 var(--feed-font);
+  scroll-margin-top:24px;
+  isolation:isolate;
+}
+.product-home .cinema-discovery *,.product-home .cinema-discovery *::before,.product-home .cinema-discovery *::after { box-sizing:border-box; }
+.product-home .cinema-discovery [hidden] { display:none!important; }
+.product-home .cinema-discovery a { color:inherit; text-decoration:none; }
+.product-home .cinema-discovery button,.product-home .cinema-discovery input,.product-home .cinema-discovery select { font:inherit; }
+.product-home .cinema-discovery button { cursor:pointer; }
+.product-home .cinema-discovery button:disabled { cursor:wait; opacity:.6; }
+.product-home .cinema-discovery :focus-visible { outline:2px solid var(--feed-accent); outline-offset:4px; }
+.product-home .cinema-discovery ::selection { background:var(--feed-accent); color:var(--feed-bg); }
+.product-home .cinema-discovery svg { width:20px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.product-home .cinema-discovery-inner { width:calc(100% - 40px); max-width:1440px; margin-inline:auto; }
+.product-home .cinema-discovery-heading { display:grid; gap:20px; align-items:end; margin-bottom:26px; }
+.product-home .cinema-discovery-heading h2 { width:fit-content; max-inline-size:22ch; margin:0; color:var(--feed-white); font:450 clamp(32px,8vw,44px)/1.04 var(--feed-font); letter-spacing:-.055em; overflow-wrap:anywhere; text-wrap:balance; }
+.product-home .cinema-discovery-heading>p { margin:0; max-width:360px; color:var(--feed-muted); font-size:16px; line-height:1.55; text-wrap:pretty; }
+
+/* Keep the search and filter controls in their native listener order. */
+.product-home .cinema-discovery-controls { display:grid; grid-template-columns:minmax(0,1fr); grid-template-areas:'search' 'saved' 'status' 'sorting' 'chips'; gap:8px; align-items:center; }
+.product-home .cinema-discovery .explore-toolbar { grid-area:search; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:10px; margin-bottom:8px; }
+.product-home .cinema-discovery .search { display:flex; align-items:center; gap:12px; min-width:0; min-height:52px; padding-inline:14px; border:1px solid var(--feed-line); border-radius:10px; background:var(--feed-surface); color:var(--feed-muted); cursor:text; transition:border-color .18s,box-shadow .18s; }
+.product-home .cinema-discovery .search:focus-within { border-color:var(--feed-accent); box-shadow:0 0 0 1px var(--feed-accent); }
+.product-home .cinema-discovery .search input { display:block; flex:1; min-width:0; width:100%; padding:14px 0; margin:0; border:0; border-radius:0; background:transparent; color:var(--feed-white); font-size:16px; line-height:1.4; outline:none; appearance:none; }
+.product-home .cinema-discovery .search input:focus-visible { outline:none; }
+.product-home .cinema-discovery .search input::placeholder { color:var(--feed-muted); opacity:1; font-size:14px; }
+.product-home .cinema-discovery .search input::-webkit-search-cancel-button { cursor:pointer; }
+.product-home .cinema-discovery .discovery-key { display:none; place-items:center; width:25px; height:27px; flex:none; border:1px solid var(--feed-line); border-radius:3px; color:var(--feed-muted); font:13px/1 var(--feed-font); }
+.product-home .cinema-discovery .filter-button { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-width:52px; min-height:52px; padding:12px 14px; border:1px solid var(--feed-line); border-radius:10px; background:var(--feed-surface); color:var(--feed-white); font-size:15px; font-weight:500; transition:color .18s,border-color .18s; }
+.product-home .cinema-discovery .filter-button:hover,.product-home .cinema-discovery .filter-button[aria-expanded=true] { color:var(--feed-accent); border-color:var(--feed-accent); }
+.product-home .cinema-discovery .filter-button>span[data-i18n] { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+.product-home .cinema-discovery #filterCount { display:grid; place-items:center; min-width:21px; height:21px; padding-inline:4px; background:var(--feed-accent); color:var(--feed-bg); border-radius:3px; font-size:13px; font-weight:650; }
+.product-home .cinema-discovery .discovery-tools { grid-area:saved; min-width:0; align-self:start; }
+.product-home .cinema-discovery .discovery-tabs { display:flex; flex-wrap:wrap; align-items:center; gap:6px 25px; }
+.product-home .cinema-discovery .discovery-tabs button,.product-home .cinema-discovery .live-filters button,.product-home .cinema-discovery .sort-tabs button { position:relative; display:inline-flex; align-items:center; justify-content:center; gap:7px; min-height:44px; padding:9px 0; border:0; border-radius:0; background:transparent; color:var(--feed-muted); font-size:14px; font-weight:450; line-height:1.4; white-space:nowrap; transition:color .18s; }
+.product-home .cinema-discovery .discovery-tabs button::after { content:''; position:absolute; inset:auto 0 0; height:2px; background:var(--feed-accent); transform:scaleX(0); transform-origin:left; transition:transform .2s; }
+.product-home .cinema-discovery .discovery-tabs button[aria-pressed=true]::after { transform:scaleX(1); }
+.product-home .cinema-discovery .discovery-tabs button[aria-pressed=true],.product-home .cinema-discovery .live-filters button[aria-pressed=true],.product-home .cinema-discovery .sort-tabs button[aria-pressed=true] { color:var(--feed-white); font-weight:600; }
+.product-home .cinema-discovery .discovery-tabs button:hover,.product-home .cinema-discovery .live-filters button:hover,.product-home .cinema-discovery .sort-tabs button:hover { color:var(--feed-accent); }
+.product-home .cinema-discovery .discovery-tabs svg { width:16px; height:16px; }
+.product-home .cinema-discovery .discovery-tabs b { display:grid; place-items:center; min-width:19px; height:19px; padding-inline:3px; border:1px solid var(--feed-line); border-radius:3px; font-size:13px; line-height:1; font-weight:500; font-variant-numeric:tabular-nums; }
+.product-home .cinema-discovery .discovery-storage { display:block; margin-top:7px; color:var(--feed-muted); font-size:13px; line-height:1.5; }
+.product-home .cinema-discovery .live-filters { grid-area:status; display:flex; flex-wrap:wrap; align-items:center; gap:6px 25px; }
+.product-home .cinema-discovery .live-filters [data-live-filter=live] i { width:5px; height:5px; border-radius:50%; background:currentColor; }
+.product-home .cinema-discovery-sorting { grid-area:sorting; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 18px; padding-top:8px; border-top:1px solid var(--feed-line-soft); }
+.product-home .cinema-discovery .sort-tabs { display:flex; flex-wrap:wrap; align-items:center; gap:6px 21px; }
+.product-home .cinema-discovery .view-switch { display:flex; flex:none; border:1px solid var(--feed-line); border-radius:10px; overflow:hidden; }
+.product-home .cinema-discovery .view-switch button { display:grid; place-items:center; width:44px; height:44px; padding:12px; border:0; border-radius:0; background:transparent; color:var(--feed-muted); }
+.product-home .cinema-discovery .view-switch button+button { border-inline-start:1px solid var(--feed-line); }
+.product-home .cinema-discovery .view-switch button[aria-pressed=true],.product-home .cinema-discovery .view-switch button:hover { color:var(--feed-accent); background:#d9f96f07; }
+.product-home .cinema-discovery .view-switch button:focus-visible { outline-offset:-4px; }
+.product-home .cinema-discovery .view-switch [data-view=grid][aria-pressed=true] svg { fill:currentColor; stroke-width:1; }
+.product-home .cinema-discovery .discovery-chips { grid-area:chips; display:flex; flex-wrap:wrap; gap:8px; }
+.product-home .cinema-discovery .discovery-chips button { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:44px; max-width:100%; padding:9px 12px; border:1px solid var(--feed-line); border-radius:10px; background:var(--feed-surface); color:var(--feed-muted); font-size:14px; line-height:1.4; }
+.product-home .cinema-discovery .discovery-chips button:hover { color:var(--feed-accent); border-color:var(--feed-accent); }
+.product-home .cinema-discovery .discovery-chips button span { min-width:0; max-width:260px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.product-home .cinema-discovery .discovery-chips svg { width:14px; height:14px; }
+.product-home .cinema-discovery .filter-panel { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:end; gap:18px 12px; padding:22px 0; margin-top:12px; border-top:1px solid var(--feed-line); border-bottom:1px solid var(--feed-line); }
+.product-home .cinema-discovery .filter-panel label { display:flex; flex-direction:column; gap:8px; min-width:0; font-size:14px; color:var(--feed-muted); line-height:1.4; }
+.product-home .cinema-discovery .filter-panel input,.product-home .cinema-discovery .filter-panel select { width:100%; min-width:0; min-height:46px; padding:10px 12px; border:1px solid var(--feed-line); border-radius:10px; background:var(--feed-surface); color:var(--feed-white); font-size:16px; line-height:1.4; }
+.product-home .cinema-discovery .filter-panel select { cursor:pointer; }
+.product-home .cinema-discovery .filter-panel input::placeholder { color:var(--feed-muted); }
+.product-home .cinema-discovery .filter-panel #clear { grid-column:1/-1; justify-self:start; }
+.product-home .cinema-discovery .result-line { display:flex; align-items:start; justify-content:space-between; gap:20px; margin:15px 0; color:var(--feed-muted); font-size:13px; line-height:1.5; }
+.product-home .cinema-discovery .result-line #sortNote { max-width:60%; text-align:end; }
+
+/* The project’s own logo or initials remain distinct from a real broadcast. */
+.product-home .cinema-discovery .ref-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:18px; align-items:start; }
+.product-home .cinema-discovery .ref-card { display:flex; flex-direction:column; min-width:0; margin:0; overflow:hidden; border:1px solid var(--feed-line); border-radius:12px; background:var(--feed-surface); color:var(--feed-white); box-shadow:none; transition:border-color .22s,box-shadow .22s; }
+.product-home .cinema-discovery .ref-card:hover { border-color:#879765; box-shadow:0 6px 22px #00000012; }
+.product-home .cinema-discovery .ref-card:focus-within { border-color:var(--feed-accent); }
+.product-home .cinema-discovery .ref-card em { font-family:var(--feed-font); font-style:normal; }
+.product-home .cinema-discovery .card-media { position:relative; flex:none; height:148px; overflow:hidden; isolation:isolate; background:#10120f; border-bottom:1px solid var(--feed-line-soft); }
+.product-home .cinema-discovery .card-stream-link { position:absolute; inset:0; z-index:1; display:block; color:inherit; text-decoration:none; }
+.product-home .cinema-discovery .card-stream-link:focus-visible { outline-offset:-4px; }
+.product-home .cinema-discovery .stream-placeholder { display:flex; align-items:center; justify-content:flex-start; height:100%; gap:14px; padding:21px; }
+.product-home .cinema-discovery .stream-project-avatar { display:grid; place-items:center; width:64px; height:64px; flex:none; overflow:hidden; border:1px solid #d9f96f44; border-radius:9px; background:#d9f96f08; color:var(--feed-accent); font:650 28px/1 var(--feed-font); letter-spacing:-.04em; }
+.product-home .cinema-discovery .stream-project-avatar img { display:block; width:100%; height:100%; object-fit:cover; }
+.product-home .cinema-discovery .card-media:not([data-stream]) .stream-placeholder>strong,.product-home .cinema-discovery .card-media:not([data-stream]) .preview-state,.product-home .cinema-discovery .community-avatar,.product-home .cinema-discovery .card-chain,.product-home .cinema-discovery .card-media:not([data-stream]) .card-watchers { display:none; }
+.product-home .cinema-discovery .card-status { position:absolute; top:18px; inset-inline-end:18px; display:inline-flex; align-items:center; gap:8px; max-width:calc(100% - 116px); padding:7px 10px; border:1px solid var(--feed-line); border-radius:4px; background:#10120fd9; color:var(--feed-white); font-size:13px; line-height:1.3; }
+.product-home .cinema-discovery .card-status::before { content:''; width:7px; height:7px; flex:none; border-radius:50%; background:var(--feed-muted); }
+.product-home .cinema-discovery .state-funding .card-status::before,.product-home .cinema-discovery .state-starting .card-status::before,.product-home .cinema-discovery .card-status.is-live::before { background:var(--feed-accent); }
+.product-home .cinema-discovery .card-link { display:block; min-width:0; color:inherit; text-decoration:none; }
+.product-home .cinema-discovery .card-link:focus-visible { outline-offset:-4px; }
+.product-home .cinema-discovery .card-content { padding:22px 20px 20px; }
+.product-home .cinema-discovery .card-heading { display:flex; align-items:center; gap:14px; min-width:0; }
+.product-home .cinema-discovery .community-identity { flex:1; min-width:0; }
+.product-home .cinema-discovery .card-heading h2 { margin:0 0 7px; font:600 24px/1.2 var(--feed-font); letter-spacing:-.025em; overflow-wrap:anywhere; }
+.product-home .cinema-discovery .card-ticker { display:block; color:var(--feed-muted); font-size:13px; line-height:1.5; letter-spacing:.04em; text-transform:uppercase; overflow-wrap:anywhere; }
+.product-home .cinema-discovery .card-heading>svg { width:34px; height:34px; padding:8px; border:1px solid var(--feed-line); border-radius:4px; color:var(--feed-muted); transition:background .18s,color .18s,border-color .18s; }
+.product-home .cinema-discovery .card-link:hover .card-heading>svg { color:var(--feed-bg); background:var(--feed-accent); border-color:var(--feed-accent); }
+.product-home .cinema-discovery .card-primary { margin-top:19px; padding-top:17px; border-top:1px solid var(--feed-line-soft); }
+.product-home .cinema-discovery .card-primary>strong { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:550; line-height:1.5; }
+.product-home .cinema-discovery .card-primary>span { display:block; margin-top:7px; color:#b2b8a9; font-size:14px; line-height:1.55; }
+.product-home .cinema-discovery .card-primary.is-live>strong i { width:7px; height:7px; flex:none; border-radius:50%; background:var(--feed-accent); }
+.product-home .cinema-discovery .card-primary.is-starting>strong { color:var(--feed-accent); }
+.product-home .cinema-discovery .card-primary.is-paused>strong,.product-home .cinema-discovery .card-primary.is-offline>strong { color:var(--feed-muted); }
+.product-home .cinema-discovery .card-setup { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+.product-home .cinema-discovery .card-setup>span { display:flex; flex:1 1 120px; flex-direction:column; gap:4px; min-width:0; max-width:100%; padding:11px 12px; border:1px solid var(--feed-line); border-radius:10px; font-size:14px; line-height:1.4; }
+.product-home .cinema-discovery .card-setup b { font-size:13px; letter-spacing:.08em; font-weight:450; color:var(--feed-muted); }
+.product-home .cinema-discovery .card-setup em { min-width:0; overflow-wrap:anywhere; color:var(--feed-white); font-size:14px; }
+.product-home .cinema-discovery .card-funding { font-size:15px; line-height:1.5; color:#b2b8a9; }
+.product-home .cinema-discovery .funding-line { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 15px; }
+.product-home .cinema-discovery .funding-line strong { color:var(--feed-white); font-size:23px; font-weight:650; line-height:1.2; letter-spacing:-.035em; }
+.product-home .cinema-discovery .funding-line em { color:#b2b8a9; font-size:14px; }
+.product-home .cinema-discovery .card-funding .bar { height:8px; width:100%; margin:15px 0 10px; overflow:hidden; border:1px solid var(--feed-line); border-radius:4px; background:#10120f; }
+.product-home .cinema-discovery .card-funding .bar i { display:block; height:100%; border-radius:inherit; background:var(--feed-accent); }
+.product-home .cinema-discovery .card-funding .bar i.some { min-width:2px; }
+.product-home .cinema-discovery .card-funding>span { color:#b2b8a9; font-size:15px; }
+.product-home .cinema-discovery .card-primary .card-auto { margin-top:10px; color:#b2b8a9; font-size:14px; line-height:1.5; }
+.product-home .cinema-discovery .card-details { margin:0 20px; border-top:1px solid var(--feed-line-soft); color:var(--feed-muted); }
+.product-home .cinema-discovery .card-details>summary { min-height:48px; padding:13px 0; color:var(--feed-white); font-size:14px; font-weight:500; line-height:1.5; cursor:pointer; }
+.product-home .cinema-discovery .card-details>summary::marker { color:var(--feed-accent); }
+.product-home .cinema-discovery .card-details>summary:hover { color:var(--feed-accent); }
+.product-home .cinema-discovery .card-values { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; padding:14px 0 20px; }
+.product-home .cinema-discovery .card-values>div,.product-home .cinema-discovery .runway-grid>div { min-width:0; }
+.product-home .cinema-discovery .card-values span { display:block; margin-bottom:6px; color:#b2b8a9; font-size:14px; line-height:1.5; }
+.product-home .cinema-discovery .card-values strong { display:block; color:var(--feed-white); font-size:24px; font-weight:500; line-height:1.2; letter-spacing:-.03em; overflow-wrap:anywhere; }
+.product-home .cinema-discovery .card-runway { margin:0 0 16px; padding-top:15px; border-top:1px solid var(--feed-line-soft); }
+.product-home .cinema-discovery .runway-head { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:9px; margin-bottom:15px; color:var(--feed-muted); font-size:13px; line-height:1.4; }
+.product-home .cinema-discovery .runway-head em { max-width:100%; color:var(--feed-muted); font-size:13px; overflow-wrap:anywhere; }
+.product-home .cinema-discovery .runway-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
+.product-home .cinema-discovery .runway-grid span { display:block; margin-bottom:5px; color:#b2b8a9; font-size:14px; line-height:1.5; }
+.product-home .cinema-discovery .runway-grid b { display:block; color:var(--feed-white); font-size:14px; font-weight:450; line-height:1.5; overflow-wrap:anywhere; }
+.product-home .cinema-discovery .runway-sub { margin-top:15px; color:#b2b8a9; font-size:14px; line-height:1.5; }
+.product-home .cinema-discovery .card-local-actions { display:flex; align-items:center; justify-content:space-between; gap:10px; margin:auto 20px 0; padding:8px 0 12px; border-top:1px solid var(--feed-line-soft); }
+.product-home .cinema-discovery .card-local-actions button { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-width:44px; min-height:44px; padding:10px 0; border:0; border-radius:4px; background:transparent; color:var(--feed-muted); font-size:14px; line-height:1.4; transition:color .18s; }
+.product-home .cinema-discovery .card-local-actions button[aria-pressed=true],.product-home .cinema-discovery .card-local-actions button:hover { color:var(--feed-accent); }
+.product-home .cinema-discovery .card-local-actions button[aria-pressed=true] svg { fill:#d9f96f20; }
+
+/* A public stream is shown only when the real renderer supplies data-stream. */
+.product-home .cinema-discovery .card-media[data-stream] { height:auto; aspect-ratio:16/9; background:#050607; }
+.product-home .cinema-discovery .card-media>.card-preview-video { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#050607; pointer-events:none; }
+.product-home .cinema-discovery .card-media[data-stream] .stream-placeholder { flex-direction:column; justify-content:center; gap:8px; padding:48px 18px 27px; background:var(--feed-surface); }
+.product-home .cinema-discovery .card-media[data-stream] .stream-project-avatar { display:none; width:40px; height:40px; border-radius:10px; font-size:18px; }
+.product-home .cinema-discovery .card-media[data-stream] .stream-placeholder>strong { display:block; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--feed-white); font-size:14px; font-weight:500; line-height:1.3; text-align:center; }
+.product-home .cinema-discovery .preview-state { color:var(--feed-muted); font-size:13px; line-height:1.4; text-align:center; }
+.product-home .cinema-discovery .card-media.preview-playing .stream-placeholder { visibility:hidden; }
+.product-home .cinema-discovery .card-media.preview-playing .card-stream-link { background:linear-gradient(180deg,#10120f44,transparent 35%,transparent 70%,#10120f99); }
+.product-home .cinema-discovery .card-media[data-stream] .card-status { top:12px; inset-inline:12px auto; max-width:calc(100% - 78px); padding:6px 9px; }
+.product-home .cinema-discovery .card-watchers { position:absolute; bottom:10px; inset-inline-start:12px; color:var(--feed-white); font-size:13px; line-height:1.4; text-shadow:0 1px 5px #000; }
+.product-home .cinema-discovery .card-preview-toggle { position:absolute; top:9px; inset-inline-end:9px; z-index:3; display:grid; place-items:center; width:44px; height:44px; padding:12px; border:1px solid #f1f0e966; border-radius:4px; background:#10120fe6; color:var(--feed-white); }
+.product-home .cinema-discovery .card-preview-toggle:hover { color:var(--feed-accent); border-color:var(--feed-accent); }
+.product-home .cinema-discovery .card-preview-toggle svg { width:18px; height:18px; }
+.product-home .cinema-discovery .card-preview-toggle .preview-pause-icon,.product-home .cinema-discovery .card-preview-toggle[aria-pressed=true] .preview-play-icon { display:none; }
+.product-home .cinema-discovery .card-preview-toggle[aria-pressed=true] .preview-pause-icon { display:block; }
+.product-home .cinema-discovery .card-preview-caption { position:absolute; bottom:10px; inset-inline-end:12px; z-index:2; max-width:46%; opacity:0; color:var(--feed-white); font-size:13px; line-height:1.4; text-shadow:0 1px 5px #000; pointer-events:none; }
+.product-home .cinema-discovery .preview-playing .card-preview-caption { opacity:1; }
+.product-home .cinema-discovery .card-media[data-preview-state=loading] .preview-state::before { content:''; display:inline-block; width:9px; height:9px; margin-inline-end:6px; vertical-align:-1px; border:1px solid #f1f0e944; border-top-color:var(--feed-accent); border-radius:50%; animation:product-preview-loading .9s linear infinite; }
+@keyframes product-preview-loading { to { transform:rotate(360deg); } }
+
+/* Honest empty/error and browser-local saved states. */
+.product-home .cinema-discovery .ref-button,.product-home .cinema-discovery .link-button,.product-home .cinema-discovery .discovery-retry { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:46px; padding:11px 17px; border:1px solid var(--feed-line); border-radius:10px; background:var(--feed-surface); color:var(--feed-white); font-size:14px; font-weight:500; line-height:1.5; text-decoration:none; transition:color .18s,border-color .18s; }
+.product-home .cinema-discovery .ref-button:hover,.product-home .cinema-discovery .link-button:hover,.product-home .cinema-discovery .discovery-retry:hover { color:var(--feed-accent); border-color:var(--feed-accent); }
+.product-home .cinema-discovery .ref-empty { grid-column:1/-1; padding:40px 22px; border:1px solid var(--feed-line); border-radius:12px; background:var(--feed-surface); color:var(--feed-muted); font-size:15px; line-height:1.7; text-align:center; }
+.product-home .cinema-discovery .ref-empty h2 { margin:0 0 13px; color:var(--feed-white); font:650 27px/1.15 var(--feed-font); letter-spacing:-.035em; }
+.product-home .cinema-discovery .ref-empty p { max-width:440px; margin:0 auto 22px; color:var(--feed-muted); font-size:15px; line-height:1.6; }
+.product-home .cinema-discovery .ref-empty h2+.ref-button { margin-top:9px; }
+.product-home .cinema-discovery .discovery-empty-icon { display:grid; place-items:center; width:48px; height:48px; margin:0 auto 20px; border:1px solid var(--feed-line); border-radius:12px; color:var(--feed-accent); }
+.product-home .cinema-discovery .discovery-recovery { display:flex; flex-direction:column; align-items:flex-start; gap:18px; margin:18px 0; padding:23px; border:1px solid var(--feed-line); border-radius:12px; background:var(--feed-surface); }
+.product-home .cinema-discovery .discovery-recovery.is-initial { min-height:130px; }
+.product-home .cinema-discovery #refreshNotice { margin:0; color:var(--feed-muted); font-size:15px; line-height:1.6; }
+.product-home .cinema-discovery .discovery-retry { flex:none; }
+.product-home .cinema-discovery .discovery-toast { position:fixed; z-index:90; inset-block:auto 20px; inset-inline:20px; margin:0; padding:15px 18px; border:1px solid var(--feed-line); border-radius:10px; background:var(--feed-surface); color:var(--feed-white); box-shadow:0 8px 32px #0006; font-size:14px; line-height:1.5; }
+.product-home .cinema-discovery-foot { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px 30px; margin-top:26px; }
+.product-home .cinema-discovery .link-button { padding-inline:0; border-color:transparent; background:transparent; color:#b2b8a9; text-align:start; }
+.product-home .cinema-discovery .link-button::after { content:'→'; margin-inline-start:5px; color:var(--feed-muted); font-size:19px; transition:transform .2s; }
+.product-home .cinema-discovery .link-button:hover::after { transform:translateX(4px); }
+.product-home .cinema-discovery .cinema-live-count { display:grid; gap:3px; color:var(--feed-muted); font-size:14px; line-height:1.5; }
+.product-home .cinema-discovery .cinema-live-count>[data-i18n] { font-size:14px; font-weight:500; }
+.product-home .cinema-discovery .cinema-live-count b { color:#b2b8a9; font-weight:400; }
+
+
+
+/* Original matte project specimens. Data/media controls keep their native hooks. */
+.product-home .cinema-discovery-heading { margin-bottom:30px; }
+.product-home .cinema-discovery-heading h2 { font:800 clamp(46px,7vw,72px)/.98 var(--product-display,Geist,sans-serif); letter-spacing:-.015em; text-transform:uppercase; max-inline-size:24ch; }
+.product-home .cinema-discovery .search { background:#191d17; border-color:#76816b; }
+.product-home .cinema-discovery .filter-button { border-radius:10px; padding-inline:18px; border-color:#76816b; background:#191d17; }
+.product-home .cinema-discovery .filter-button>span[data-i18n] { position:static; width:auto; height:auto; padding:0; margin:0; overflow:visible; clip-path:none; white-space:normal; }
+.product-home .cinema-discovery .discovery-tabs { gap:8px; }
+.product-home .cinema-discovery .discovery-tabs button { min-height:44px; padding:10px 15px; border:1px solid var(--feed-line); border-radius:9px; font-weight:550; }
+.product-home .cinema-discovery .discovery-tabs button::after { display:none; }
+.product-home .cinema-discovery .discovery-tabs button[aria-pressed=true] { background:var(--feed-accent); border-color:var(--feed-accent); color:#171b12; }
+.product-home .cinema-discovery .discovery-tabs button[aria-pressed=true] b { border-color:#171b1255; }
+.product-home .cinema-discovery .live-filters { gap:6px 18px; }
+.product-home .cinema-discovery .view-switch { border-radius:10px; background:#191d17; }
+.product-home .cinema-discovery .view-switch button[aria-pressed=true] { color:#171b12; background:#d9f96f; }
+.product-home .cinema-discovery .result-line { font-size:14px; margin:20px 0; }
+.product-home .cinema-discovery .filter-panel { margin-top:18px; padding:22px; background:#191d17; border:1px solid var(--feed-line); border-radius:12px; }
+.product-home .cinema-discovery .filter-panel input,.product-home .cinema-discovery .filter-panel select { background:#10120f; border-color:#76816b; }
+.product-home .cinema-discovery .ref-grid { gap:24px; }
+.product-home .cinema-discovery .ref-card { --feed-bg:#f1f0e9; --feed-surface:#e2e8d6; --feed-white:#171b12; --feed-muted:#536048; --feed-line:#c5cdb8; --feed-line-soft:#c5cdb8; --feed-accent:#385420; background:#f1f0e9; border:1px solid #c5cdb8; border-radius:14px; box-shadow:0 3px 0 #8c967a; transition:border-color .2s,box-shadow .2s,transform .2s; }
+.product-home .cinema-discovery .ref-card:hover { border-color:#d9f96f; box-shadow:0 3px 0 #d9f96f; }
+.product-home .cinema-discovery .ref-card:focus-within { border-color:#d9f96f; }
+.product-home .cinema-discovery .ref-card :focus-visible { outline-color:#171b12; }
+.product-home .cinema-discovery .card-media { --feed-bg:#10120f; --feed-surface:#191d17; --feed-white:#f1f0e9; --feed-muted:#b2b8a9; --feed-line:#76816b; --feed-line-soft:#384032; --feed-accent:#d9f96f; height:194px; margin:7px 7px 0; border:0; border-radius:8px; background:#191d17; }
+.product-home .cinema-discovery .card-media :focus-visible { outline-color:#d9f96f; }
+.product-home .cinema-discovery .card-stream-link { overflow:hidden; border-radius:8px; }
+.product-home .cinema-discovery .stream-placeholder { justify-content:center; padding:44px 18px; }
+.product-home .cinema-discovery .stream-project-avatar { position:relative; width:80px; height:80px; border:1px solid #c5cdb8; border-radius:12px; background:#e2e8d6; color:#171b12; font-size:32px; font-weight:700; box-shadow:3px 3px 0 #76816b; }
+.product-home .cinema-discovery .stream-project-avatar img { border-radius:inherit; }
+.product-home .cinema-discovery .cover-symbol { display:none; }
+.product-home .cinema-discovery .card-status { top:12px; inset-inline:12px auto; max-width:calc(100% - 24px); border-color:#76816b; border-radius:6px; background:#10120fed; padding:7px 9px; font-size:12px; }
+.product-home .cinema-discovery .state-funding .card-status::before { background:#dbc089; }
+.product-home .cinema-discovery .state-starting .card-status::before,.product-home .cinema-discovery .card-status.is-live::before { background:#d9f96f; }
+.product-home .cinema-discovery .card-open { position:absolute; inset-inline-end:12px; bottom:12px; display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:10px 12px; border:1px solid #76816b; border-radius:8px; background:#10120f; color:#f1f0e9; font-size:13px; line-height:1.4; transition:background .18s; }
+.product-home .cinema-discovery .card-open svg { width:17px; height:17px; }
+.product-home .cinema-discovery .card-stream-link:hover .card-open { background:#d9f96f; color:#171b12; border-color:#d9f96f; }
+.product-home .cinema-discovery .card-media[data-stream] { background:#050607; border-radius:8px; }
+.product-home .cinema-discovery .card-media[data-stream] .card-open { display:none; }
+.product-home .cinema-discovery .card-preview-toggle { border-radius:8px; }
+.product-home .cinema-discovery .card-content { padding:22px 20px 20px; }
+.product-home .cinema-discovery .card-heading h2 { font-size:28px; font-weight:700; line-height:1.1; letter-spacing:-.045em; }
+.product-home .cinema-discovery .card-heading>svg { width:40px; height:40px; padding:10px; border-radius:8px; border-color:var(--feed-line); color:var(--feed-white); }
+.product-home .cinema-discovery .card-primary { margin-top:22px; padding-top:18px; border-top:1px solid var(--feed-line); }
+.product-home .cinema-discovery .card-primary>strong { font-size:16px; font-weight:650; }
+.product-home .cinema-discovery .ref-card :is(.card-primary>span,.card-funding,.funding-line em,.card-funding>span,.card-primary .card-auto,.card-values span,.runway-grid span,.runway-sub) { color:#536048; }
+.product-home .cinema-discovery .funding-line strong { font-size:25px; font-weight:650; }
+.product-home .cinema-discovery .card-funding .bar { height:6px; border:0; background:#c5cdb8; }
+.product-home .cinema-discovery .card-setup { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.product-home .cinema-discovery .card-setup>span { flex:none; background:#e2e8d6; border:0; border-radius:8px; }
+.product-home .cinema-discovery .card-setup b { letter-spacing:0; }
+.product-home .cinema-discovery .card-details { margin:0 20px; }
+.product-home .cinema-discovery .card-details>summary { min-height:48px; font-weight:600; }
+.product-home .cinema-discovery .card-local-actions { margin:0 20px; padding:10px 0 14px; }
+.product-home .cinema-discovery .card-local-actions button { padding:10px 12px; border-radius:8px; }
+.product-home .cinema-discovery .card-local-actions button[data-save-project] { background:#e2e8d6; color:#171b12; }
+.product-home .cinema-discovery .card-local-actions button[data-save-project][aria-pressed=true] { background:#385420; color:#f1f0e9; }
+.product-home .cinema-discovery .card-local-actions button:hover { background:#e2e8d6; color:#171b12; }
+.product-home .cinema-discovery .ref-empty .ref-button,.product-home .cinema-discovery .discovery-retry { background:#d9f96f; color:#171b12; border-color:#d9f96f; }
+@media(min-width:560px) {
+ .product-home .cinema-discovery-inner { width:calc(100% - 56px); }
+ .product-home .cinema-discovery-controls { grid-template-columns:minmax(0,1fr) auto; grid-template-areas:'search search' 'saved status' 'sorting sorting' 'chips chips'; column-gap:20px; }
+ .product-home .cinema-discovery .ref-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child,.product-home .cinema-discovery .list-view>.ref-card { grid-column:1/-1; }
+ .product-home .cinema-discovery .ref-grid.list-view { grid-template-columns:minmax(0,1fr); }
+ .product-home .cinema-discovery .card-media { height:220px; }
+ .product-home .cinema-discovery .discovery-toast { inset-inline:auto 24px; max-width:360px; }
+ .product-home .cinema-discovery .discovery-recovery { flex-direction:row; align-items:center; justify-content:space-between; }
+ .product-home .cinema-discovery .cinema-live-count { margin-inline-start:auto; }
+}
+@media(min-width:800px) {
+ .product-home .cinema-discovery { padding:24px 0 58px; }
+ .product-home .cinema-discovery-inner { width:calc(100% - 80px); }
+ .product-home .cinema-discovery-heading { grid-template-columns:minmax(0,1fr) minmax(250px,.65fr); gap:40px; margin-bottom:32px; }
+ .product-home .cinema-discovery-heading h2 { font-size:52px; }
+ .product-home .cinema-discovery-heading>p { justify-self:end; max-width:330px; }
+ .product-home .cinema-discovery .discovery-key { display:grid; }
+ .product-home .cinema-discovery .filter-panel { grid-template-columns:repeat(4,minmax(0,1fr)) auto; }
+ .product-home .cinema-discovery .filter-panel #clear { grid-column:auto; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child,.product-home .cinema-discovery .list-view>.ref-card { display:grid; grid-template-columns:minmax(0,1.13fr) minmax(0,1fr); column-gap:32px; align-items:start; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-media,.product-home .cinema-discovery .list-view>.ref-card .card-media { grid-column:1; grid-row:1/4; height:auto; min-height:390px; align-self:stretch; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-media[data-stream],.product-home .cinema-discovery .list-view>.ref-card .card-media[data-stream] { min-height:0; height:auto; aspect-ratio:16/9; align-self:start; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .stream-project-avatar,.product-home .cinema-discovery .list-view>.ref-card .stream-project-avatar { width:104px; height:104px; border-radius:23px; font-size:39px; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-link,.product-home .cinema-discovery .list-view>.ref-card .card-link { grid-column:2; grid-row:1; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-content,.product-home .cinema-discovery .list-view>.ref-card .card-content { padding:5px 0 20px; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-heading h2,.product-home .cinema-discovery .list-view>.ref-card .card-heading h2 { font-size:36px; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-primary,.product-home .cinema-discovery .list-view>.ref-card .card-primary { margin-top:32px; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-details,.product-home .cinema-discovery .list-view>.ref-card .card-details { grid-column:2; grid-row:2; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-local-actions,.product-home .cinema-discovery .list-view>.ref-card .card-local-actions { grid-column:2; grid-row:3; }
+}
+@media(min-width:1100px) {
+ .product-home .cinema-discovery-inner { width:calc(100% - 112px); }
+ .product-home .cinema-discovery-heading h2 { font-size:58px; }
+ .product-home .cinema-discovery-controls { grid-template-columns:minmax(190px,.9fr) auto minmax(0,1.2fr); grid-template-areas:'search search search' 'saved status sorting' 'chips chips chips'; gap:18px 28px; }
+ .product-home .cinema-discovery .explore-toolbar { margin-bottom:0; }
+ .product-home .cinema-discovery-sorting { flex-wrap:nowrap; padding-top:0; border-top:0; }
+ .product-home .cinema-discovery .sort-tabs { gap:6px 22px; }
+ .product-home .cinema-discovery .discovery-tabs button,.product-home .cinema-discovery .live-filters button,.product-home .cinema-discovery .sort-tabs button { font-size:15px; }
+ .product-home .cinema-discovery .ref-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .product-home .cinema-discovery .ref-grid.list-view { grid-template-columns:minmax(0,1fr); }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child,.product-home .cinema-discovery .list-view>.ref-card { column-gap:44px; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-media,.product-home .cinema-discovery .list-view>.ref-card .card-media { min-height:420px; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-media[data-stream],.product-home .cinema-discovery .list-view>.ref-card .card-media[data-stream] { min-height:0; }
+}
+@media(max-width:359px) {
+ .product-home .cinema-discovery-inner { width:calc(100% - 32px); }
+ .product-home .cinema-discovery .sort-tabs { gap:6px 16px; }
+ .product-home .cinema-discovery .filter-panel { grid-template-columns:minmax(0,1fr); }
+ .product-home .cinema-discovery .filter-button { gap:5px; padding-inline:12px; }
+ .product-home .cinema-discovery .filter-button svg { width:16px; }
+}
+[dir=rtl] .product-home .cinema-discovery .link-button::after { transform:scaleX(-1); }
+@media(pointer:coarse) { .product-home .cinema-discovery .discovery-key { display:none; } }
+@media(prefers-reduced-motion:reduce) { .product-home .cinema-discovery *,.product-home .cinema-discovery *::before,.product-home .cinema-discovery *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+.product-home[data-motion=paused] .cinema-discovery *,.product-home.page-hidden .cinema-discovery *,.product-home.app-page-hidden .cinema-discovery * { animation-play-state:paused!important; }
+
+@media(min-width:800px) {
+ .product-home .cinema-discovery-heading h2 { font-size:68px; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child,.product-home .cinema-discovery .list-view>.ref-card { grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); column-gap:0; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-content,.product-home .cinema-discovery .list-view>.ref-card .card-content { padding:25px 26px 20px; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-details,.product-home .cinema-discovery .list-view>.ref-card .card-details { margin-inline:26px; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-local-actions,.product-home .cinema-discovery .list-view>.ref-card .card-local-actions { margin-inline:26px; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-media,.product-home .cinema-discovery .list-view>.ref-card .card-media { margin:7px; min-height:360px; }
+ .product-home .cinema-discovery .ref-grid>.ref-card:only-child .card-media[data-stream],.product-home .cinema-discovery .list-view>.ref-card .card-media[data-stream] { min-height:0; }
+}
+@media(prefers-reduced-motion:reduce) { .product-home .cinema-discovery .ref-card { transition:none; } }
+/* Page display headlines must not override project names on ivory specimens. */
+.product-home .cinema-discovery .ref-card .card-heading h2{color:#171b12;font-family:Geist,Arial,sans-serif}
+.product-home .cinema-discovery .ref-card .card-details :is(strong,b){color:#171b12}
