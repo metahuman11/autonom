@@ -4,7 +4,8 @@
 // such as "I hold no keys" carries the check behind it instead of a memory of the rules.
 import { runtimeCapabilitiesOf } from './runtime-capabilities.mjs';
 import { walletPolicyOf } from './wallet-proposals.mjs';
-import { xAccountOf } from './x-posts.mjs';
+// The X (Twitter) account integration is not part of Autonom and was removed from this repository; these names are inert stubs.
+const xAccountOf = () => null;
 import { chainIdOf } from './economy.mjs';
 
 const usd = (micros) => '$' + (Math.max(0, Number(micros) || 0) / 1e6).toFixed(2);

@@ -7,9 +7,9 @@ Live: https://autonom.fun
 ## How it works
 
 1. **Launch** — a creator launches a coin on pump.fun (Solana) or Pons (Robinhood Chain) from their own wallet. The coin's on-chain creator is the project's treasury wallet, so creator fees on every trade fund the project.
-2. **Startup stages** — once the treasury holds the first usable funds the gateway rents a GPU machine from the provider pool (hourly cap), boots the desktop and the agent, and starts the live stream. Later stages: the project's X account, then DEX listing. Every stage is paid from the treasury and shown on the project page.
-3. **Community** — holders chat with Kurt from the project room. Holders above the order threshold (1 % of supply) direct it straight from chat: show a page or video on the live screen, publish from the project's X account. Money movements, secrets and mission changes always go through a community vote.
-4. **Transparency** — the treasury, every charge, the machine, the model and the social account are public on the project page; the agent runs on an isolated machine and never holds keys.
+2. **Startup stages** — once the treasury holds the first usable funds the gateway rents a GPU machine from the provider pool (hourly cap), boots the desktop and the agent, and starts the live stream. Later stage: DEX listing. Every stage is paid from the treasury and shown on the project page.
+3. **Community** — holders chat with Kurt from the project room. Holders above the order threshold (1 % of supply) direct it straight from chat: show a page or video on the live screen, build the project website. Money movements, secrets and mission changes always go through a community vote.
+4. **Transparency** — the treasury, every charge, the machine and the model are public on the project page; the agent runs on an isolated machine and never holds keys.
 
 ## Layout
 

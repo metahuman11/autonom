@@ -114,14 +114,22 @@ export function runtimeStageReady(t, { now = Date.now() } = {}) {
     Number.isFinite(rented) && Number.isFinite(registered) && registered >= rented &&
     Number.isFinite(heartbeat) && heartbeat >= registered && heartbeat <= now && now - heartbeat <= 90_000;
 }
-export const socialStageComplete = t => socialAccountFundingCreditMicros(t) > 0;
+import { X_FEATURE_ENABLED } from './x-feature.mjs';
+export const socialStageComplete = t => !X_FEATURE_ENABLED || socialAccountFundingCreditMicros(t) > 0;
+/// Enhanced Token Info that DEX Screener's public orders API reports as approved although Autonom never
+/// paid for it (the creator bought it directly, AUTONOM 2026-10-02): the stage is complete and the
+/// $310 reserve is released, with no treasury payment and no broker order.
+export const externalListingVerified = d => record(d?.externalListing) && d.externalListing.verified === true &&
+  d.externalListing.status === 'approved' && typeof d.externalListing.type === 'string' && d.state === 'settled' && d.publication === 'published';
 export const dexStageComplete = t => {
   const terms = packageTerms(t), d = t.launchPackageRun?.dex;
-  if (!terms || !settledPayment(d, terms.dexBudgetMicros) || d.publication !== 'published') return false;
+  if (!terms) return false;
   const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
   const key = launchProjectKey(t);
   const binding = hash({ policy: terms.version === 5 ? terms : t.launchPackage, token: key,
     treasury: launchTreasuryKey(t), launchTx: t.onchain?.launchTx || null });
+  if (externalListingVerified(d) && d.version === 1 && d.id === `launch-dex:${key}:v1` && d.binding === binding) return true;
+  if (!settledPayment(d, terms.dexBudgetMicros) || d.publication !== 'published') return false;
   return d.version === 1 && d.id === `launch-dex:${key}:v1` && d.binding === binding && record(d.order) &&
     d.orderFingerprint === hash(d.order) && d.order.targetChain === t.chain &&
     (terms.version === 5 && t.chain === 'solana' ? d.order.targetTokenAddress === t.address : String(d.order.targetTokenAddress).toLowerCase() === String(t.address).toLowerCase()) &&
@@ -310,6 +318,7 @@ export function dexReserveMicros(t) {
   const terms = packageTerms(t);
   if (!terms) return 0;
   if (dexAllocationWaived(t)) return 0;
+  if (externalListingVerified(t.launchPackageRun?.dex)) return 0;
   // Reservation is released only after both verified settlement and a new
   // source-wallet balance read. The DEX queue certifies that read before it
   // persists sourceBalanceReconciled; old settlement journals remain valid.
@@ -327,6 +336,7 @@ function reconciledSocialAccount(r, budget) {
     reconciled <= Date.now() && reconciled - start <= 30_000;
 }
 export function socialAccountReserveMicros(t) {
+  if (!X_FEATURE_ENABLED) return 0;
   const terms = packageTerms(t), budget = terms?.socialAccountBudgetMicros || 0;
   return budget && !reconciledSocialAccount(t.launchPackageRun?.socialAccount, budget) ? terms.version === 5 ? stagedReserve(t, 'socialAccount', budget) : budget : 0;
 }
@@ -409,7 +419,7 @@ export function publicLaunchPackage(t, { now = Date.now() } = {}) {
   const statusText = terminal ? 'Operator review required — no second payment' :
     nextAttemptAt && Date.parse(nextAttemptAt) > now ? `Retrying the allocation at ${clock(nextAttemptAt)}` :
     ['payment_pending','submitted'].includes(shown) && !paid && bridgeLabels[bridgeState] ? bridgeLabels[bridgeState] : labels[shown];
-  return { ...terms, activationMicros, dexBudgetMicros: waived ? 0 : terms.dexBudgetMicros,
+  return { ...terms, activationMicros, dexBudgetMicros: waived ? 0 : terms.dexBudgetMicros, socialAccountBudgetMicros: X_FEATURE_ENABLED ? terms.socialAccountBudgetMicros : 0, totalOnboardingMicros: X_FEATURE_ENABLED ? terms.totalOnboardingMicros : terms.totalOnboardingMicros - (terms.socialAccountBudgetMicros || 0),
     dexAllocationWaived: waived, originalActivationMicros: terms.activationMicros, originalDexBudgetMicros: terms.dexBudgetMicros,
     funded, fundedAt: t.launchPackageRun?.fundedAt || null, socialFundingCreditMicros: terms.version === 5 ? 0 : socialAccountFundingCreditMicros(t),
     remainingWalletTargetMicros: activationRequirementMicros(t),

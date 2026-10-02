@@ -32,10 +32,12 @@ import { refreshTreasury, billRunning, fundTreasuryFromOps, opsBalances, opsBrid
 import * as plan from "./plan.mjs";
 import { inventory, gpuClasses } from "./inventory.mjs";
 import { startViewerPoll } from "./viewers.mjs";
-import { createXPosts, setXPosts } from "./x-posts.mjs";
+// The X (Twitter) account integration is not part of Autonom and was removed from this repository; these names are inert stubs.
+const createXPosts = () => ({ status: () => ({ connected: false }) }), setXPosts = () => {};
 import { needsAgentReply } from './chat-policy.mjs';
-import { createDexPackageAdapter, createSocialPoolAdapter, dexSocketPath } from './package-adapters.mjs';
-import { brokerSocketPath, brokerCall } from './x-posts.mjs';
+// DEX purchase and social adapters are operator-side integrations and are not published here.
+const createDexPackageAdapter = () => null, createSocialPoolAdapter = () => null, dexSocketPath = () => '';
+const brokerSocketPath = () => '', brokerCall = async () => ({ status: 503, json: null });
 import { createPumpFeeSponsorClient } from './pump-fee-sponsor-client.mjs';
 import * as launchpad from "./launch.mjs";
 import { adoptSolanaToken } from "./launch-solana.mjs";
@@ -49,7 +51,7 @@ import { BRAND_ASSETS } from "./brand-assets.mjs";
 import { projectLogo } from './project-profile.mjs';
 import {previewWalletAction} from './community-signer-runtime.mjs';
 import { createLaunchPackageQueue } from './launch-package-queue.mjs';
-import { createSocialAccountQueue } from './social-account-queue.mjs';
+const createSocialAccountQueue = () => ({ tick: async () => ({ processed: 0 }), capacity: 0 });
 import { autonomContextBlock } from './autonom-context.mjs';
 import { createProjectBannerPipeline, createBannerStorage } from './project-banner-runtime.mjs';
 

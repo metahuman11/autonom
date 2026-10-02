@@ -1,5 +1,6 @@
 // Pure staged onboarding projection, shared by queues and the public UI.
 // No estimates of unclaimed creator fees can authorize a provider charge.
+import { X_FEATURE_ENABLED } from './x-feature.mjs';
 import { packageTerms, isStagedLaunch, isPackageFunded, runtimeStageReady, operationalReserveMicros,
   hasFreshMarketingObservation, socialStageComplete, dexStageComplete, holderWorkAllowed,
   socialAccountFundingCreditMicros } from './launch-package.mjs';
@@ -37,6 +38,7 @@ export function startupStagesOf(t,{now=Date.now()}={}) {
     {id:'dex',label:'DEX Screener',state:state(d,j.dex,dex),detail:d.waitingPreviousStage?'Starts after the X account is verified.':dex?'Payment and listing publication are verified.':'A verified order, payment receipt and published listing are required.',requiredMicros:d.thresholdMicros,...d},
     {id:'holders',label:'Holder requests',state:holderWorkAllowed(t,{now})?'complete':'pending',detail:'Custom holder work opens after the AI computer, X account and DEX listing are ready.',requiredMicros:0,availableMicros:0,collectedMicros:0}
   ];
-  return {version:1,policyVersion:5,activeStage:!runtime?'runtime':!social?'social':!dex?'dex':'holders',stages,
+  const shown=X_FEATURE_ENABLED?stages:stages.filter(s=>s.id!=='social');
+  return {version:1,policyVersion:5,activeStage:!runtime?'runtime':!social?'social':!dex?'dex':'holders',stages:shown,
     operatingReserveMicros:operationalReserveMicros(t,{now}),holderWorkAllowed:holderWorkAllowed(t,{now}),fresh};
 }

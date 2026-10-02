@@ -30,16 +30,20 @@
 <script defer src="/community-actions.js?v=unified-20260930"></script>
 <script defer src="/autonom-shell.js?v=unified-20260930"></script>
 <link rel="stylesheet" href="/product.css?v=unified-20260930">
-<link rel="stylesheet" href="/product-room.css?v=chat-allowance-20260930">
+<link rel="stylesheet" href="/product-room.css?v=room-cleanup-20261002">
+
+<style>.app-links .app-official{color:var(--lime,#c6ff4a);font-weight:700;white-space:nowrap}.app-links .app-official small{font-size:10px;opacity:.75;margin-left:4px;text-transform:uppercase;letter-spacing:.06em}.card-official{position:absolute;z-index:3;top:44px;left:13px;padding:5px 8px;background:var(--lime,#c6ff4a);color:#111;border-radius:6px;font-size:10px;font-weight:800;line-height:1.5;letter-spacing:.06em;text-transform:uppercase}.card-official-inline{display:inline-block;margin-top:3px;color:var(--lime,#c6ff4a);font-size:11px;font-weight:700}</style>
 <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.15/hls.min.js">
+<style>.site-status{display:flex;align-items:center;gap:10px;margin:0;padding:9px 20px;background:#1a1a20;border-bottom:1px solid #34343c;color:#f7f3ef;font-size:13px;line-height:1.5}.site-status strong{color:#ff765e}.site-status-dot{flex:none;width:9px;height:9px;border-radius:50%;background:#7de3b0;box-shadow:0 0 0 3px rgba(125,227,176,.18)}@media (max-width:640px){.site-status{font-size:12px;padding:8px 14px}}</style>
 </head>
 <body class="token-page mh-site autonom-app product-room live-room product-app app-ready token-workspace room-polished" data-room-static="1" data-autonom-static="1">
-<header class="app-topnav"><a class="app-skip" data-product-copy="skip" href="#appMain">Skip to content</a><a class="app-brand" href="/" aria-label="Autonom home" data-product-label="brandHome"><img src="/brand/autonom-mark.png" width="32" height="32" alt=""><span>Autonom</span></a><nav class="app-links" id="appNavigation" aria-label="Main navigation" data-product-label="mainNav"><a class="app-mobile-link" href="/launch" data-i18n="create">Launch a project</a><a href="/#communities" data-i18n="explore">Explore</a><a href="/#how-it-works" data-i18n="navHow">How it works</a><a href="/agent-playbook.html" data-i18n="navDocs">Docs</a></nav><div class="app-actions"><a class="app-pill" href="/launch" data-i18n="create">Launch a project</a><span id="me" class="mono muted" style="font-size:12px"></span><button id="connect" class="btn lime">Connect wallet</button><button id="disconnect" class="btn" hidden>Disconnect</button></div><button class="app-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="appNavigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14M5 16h14"/></svg></button></header>
+<header class="app-topnav"><a class="app-skip" data-product-copy="skip" href="#appMain">Skip to content</a><a class="app-brand" href="/" aria-label="Autonom home" data-product-label="brandHome"><img src="/brand/autonom-mark.png" width="32" height="32" alt=""><span>Autonom</span></a><nav class="app-links" id="appNavigation" aria-label="Main navigation" data-product-label="mainNav"><a class="app-mobile-link" href="/launch" data-i18n="create">Launch a project</a><a href="/#communities" data-i18n="explore">Explore</a><a href="/#how-it-works" data-i18n="navHow">How it works</a><a href="/agent-playbook.html" data-i18n="navDocs">Docs</a><a class="app-official" href="/t/8tyaSHgK5HEi42qHvUwpWKE9t4NCyGxutLV8hACameta" title="Official Autonom token">$AUTONOM <small>official</small></a></nav><div class="app-actions"><a class="app-pill" href="/launch" data-i18n="create">Launch a project</a><span id="me" class="mono muted" style="font-size:12px"></span><button id="connect" class="btn lime">Connect wallet</button><button id="disconnect" class="btn" hidden>Disconnect</button></div><button class="app-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="appNavigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14M5 16h14"/></svg></button></header>
+<div class="site-status" id="siteStatus" role="status"><span class="site-status-dot" aria-hidden="true"></span><strong>Live and running.</strong> Stream, chat and votes are up. Nothing has left the treasury — there is no withdraw function and the AI holds no keys; every treasury tx is on-chain. The team is here; UI polish is shipping today.</div>
 <div class="app-content">
 
 <main class="wrap" id="appMain" tabindex="-1">
   <section class="token-header room-identity" aria-label="Token details">
-    <div class="room-project-image"><div class="avatar big" id="av2">?</div><img id="projectLogo" width="64" height="64" alt="Project logo" hidden></div><div class="token-heading"><h1 id="pageTitle">Loading project…</h1><div class="token-meta"><span id="headerSymbol">$—</span><span id="headerChain">—</span><a id="projectXHeaderLink" class="room-project-x-link" target="_blank" rel="noopener noreferrer" hidden></a><button type="button" class="room-text-button" id="roomAboutButton" aria-haspopup="dialog" aria-controls="aboutDialog">About project</button><a class="room-text-button" id="roomTokenLink" target="_blank" rel="noopener noreferrer" hidden>View token ↗</a></div></div>
+    <div class="room-project-image"><div class="avatar big" id="av2">?</div><img id="projectLogo" width="64" height="64" alt="Project logo" hidden></div><div class="token-heading"><h1 id="pageTitle">Loading project…</h1><div class="token-meta"><span id="headerSymbol">$—</span><span id="headerChain">—</span><span class="badge lime" id="officialBadge" hidden>Official Autonom token</span><a id="projectXHeaderLink" class="room-project-x-link" target="_blank" rel="noopener noreferrer" hidden></a><button type="button" class="room-text-button" id="roomAboutButton" aria-haspopup="dialog" aria-controls="aboutDialog">About project</button><a class="room-text-button" id="roomTokenLink" target="_blank" rel="noopener noreferrer" hidden>View token ↗</a></div></div>
     
     
   <section class="room-metrics" aria-label="Token and project overview"><div class="room-metric room-marketcap"><span class="room-metric-label">Est. market cap</span><strong class="room-value" id="roomMcap">—</strong><small class="room-metric-note" id="roomMcapNote">Waiting for price data</small></div><button class="room-metric room-balance" type="button" id="roomBudgetButton" aria-controls="budget"><span class="room-metric-label" id="roomBalanceLabel">Fund balance</span><strong id="budgetOverview" class="room-value">—</strong><small class="room-metric-note" id="roomBudgetNote">View funding</small></button></section></section>
@@ -70,7 +74,7 @@
       </div>
       <div class="off" id="off"><svg class="room-dormant-art" viewBox="0 0 240 138" fill="none" aria-hidden="true"><defs><linearGradient id="dormantFrame" x1="56" y1="12" x2="188" y2="120" gradientUnits="userSpaceOnUse"><stop stop-color="#aaa4a2"/><stop offset="1" stop-color="#373336"/></linearGradient><linearGradient id="dormantScreen" x1="77" y1="22" x2="169" y2="97" gradientUnits="userSpaceOnUse"><stop stop-color="#29252a"/><stop offset="1" stop-color="#151416"/></linearGradient></defs><ellipse cx="120" cy="126" rx="83" ry="7" fill="#09090a" opacity=".55"/><path d="M103 99v16l-18 8h70l-18-8V99" fill="#19181b" stroke="#494449"/><rect x="40" y="8" width="160" height="98" rx="8" fill="#18171a" stroke="url(#dormantFrame)"/><rect x="47" y="15" width="146" height="79" rx="3" fill="url(#dormantScreen)"/><path d="M47 30h146" stroke="#40383b"/><circle cx="55" cy="23" r="1.5" fill="#ed947d"/><circle cx="61" cy="23" r="1.5" fill="#63595d"/><circle cx="67" cy="23" r="1.5" fill="#63595d"/><path d="M60 41h45M60 49h28M60 72h15" stroke="#685861" stroke-width="2" stroke-linecap="round" opacity=".5"/><path d="m139 43-14 33m22-25 12 9-12 9m-27-18-12 9 12 9" stroke="#e79a84" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity=".65"/><path d="M101 121h39" stroke="#696066" stroke-linecap="round"/><circle cx="120" cy="100" r="1.5" fill="#786b70"/></svg><strong id="offlineTitle">Connecting to the computer</strong><div id="offwhy" class="muted"></div><div class="player-empty-actions"><button class="btn sm" id="retryPlayer" type="button">Reconnect</button><button class="btn sm" id="playerBudgetAction" type="button" data-workspace-open="budget" aria-controls="roomPanelBudget" hidden>View funding <span aria-hidden="true">↗</span></button></div></div>
     </div>
-    </details><section class="workspace-dock" id="roomDock" aria-label="Project work and details"><div class="workspace-tabs" role="tablist" aria-label="Project details"><button type="button" id="roomTabIdeas" role="tab" aria-controls="roomPanelIdeas" aria-selected="true" data-workspace-tab="ideas">Ideas</button><button type="button" id="roomTabWork" role="tab" aria-controls="roomPanelWork" aria-selected="false" data-workspace-tab="work">Tasks</button><button type="button" id="roomTabBudget" role="tab" aria-controls="roomPanelBudget" aria-selected="false" data-workspace-tab="budget">Budget</button><button type="button" id="roomTabSetup" role="tab" aria-controls="roomPanelSetup" aria-selected="false" data-workspace-tab="setup">Setup</button><button type="button" id="roomTabServices" role="tab" aria-controls="roomPanelServices" aria-selected="false" data-workspace-tab="services">X & DEX</button></div><div class="workspace-panel" id="roomPanelIdeas" data-workspace-panel="ideas" role="tabpanel" aria-labelledby="roomTabIdeas" tabindex="0"><section class="card room-decisions" id="proposals" tabindex="-1"><div class="room-section-head"><div><h2>Ideas &amp; votes</h2><p>Propose what the AI should work on next.</p></div><button type="button" class="btn lime" id="suggestIdea">Suggest an idea</button></div><div class="hint bad" id="suggestHint" hidden></div><div class="list" id="props"></div><div class="room-empty" id="ideasEmpty">No proposals yet.</div><label class="room-history-toggle"><input type="checkbox" id="roomPastIdeas"> Show past decisions</label><details class="room-voting-rules"><summary>How voting works</summary><p id="proposalRules">Loading voting rules…</p></details></section></div><div class="workspace-panel" id="roomPanelWork" data-workspace-panel="work" role="tabpanel" aria-labelledby="roomTabWork" tabindex="0"><section class="room-work" id="roomWork" tabindex="-1"><div class="room-section-head"><h2 id="roomWorkStatus">Tasks and results</h2><small id="roomWorkCount">0 saved outputs</small></div><section class="card" id="work">
+    </details><section class="workspace-dock" id="roomDock" aria-label="Project work and details"><div class="workspace-tabs" role="tablist" aria-label="Project details"><button type="button" id="roomTabIdeas" role="tab" aria-controls="roomPanelIdeas" aria-selected="true" data-workspace-tab="ideas">Ideas</button><button type="button" id="roomTabWork" role="tab" aria-controls="roomPanelWork" aria-selected="false" data-workspace-tab="work">Tasks</button><button type="button" id="roomTabBudget" role="tab" aria-controls="roomPanelBudget" aria-selected="false" data-workspace-tab="budget">Budget</button><button type="button" id="roomTabSetup" role="tab" aria-controls="roomPanelSetup" aria-selected="false" data-workspace-tab="setup">Setup</button><button type="button" id="roomTabServices" role="tab" aria-controls="roomPanelServices" aria-selected="false" data-workspace-tab="services">X & DEX</button></div><div class="workspace-panel" id="roomPanelIdeas" data-workspace-panel="ideas" role="tabpanel" aria-labelledby="roomTabIdeas" tabindex="0"><section class="card room-decisions" id="proposals" tabindex="-1"><div class="room-section-head"><div><h2 id="roomIdeasTitle">Ideas &amp; votes</h2><p>Propose what the AI should work on next.</p></div><button type="button" class="btn lime room-cta" id="suggestIdea">Suggest an idea</button></div><ol class="decision-steps" id="decisionSteps"><li><b>1</b>Suggest an idea<small id="stepPropose">Any wallet holding the token can propose.</small></li><li><b>2</b>Holders vote<small id="stepVote">6 hours · Yes must pass 15% of total supply and beat No.</small></li><li><b>3</b>Kurt does it<small>Approved work runs on the live screen, paid by the project treasury.</small></li></ol><div class="hint bad" id="suggestHint" hidden></div><div class="list" id="props"></div><div class="room-empty" id="ideasEmpty">No proposals yet.</div><label class="room-history-toggle"><input type="checkbox" id="roomPastIdeas"> Show past decisions</label><details class="room-voting-rules"><summary>How voting works</summary><p id="proposalRules">Loading voting rules…</p></details></section></div><div class="workspace-panel" id="roomPanelWork" data-workspace-panel="work" role="tabpanel" aria-labelledby="roomTabWork" tabindex="0"><section class="room-work" id="roomWork" tabindex="-1"><div class="room-section-head"><h2 id="roomWorkStatus">Tasks and results</h2><small id="roomWorkCount">0 saved outputs</small></div><section class="card" id="work">
     <div class="hubhead"><h2>Current work</h2><a class="btn sm lime" href="#proposals">Suggest an idea</a></div>
     <p class="hint" id="digestDate">Today’s community update</p>
     <div class="daily" id="dailyDigest"></div>
@@ -152,7 +156,6 @@
     <div class="hubhead"><h2 id="socialBudgetTitle">X / Twitter costs</h2><span class="badge dim" id="socialBadge">Not connected</span></div>
     <p class="social-lead">Community-approved posts go out from this project’s X account. Every post is billed at the provider’s measured deduction, booked to the project at once and settled to operations in small batches.</p>
     <div class="social-actual" id="socialActual"><b id="socialActualHead">Actual X usage: no posts yet</b><span id="socialActualNote">Posts made, booked and settled amounts appear here from the live ledger.</span></div>
-    <p class="social-note"><b>Provider · 21 September 2026:</b> the X posting API provider, documented $0.003 per posted tweet plus $0.00015 per verification read; the actual deduction is measured from the account balance around each post. This dated check is not a live status monitor.</p>
     <div class="social-stats" aria-live="polite" aria-atomic="true">
       <div><span>Planning budget · not deposited</span><strong id="socialUsageTotal">—</strong></div>
       <div><span>Posts at published API rate only</span><strong id="socialPostCapacity">—</strong></div>
@@ -172,6 +175,7 @@
     <p class="social-note" id="socialPriceNote"></p>
     <p class="social-note">Account setup and Premium are separate from usage. AI content generation, reading data and network fees are excluded. x402 is a payment method; it does not create an X account.</p>
     <details class="detailbox"><summary>Prices, requirements and sources · checked 15 September 2026</summary>
+      <p class="social-note"><b>TweetX402:</b> $0.01 per post/reply and $0.001 for documented public read endpoints, paid in USDC on Base. Requires an existing X account’s session cookies and X Premium with a blue check. No wallet-only X account signup is documented. <a href="https://tweetx402.com/docs" target="_blank" rel="noopener noreferrer">Provider documentation ↗</a></p>
       <p class="social-note"><b>X Premium:</b> the official US web price is $8/month or $84/year, before applicable taxes and payment fees. Country and purchase channel affect pricing. Basic is not the blue-check tier; a new account’s eligibility/review must also pass. No US price is automatically applied to your account. <a href="https://help.x.com/en/using-x/x-premium" target="_blank" rel="noopener noreferrer">X subscription prices ↗</a></p>
     </details>
   </section><section class="card" id="xAccountCard" hidden aria-labelledby="xAccountTitle" tabindex="-1">
@@ -200,7 +204,7 @@
     <p class="hint" id="xActionNote" aria-live="polite"></p>
     <div id="xActionLog" aria-live="polite"></div>
     <details class="hint detailbox"><summary>What cannot be changed here</summary><p>The @username and the login stay with the operator: X's API cannot rename an account. An account is assigned to one project and is never reassigned. Posting has a 2-minute gap and 24 posts a day; identity changes have a 30-second gap and 20 a day.</p></details>
-  </section></section></div></section></section><aside class="chat conversation-room"><div class="conversation-heading"><div><strong>Conversation</strong><span id="dataConnection" class="chat-connection" role="status" data-state="connecting">Connecting…</span></div><button class="chat-expand" type="button" aria-pressed="false" aria-label="Expand chat" title="Expand chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path></svg></button></div><details class="project-x-milestone" id="projectXMilestone" aria-labelledby="projectXTitle"><summary class="project-x-head"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l8.2-9.4L.8 2h6.5l5.8 7.6L18.9 2Zm-1.1 18h1.8L6.3 3.9H4.4L17.8 20Z" fill="currentColor"/></svg><h3 id="projectXTitle">X account</h3><span id="projectXStatus">Checking</span><a id="projectXPublicLink" target="_blank" rel="noopener noreferrer" hidden></a></summary><p id="projectXDetail">Checking account setup.</p><div class="project-x-progress" id="projectXProgress" role="progressbar" aria-label="X account funding" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="projectXBar"></i></div><small id="projectXAmounts"></small></details><div class="chat-idea-entry"><div><strong>Want the AI to do something?</strong><span>Suggest it. Let the community decide.</span></div><button type="button">Suggest an idea</button></div>
+  </section></section></div></section></section><aside class="chat conversation-room"><div class="conversation-heading"><div><strong>Conversation</strong><span id="dataConnection" class="chat-connection" role="status" data-state="connecting">Connecting…</span></div><button class="chat-expand" type="button" aria-pressed="false" aria-label="Expand chat" title="Expand chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path></svg></button></div><details class="project-x-milestone" id="projectXMilestone" aria-labelledby="projectXTitle"><summary class="project-x-head"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l8.2-9.4L.8 2h6.5l5.8 7.6L18.9 2Zm-1.1 18h1.8L6.3 3.9H4.4L17.8 20Z" fill="currentColor"/></svg><h3 id="projectXTitle">X account</h3><span id="projectXStatus">Checking</span><a id="projectXPublicLink" target="_blank" rel="noopener noreferrer" hidden></a></summary><p id="projectXDetail">Checking account setup.</p><div class="project-x-progress" id="projectXProgress" role="progressbar" aria-label="X account funding" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="projectXBar"></i></div><small id="projectXAmounts"></small></details><div class="chat-idea-entry"><div><strong id="ideasPromptTitle">Want the AI to do something?</strong><span id="ideasPromptSub">Suggest it. Let the community decide.</span></div><button type="button">Suggest an idea</button></div>
       <div class="tabs"><button class="on" data-tab="chat">Chat</button><button data-tab="log">Activity</button><button type="button" class="chat-ask">Ask Kurt</button></div>
       <div class="chatnote" id="chatnote" role="status" aria-live="polite">Everyone can read. Connect a holder wallet to join the conversation.</div>
       <details id="usageAllowance" class="chat-usage" hidden>
@@ -255,7 +259,7 @@
     </div><details class="hint detailbox"><summary>What does Kurt know about this project?</summary><p id="projectAudience"></p><p id="projectLogoBrief"></p><p>Approved profile information is included in future AI requests. It cannot change Kurt’s permissions or the on-chain token. Profile changes do not grant spending or posting permissions.</p><div id="projectHistory"></div></details><span class="metric-note" id="agentPresenceNote">Waiting for an update</span><p class="hint">Token holders: <strong id="holderOverview">—</strong></p></div></dialog><dialog id="ideaComposer" class="community-composer room-dialog" aria-labelledby="ideaComposerTitle" aria-describedby="ideaComposerIntro"><div class="community-composer-head"><h2 id="ideaComposerTitle">Suggest an idea</h2><button type="button" class="btn" data-close-dialog="ideaComposer">Close</button></div><div class="community-composer-body">
 <p class="idea-intro" id="ideaComposerIntro">Describe the work you want the AI to do. Holders vote before it starts.</p>
 <form class="form idea-form" id="propForm">
-          <label class="full">Type of work<select id="propType"><option value="TASK">Research or write something</option><option value="WEBSITE_UPDATE">Update the project website</option><option value="MISSION_CHANGE">Change the project goals</option><option value="X_POST">Post on the project X account</option><option value="PROJECT_PROFILE_UPDATE">Update the project name or logo</option><option value="DEX_UPDATE">Update the DEX Screener listing</option><option value="DEX_BOOST">Request a paid DEX Screener boost</option></select></label>
+          <label class="full">Type of work<select id="propType"><option value="TASK">Research or write something</option><option value="WEBSITE_UPDATE">Update the project website</option><option value="MISSION_CHANGE">Change the project goals</option><option value="PROJECT_PROFILE_UPDATE">Update the project name or logo</option><option value="DEX_UPDATE">Update the DEX Screener listing</option><option value="DEX_BOOST">Request a paid DEX Screener boost</option></select></label>
           <label class="full">Title<input id="propTitle" maxlength="120" required placeholder="e.g. Create a welcome guide"></label>
           <label class="full">Your idea<textarea id="propText" rows="4" maxlength="2000" placeholder="Describe the result you want and any details Kurt should follow." required></textarea></label>
           <fieldset id="projectFields" class="project-fields full" hidden>
@@ -485,9 +489,13 @@ function playHls() {
   const native = v.canPlayType("application/vnd.apple.mpegurl");
   if (native) { v.src = src; }
   else if (window.Hls && Hls.isSupported()) {
-    const mine = hls = new Hls({ lowLatencyMode: true, liveSyncDurationCount: 2, manifestLoadingMaxRetry: 20, levelLoadingMaxRetry: 20, fragLoadingMaxRetry: 20 });
+    // Standard HLS with a real buffer: the low-latency mode with a two-segment buffer stalled on any hiccup (owner, 2026-10-02).
+    const mine = hls = new Hls({ lowLatencyMode: false, liveSyncDurationCount: 3, liveMaxLatencyDurationCount: 8, maxBufferLength: 30, maxMaxBufferLength: 60, backBufferLength: 30, manifestLoadingMaxRetry: 20, levelLoadingMaxRetry: 20, fragLoadingMaxRetry: 20, fragLoadingRetryDelay: 1000 });
     let mediaRecoveries=0;
-    mine.on(Hls.Events.ERROR, (_, d) => { if (mine!==hls||!d.fatal)return; playerMessage('Stream interrupted. Reconnecting…'); if (d.type === Hls.ErrorTypes.NETWORK_ERROR) setTimeout(() => {if(mine===hls&&desktopWanted())mine.loadSource(src);}, 3000); else if (d.type === Hls.ErrorTypes.MEDIA_ERROR&&mediaRecoveries++<2) mine.recoverMediaError(); else stop('Playback could not recover. Refresh the stream to try again.'); });
+    // A fatal error never parks the player on a "refresh" screen: the server-side HLS session may have
+    // expired, so the whole player is rebuilt (fresh session) after a short pause, as often as needed.
+    const rebuild = (why) => { playerMessage(why); setTimeout(() => { if (mine === hls && desktopWanted()) { releasePlayer(); start(); } }, 3000); };
+    mine.on(Hls.Events.ERROR, (_, d) => { if (mine!==hls||!d.fatal)return; if (d.type === Hls.ErrorTypes.MEDIA_ERROR&&mediaRecoveries++<2) { playerMessage('Stream interrupted. Reconnecting…'); mine.recoverMediaError(); } else rebuild('Stream interrupted. Reconnecting…'); });
     mine.loadSource(src); mine.attachMedia(v);
   } else v.src = src;
   v.muted = true; v.play?.().catch(() => {});
@@ -523,7 +531,7 @@ $("#proto").onclick = () => { const on = mode === "webrtc"; localStorage.setItem
 $("#retryPlayer").onclick = async () => { stop(desktopWhy); try { await refresh(); } catch {} if(desktopWanted())start(); };
 $("#video").addEventListener('playing',()=>playerMessage(''));
 for(const event of ['waiting','stalled'])$("#video").addEventListener(event,()=>{if(desktopWanted()&&mode)playerMessage('Buffering the stream…');});
-$("#video").addEventListener('error',()=>{if(desktopWanted()&&mode)stop('The stream could not be loaded. Refresh the stream to try again.');});
+$("#video").addEventListener('error',()=>{ if(!desktopWanted()||!mode)return; playerMessage('Reconnecting to the live stream…'); setTimeout(()=>{ if(desktopWanted()){ releasePlayer(); start(); } }, 3000); });
 function attach(live, why) {
   desktopLive = live; desktopWhy = why || '';
   if (onScreen) { $("#video").hidden = true; $("#offwhy").textContent = live ? "This is Kurt’s broadcast screen. The player stays off to avoid a screen-within-a-screen." : "The desktop stream is not live."; $("#retryPlayer").hidden=true; return; }
@@ -750,6 +758,74 @@ $("#props").onclick = async (e) => { const b = e.target.closest("[data-vote]"); 
   const id = b.dataset.id, card = b.closest(".item"), input = card?.querySelector(`[data-vote-comment="${id}"]`), comment = (input?.value || "").trim();
   const say = (text, bad) => { voteNotes[id] = { text, bad, at: Date.now() }; const el = card?.querySelector(`[data-vote-status="${id}"]`); if (el) { el.textContent = text; el.className = "hint vote-status " + (bad ? "bad" : "ok"); } $("#propHint").textContent = text; $("#propHint").className = "hint " + (bad ? "bad" : "ok"); };
   try { await signed("holder_vote", "vote", { proposalId: id, support: b.dataset.vote === "yes", ...(comment ? { comment } : {}) }); say("Vote recorded.", false); refresh(); } catch (err) { say("Refused: " + err.message, true); } };
+// Desktop (owner 2026-10-02): the Ideas & votes panel leaves the tabbed dock and sits beside the stream,
+// always visible. A stub keeps the dock's tab controller (project-community.js, deferred) consistent.
+if (window.matchMedia && matchMedia("(min-width:1180px)").matches) {
+  const center = document.querySelector(".room-center"), ideas = document.getElementById("roomPanelIdeas"), desk = document.getElementById("desktopPanel");
+  if (center && ideas && desk && ideas.parentElement !== center) {
+    const stub = document.createElement("div"); stub.className = "workspace-panel"; stub.dataset.workspacePanel = "ideas"; stub.hidden = true;
+    ideas.after(stub); desk.after(ideas);
+    ideas.id = "roomPanelIdeasBeside"; ideas.hidden = false; ideas.removeAttribute("inert"); ideas.removeAttribute("role"); ideas.classList.add("ideas-beside");
+    window.addEventListener("load", () => { try { document.getElementById("roomTabWork")?.click(); } catch { /* the dock keeps its default tab */ } });
+  }
+}
+// Keep the original desktop move above. The dock controller captures its panel
+// nodes at DOMContentLoaded, so responsive changes move only the Ideas CONTENT,
+// never replace those nodes or override their hidden/inert tab state.
+document.addEventListener("DOMContentLoaded", () => {
+  const wide = window.matchMedia?.("(min-width:1180px)");
+  const dock = document.getElementById("roomDock");
+  const dockIdeas = dock?.querySelector('[data-workspace-panel="ideas"]');
+  const desk = document.getElementById("desktopPanel");
+  const tablist = dock?.querySelector(".workspace-tabs");
+  if (!wide || !dockIdeas || !desk || !tablist) return;
+  let beside = document.getElementById("roomPanelIdeasBeside");
+  if (!beside) {
+    beside = document.createElement("div");
+    beside.id = "roomPanelIdeasBeside";
+    beside.className = "workspace-panel ideas-beside";
+    beside.dataset.workspacePanel = "ideas";
+    beside.hidden = true;
+    beside.inert = true;
+    desk.after(beside);
+  }
+  beside.setAttribute("role", "region");
+  beside.setAttribute("aria-labelledby", "roomIdeasTitle");
+  beside.tabIndex = -1;
+  const keepDockVisible = () => {
+    if (wide.matches && !dockIdeas.hidden) document.getElementById("roomTabWork")?.click();
+  };
+  const placeIdeas = () => {
+    if (wide.matches) {
+      if (dockIdeas.childNodes.length) beside.append(...dockIdeas.childNodes);
+      beside.hidden = false;
+      beside.inert = false;
+      keepDockVisible();
+    } else {
+      if (beside.childNodes.length) dockIdeas.append(...beside.childNodes);
+      beside.hidden = true;
+      beside.inert = true;
+    }
+  };
+  placeIdeas();
+  if (wide.addEventListener) wide.addEventListener("change", placeIdeas);
+  else wide.addListener(placeIdeas);
+  // Deep links may select the dock's placeholder; keep the visible dock on Tasks.
+  new MutationObserver(keepDockVisible).observe(dockIdeas, { attributes:true, attributeFilter:["hidden"] });
+  // The existing tab controller includes Ideas. Skip that hidden tab on desktop.
+  tablist.addEventListener("keydown", event => {
+    if (!wide.matches || !["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+    const tabs = [...tablist.querySelectorAll('[data-workspace-tab]:not([data-workspace-tab="ideas"])')];
+    const index = tabs.indexOf(event.target.closest("[data-workspace-tab]"));
+    if (index < 0) return;
+    const next = event.key === "Home" ? 0 : event.key === "End" ? tabs.length - 1
+      : (index + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    tabs[next].click();
+    tabs[next].focus({ preventScroll:true });
+  }, true);
+});
 document.querySelectorAll(".tabs button").forEach((b) => (b.onclick = () => { tab = b.dataset.tab; document.querySelectorAll(".tabs button").forEach((x) => x.classList.toggle("on", x === b)); render(last); }));
 
 // ── funding: what unlocks the agent, and where the money came from ───────────
@@ -791,7 +867,7 @@ function renderLaunchPackage(t) {
   if(social){
     const account=p.socialAccount,paid=account?.paid===true,acquired=account?.acquired===true;
     const waiting=t.social?.milestone?.state==='waiting_for_account'&&t.social.milestone.funded===true&&account?.paid===false&&account?.spentMicros===0&&account?.reservedMicros===social;
-    put('#launchPackageSocial',waiting?`X account · ${amount(social)} reserved, not charged · Waiting for an available verified account. No additional X setup funding is needed.`:`X account · ${amount(social)} budget cap · ${acquired?'account ready':account?.acquisitionConnected===false?'setup not connected':'setup pending'} · ${paid?`${amount(account.spentMicros)} paid`:'not paid'}${paid?'':note(account?.detail)}`);
+    put('#launchPackageSocial',!social?'':waiting?`X account · ${amount(social)} reserved, not charged · Waiting for an available verified account. No additional X setup funding is needed.`:`X account · ${amount(social)} budget cap · ${acquired?'account ready':account?.acquisitionConnected===false?'setup not connected':'setup pending'} · ${paid?`${amount(account.spentMicros)} paid`:'not paid'}${paid?'':note(account?.detail)}`);
   }
 }
 // What the creator chose, for everyone: the machine, the AI model, the daily rate and the startup
@@ -842,7 +918,7 @@ function renderHowItWorks(t){
   put('#hiwRun',[Number.isFinite(dph)&&dph>0?`The rented computer costs $${dph.toFixed(4)} an hour`:'The rented computer is billed by the hour',
     Number.isFinite(step)&&step>0?`and a typical AI step costs about $${step.toFixed(4)}`:'and every AI request is paid one by one'].join(' ')+'. Both come out of the treasury, never out of your wallet.');
   const min=Number(t.orderMinPct),hours=Number(t.usagePolicy?.periodHours);
-  put('#hiwHolder',`Holders chat with the agent and vote on proposals; chat alone never starts work or spends money.${Number.isFinite(min)&&min>0?` Holding more than ${min}% of the supply also lets you drive the X account without a vote.`:''}${Number.isFinite(hours)&&hours>0?` Each holder gets a share of the treasury's chat budget every ${hours} hours.`:''}`);
+  put('#hiwHolder',`Holders chat with the agent and vote on proposals; chat alone never starts work or spends money.${Number.isFinite(hours)&&hours>0?` Each holder gets a share of the treasury's chat budget every ${hours} hours.`:''}`);
 }
 /// The wallet the AI owns, shown under the contract: on pump.fun coins it is the on-chain
 /// creator, so pump.fun's creator fee lands here and nowhere else.
@@ -1069,6 +1145,7 @@ function render(t) {
   $("#pageTitle").textContent = t.name;
   $("#headerSymbol").textContent = '$'+t.symbol;
   $("#headerChain").textContent = t.chain==='robinhood'?'Robinhood':t.chain==='solana'?'Solana':String(t.chain||'Network unavailable');
+  $("#officialBadge").hidden = t.official !== true;
   const addressValid=/^0x[a-fA-F0-9]{40}$/.test(t.address)||(t.chain==='solana'&&/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(t.address));
   $("#contractAddress").textContent = addressValid?t.address:'Address unavailable';
   $("#contract").disabled=!addressValid; $("#contract").title=addressValid?t.address:'';
@@ -1152,7 +1229,7 @@ function render(t) {
       box.scrollTop = followChat ? 1e9 : previousScroll;
     }
   } else if (tab === "holders") {
-    const taskThreshold = t.governancePolicy?.version === 2 ? "more than 1% of total supply" : `at least ${t.orderMinPct}% of eligible supply`;
+    const taskThreshold = Number(t.governancePolicy?.proposalPct ?? 0) <= 0 ? "any amount of the token" : t.governancePolicy?.version === 2 ? `more than ${t.governancePolicy.proposalPct}% of total supply` : `at least ${t.orderMinPct}% of eligible supply`;
     box.innerHTML = `<table><tr><th>Holder</th><th>Share</th><th>Role</th></tr>${t.holders.map((h) => `<tr${h.address === me ? ' class="ok"' : ""}><td>${h.username ? `<b>@${esc(h.username)}</b> <span class="mono muted" style="font-size:11px">${esc(short(h.address))}</span>` : `<span class="mono">${esc(short(h.address))}</span>`}${h.address === me ? " (you)" : ""}</td><td>${Number(h.sharePct).toFixed(2)}%</td><td>${h.role === "order" ? `<span class="badge lime" style="font-size:9px">can authorize tasks</span>` : `<span class="muted">chats</span>`}</td></tr>`).join("")}</table><div class="hint" style="padding:8px 4px">Chat is read-only by default. Holders with ${esc(taskThreshold)} can explicitly sign action permissions when tools are available. Balances are read from the chain.</div>`;
   } else {
     box.innerHTML = (t.statusLog || []).map((l) => `<div class="item"><b>${esc(l.event)}</b> ${esc(l.message)}<div class="muted" style="font-size:11px">${esc((l.at || "").slice(0, 16).replace("T", " "))}</div></div>`).join("") || `<div class="muted" style="text-align:center;padding:40px 10px">No agent log yet.</div>`;
@@ -1179,18 +1256,34 @@ function render(t) {
   const labels = { DEX_UPDATE:'Dex Update', DEX_BOOST:'Dex Boost', PROJECT_PROFILE_UPDATE:"Official project profile", X_POST: "X post", FARCASTER_POST: "Social post", TASK: "Agent task", WEBSITE_UPDATE: "Website update", MISSION_CHANGE: "Change the mission", voting: "Open for voting", approved: "Approved", rejected: "Not approved", in_progress: "In progress", done: "Completed", rejected_by_rules: "Cannot apply" };
   const friendly = v => labels[v] || String(v || "").replaceAll("_", " ");
   $("#proposalRules").textContent = t.governancePolicy?.version === 2
-    ? `New ideas: hold more than 1% of total token supply to propose work. Voting lasts ${t.settings?.votingHours || 0} hours. More than 15% of total supply must vote Yes, and Yes must exceed No. Balances are fixed at the opening block, so moving tokens cannot create extra votes. Earlier proposals keep their original rules. Approval never overrides safety restrictions.`
+    ? `New ideas: any wallet holding $${t.symbol} can propose work. Voting lasts ${t.settings?.votingHours || 0} hours. More than 15% of total supply must vote Yes, and Yes must exceed No. Balances are fixed at the opening block, so moving tokens cannot create extra votes. Earlier proposals keep their original rules. Approval never overrides safety restrictions.`
     : `To suggest an idea, hold at least ${(t.settings?.proposalMinBps || 0) / 100}% of tokens held outside the bonding curve. Voting lasts ${t.settings?.votingHours || 0} hours and uses balances recorded when the idea opens. At least ${(t.settings?.quorumBps || 0) / 100}% of that snapshot must vote, with more than ${(t.settings?.passBps || 0) / 100}% of voting weight in favour. Approved ideas must still follow the agent’s safety rules.`;
   $("#props").innerHTML = (t.proposals || []).map(p => {
     const cancelled = p.cancelledAt || p.revokedAt, open = p.status === "voting" && !cancelled;
     const saved = t.community?.artifacts?.some(a => a.proposalId === p.id);
     const agentLabel = p.result?.paymentState==='paid' ? 'Payment confirmed · publication unverified' : p.agentStatus === "done" && ["TASK", "WEBSITE_UPDATE"].includes(p.type) ? saved ? "Output saved" : "No saved output" : friendly(p.agentStatus);
-    return `<div class="item" data-idea-state="${open ? 'voting' : !cancelled && p.status === 'approved' ? 'approved' : 'closed'}"><b>${esc(p.title)}</b> <span class="badge ${open ? "lime" : "dim"}">${esc(cancelled ? "Withdrawn" : friendly(p.status))}</span> ${p.agentStatus ? `<span class="badge dim">${esc(p.result?.profileVersion?'Profile updated · v'+p.result.profileVersion:agentLabel)}</span>` : ""}<div class="muted" style="font-size:12px;margin:4px 0">${esc(friendly(p.type))} · ${esc(p.voteCount)} votes · ${esc(p.payload?.text || p.payload?.description || p.payload?.mission || "")}</div>${p.result?.tweetUrl ? `<div class="muted" style="font-size:12px;margin:2px 0"><a href="${esc(p.result.tweetUrl)}" target="_blank" rel="noopener noreferrer">View the post on X ↗</a></div>` : ""}${window.GatewayProject.ballot(p)}${window.GatewayDex.ballot(p)}${window.GatewayWallet?.ballot(p)||""}${window.GatewayActions?.ballot(p)||""}${p.agentReason?`<p class="hint">${esc(p.agentReason)}</p>`:''}${voteMeter(p)}${open ? `<div class="ballot-row"><input class="vote-comment-input" data-vote-comment="${esc(p.id)}" maxlength="280" placeholder="Add a comment with your vote (optional)"><button class="btn sm lime" data-vote="yes" data-id="${esc(p.id)}">Yes</button> <button class="btn sm" data-vote="no" data-id="${esc(p.id)}">No</button></div>` : ""}${voteNote(p.id)}</div>`;
+    return `<div class="item" data-idea-state="${open ? 'voting' : !cancelled && p.status === 'approved' ? 'approved' : 'closed'}"><b>${esc(p.title)}</b> <span class="badge ${open ? "lime" : "dim"}">${esc(cancelled ? "Withdrawn" : friendly(p.status))}</span> ${p.agentStatus ? `<span class="badge dim">${esc(p.result?.profileVersion?'Profile updated · v'+p.result.profileVersion:agentLabel)}</span>` : ""}<div class="muted" style="font-size:12px;margin:4px 0">${esc(friendly(p.type))} · ${esc(p.voteCount)} votes · ${esc(p.payload?.text || p.payload?.description || p.payload?.mission || "")}</div>${p.result?.tweetUrl ? `<div class="muted" style="font-size:12px;margin:2px 0"><a href="${esc(p.result.tweetUrl)}" target="_blank" rel="noopener noreferrer">View the post on X ↗</a></div>` : ""}${window.GatewayProject.ballot(p)}${window.GatewayDex.ballot(p)}${window.GatewayWallet?.ballot(p)||""}${window.GatewayActions?.ballot(p)||""}${p.agentReason?`<p class="hint">${esc(p.agentReason)}</p>`:''}${voteMeter(p)}${open ? `<div class="ends-in">${esc(endsIn(p.endsAt))}</div><div class="ballot-row"><input class="vote-comment-input" data-vote-comment="${esc(p.id)}" maxlength="280" placeholder="Add a comment with your vote (optional)"></div><div class="vote-actions"><button class="btn lime vote-yes" data-vote="yes" data-id="${esc(p.id)}">👍 Yes</button><button class="btn vote-no" data-vote="no" data-id="${esc(p.id)}">👎 No</button></div>` : ""}${voteNote(p.id)}</div>`;
   }).join("") || `<div class="item muted">No ideas yet. Suggest something you would like the agent to build.</div>`;
+  const openVotes = (t.proposals || []).filter((p) => p.status === "voting" && !p.cancelledAt && !p.revokedAt).length;
+  const tabIdeas = $("#roomTabIdeas"); if (tabIdeas) tabIdeas.textContent = openVotes ? `Ideas · ${openVotes} open` : "Ideas";
+  const promptTitle = $("#ideasPromptTitle"), promptSub = $("#ideasPromptSub");
+  if (promptTitle) { promptTitle.textContent = openVotes ? `${openVotes} idea${openVotes > 1 ? "s" : ""} open for voting` : "Want the AI to do something?"; promptTitle.classList.toggle("ideas-prompt-live", openVotes > 0); }
+  if (promptSub) promptSub.textContent = openVotes ? "Holders decide what Kurt does next — cast your vote in Ideas & votes." : "Suggest it. Let the community decide.";
+  const v2 = t.governancePolicy?.version === 2, hours = t.settings?.votingHours || 6;
+  const stepPropose = $("#stepPropose"); if (stepPropose) { const needPct = Number(t.governancePolicy?.proposalPct ?? 0); stepPropose.textContent = needPct <= 0 ? `Any wallet holding $${t.symbol} can propose — connect and write your idea.` : v2 ? `Hold more than ${needPct}% of the total supply to propose.` : `Hold at least ${needPct}% of eligible supply to propose.`; }
+  const stepVote = $("#stepVote"); if (stepVote) stepVote.textContent = v2 ? `${hours} hours · Yes must pass 15% of total supply and beat No.` : `${hours} hours · ${(Number(t.settings?.quorumBps) || 0) / 100}% turnout, more than ${(Number(t.settings?.passBps) || 0) / 100}% Yes.`;
   const gate = suggestGate(t, me), suggestBtn = $("#suggestIdea"), suggestHint = $("#suggestHint");
   if (suggestBtn) { suggestBtn.disabled = gate.blocked; suggestBtn.title = gate.reason; suggestBtn.classList?.toggle("is-blocked", gate.blocked); }
   if (suggestHint) { suggestHint.textContent = gate.reason; suggestHint.hidden = !gate.reason; }
   window.GatewayRoom?.render(t);
+}
+// "Ends in 3h 12m" for an open vote (the server's endsAt; closed votes show nothing).
+function endsIn(endsAt) {
+  const ms = Date.parse(endsAt || "") - Date.now();
+  if (!Number.isFinite(ms)) return "";
+  if (ms <= 0) return "Vote closing…";
+  const h = Math.floor(ms / 3600e3), m = Math.floor((ms % 3600e3) / 60e3);
+  return `⏱ Voting ends in ${h ? h + "h " : ""}${m}m`;
 }
 // Vote outcomes shown on the card itself for half a minute, surviving re-renders.
 const voteNotes = {};
@@ -1214,7 +1307,8 @@ function voteMeter(p) {
 function suggestGate(t, wallet) {
   if (!wallet) return { blocked: false, reason: "" };
   const mine = (t.holders || []).find((h) => h.address === wallet), held = Number(mine?.sharePct) || 0;
-  const v2 = t.governancePolicy?.version === 2, need = v2 ? Number(t.governancePolicy.proposalPct ?? 1) : (Number(t.settings?.proposalMinBps) || 0) / 100;
+  const v2 = t.governancePolicy?.version === 2, need = Number(t.governancePolicy?.proposalPct ?? 0);
+  if (need <= 0) return held > 0 ? { blocked: false, reason: "" } : { blocked: true, reason: `Hold any amount of $${t.symbol} with this wallet to suggest work.` };
   if (v2 ? held > need : held >= need) return { blocked: false, reason: "" };
   return { blocked: true, reason: `Suggesting work needs ${v2 ? "more than" : "at least"} ${need}% of ${v2 ? "total token supply" : "eligible supply"} · you hold ${held.toFixed(2)}%` };
 }
@@ -1241,7 +1335,16 @@ document.querySelectorAll("[data-template]").forEach(button => button.onclick = 
   $("#propType").dispatchEvent(new Event('change'));
   $("#propText").focus();
 });
-const liveData = GatewayLiveToken({ token, onSnapshot: t => { last = t; window.GatewayDex?.syncClock?.(t); }, render: t => { last = t; render(t); }, status: state => {
+// Live frames carry only the top holders (holdersPartial); the rest of the list, including this
+// viewer's own quota, is kept from the last full snapshot so counts and allowances do not flicker.
+const keepHolders = (t) => {
+  if (t && t.holdersPartial && Array.isArray(last?.holders) && last.holders.length > (t.holders?.length || 0)) {
+    const fresh = new Map((t.holders || []).map((h) => [h.address, h]));
+    t = { ...t, holders: [...(t.holders || []), ...last.holders.filter((h) => !fresh.has(h.address))], holdersPartial: false };
+  }
+  return t;
+};
+const liveData = GatewayLiveToken({ token, onSnapshot: t => { t = keepHolders(t); last = t; window.GatewayDex?.syncClock?.(t); }, render: t => { t = keepHolders(t); last = t; render(t); }, status: state => {
   $("#dataConnection").textContent = { live: "Live updates", connecting: "Connecting…", reconnecting: "Reconnecting…" }[state];
   $("#dataConnection").dataset.state = state;
 } });

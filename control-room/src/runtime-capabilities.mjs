@@ -1,4 +1,5 @@
-import { xAccountOf } from './x-posts.mjs';
+// The X (Twitter) account integration is not part of Autonom and was removed from this repository; these names are inert stubs.
+const xAccountOf = () => null;
 
 // A fresh controller acknowledgment is not an isolation attestation or permission.
 // It only describes which already-authorized workflows the running controller has.

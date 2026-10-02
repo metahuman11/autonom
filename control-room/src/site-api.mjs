@@ -23,10 +23,12 @@ import { KURT } from "../public/kurt/profile.mjs";
 import { projectProfile, publicProfileProposal } from './project-profile.mjs';
 import { isDexType } from './dex-policy.mjs';
 import { dexPaymentsOf } from './dex-payments.mjs';
-import { xAccountOf, xPostsOf, xUsageOf, xActionsOf, xProfileOf, validateXAction, validateXImage, xPosts, X_PROFILE_LIMITS, X_AVATAR_MAX_BYTES, X_BANNER_MAX_BYTES } from './x-posts.mjs';
+// The X (Twitter) account integration is not part of Autonom and was removed from this repository; these names are inert stubs.
+const xAccountOf = () => null, xPostsOf = () => [], xUsageOf = () => null, xActionsOf = () => ({}), xProfileOf = () => null, xPosts = () => ({ status: () => ({ connected: false }) }), X_PROFILE_LIMITS = {}, X_AVATAR_MAX_BYTES = 0, X_BANNER_MAX_BYTES = 0;
+const validateXAction = () => { throw Object.assign(new Error('X posting is not part of Autonom'), { status: 409 }); }, validateXImage = validateXAction;
 import { publicLaunchPackage } from './launch-package.mjs';
 import { publicCreatorFees } from './fee-public.mjs';
-import { socialMilestoneOf } from './social-milestone.mjs';
+const socialMilestoneOf = () => null;
 import { startupStagesOf } from './startup-stages.mjs';
 import { publicText, publicTree, pickPublic, publicOffer, publicMarket, publicTransactions } from "./public-safety.mjs";
 import { consumeReplayNonce, SIGNATURE_FRESH_MS } from './replay-window.mjs';
